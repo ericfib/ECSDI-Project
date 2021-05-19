@@ -22,7 +22,7 @@ from AgentUtil.FlaskServer import shutdown_server
 from AgentUtil.ACLMessages import build_message, send_message, get_message_properties
 from AgentUtil.Agent import Agent
 from AgentUtil.Logging import config_logger
-from AgentUtil.DSO import DSO
+from AgentUtil.DSO import ONTOLOGY
 from AgentUtil.Util import gethostname
 import socket
 
@@ -118,13 +118,13 @@ def register_message():
 
     # Construimos el mensaje de registro
     gmess.bind('foaf', FOAF)
-    gmess.bind('dso', DSO)
+    gmess.bind('dso', ONTOLOGY)
     reg_obj = agn[InfoAgent.name + '-Register']
-    gmess.add((reg_obj, RDF.type, DSO.Register))
-    gmess.add((reg_obj, DSO.Uri, InfoAgent.uri))
+    gmess.add((reg_obj, RDF.type, ONTOLOGY.Register))
+    gmess.add((reg_obj, ONTOLOGY.Uri, InfoAgent.uri))
     gmess.add((reg_obj, FOAF.name, Literal(InfoAgent.name)))
-    gmess.add((reg_obj, DSO.Address, Literal(InfoAgent.address)))
-    gmess.add((reg_obj, DSO.AgentType, DSO.HotelsAgent))
+    gmess.add((reg_obj, ONTOLOGY.Address, Literal(InfoAgent.address)))
+    gmess.add((reg_obj, ONTOLOGY.AgentType, ONTOLOGY.HotelsAgent))
 
     # Lo metemos en un envoltorio FIPA-ACL y lo enviamos
     gr = send_message(

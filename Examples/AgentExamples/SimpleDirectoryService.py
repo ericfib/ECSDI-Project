@@ -30,7 +30,7 @@ from AgentUtil.FlaskServer import shutdown_server
 from AgentUtil.Agent import Agent
 from AgentUtil.ACLMessages import build_message, get_message_properties
 from AgentUtil.Logging import config_logger
-from AgentUtil.DSO import DSO
+from AgentUtil.DSO import ONTOLOGY
 from AgentUtil.Util import gethostname
 import socket
 
@@ -72,7 +72,7 @@ dsgraph.bind('acl', ACL)
 dsgraph.bind('rdf', RDF)
 dsgraph.bind('rdfs', RDFS)
 dsgraph.bind('foaf', FOAF)
-dsgraph.bind('dso', DSO)
+dsgraph.bind('dso', ONTOLOGY)
 
 agn = Namespace("http://www.agentes.org#")
 DirectoryAgent = Agent('DirectoryAgent',
