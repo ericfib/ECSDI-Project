@@ -13,7 +13,7 @@ Asume que el agente de registro esta en el puerto 9000
 
 @author: javier
 """
-
+import json
 from multiprocessing import Process, Queue
 import socket
 import os
@@ -34,6 +34,7 @@ hostname = socket.gethostname()
 port = 9011
 
 agn = Namespace("http://www.agentes.org#")
+# namespace = ONTOLOGY
 
 # Contador de mensajes
 mss_cnt = 0
@@ -51,9 +52,6 @@ DirectoryAgent = Agent('DirectoryAgent',
                        'http://%s:9000/Register' % hostname,
                        'http://%s:9000/Stop' % hostname)
 
-# Global triplestore graph
-dsgraph = Graph()
-
 cola1 = Queue()
 
 # Flask stuff
@@ -61,10 +59,9 @@ app = Flask(__name__)
 
 # APIs
 load_dotenv()
-
 AMADEUS_KEY = os.getenv("AMADEUS_API_KEY")
 AMADEUS_SECRET = os.getenv("AMADEUS_API_SECRET")
-amazon = Client()
+amadeus = Client(client_id=AMADEUS_KEY, client_secret=AMADEUS_SECRET)
 
 
 @app.route("/comm")
@@ -97,23 +94,51 @@ def tidyup():
     pass
 
 
-def agentbehavior1(cola):
+def agentbehavior1():
     """
     Un comportamiento del agente
 
     :return:
     """
+    city = 'BCN'
+    pricemax = '800'
+    pricemin = '200'
+    arrivaldate = '2021-12-12'
+    departuredate = '2021-12-25'
+    buscar_alojamientos(city, pricemax, pricemin, arrivaldate, departuredate, 1)
     pass
 
 
-def buscar_alojamientos():
-    #PROGRAMAR MUCHO
+def buscar_alojamientos(city, pricemax, pricemin, arrivaldate, departuredate, iscentric):
+    pricerange = pricemax + '-' + pricemin
+    # DATE HA DE SER STRING YYYY-MM-DD
+    # CALL
+    cityhotels = amadeus.shopping.hotel_offers.get(cityCode=city)
+
+    response = cityhotels.data
+
+    # TRATAMIENTO RESPUESTA
+    # grafo = Graph('dso', namespace)
+    out_file = open("../datos/hotels.json", "w")
+    json.dump(response, out_file, indent=4)
+
+    code = cityhotels.status_code
+
+    if cityhotels.status_code != 200:
+        print('Error al buscar hoteles: ' + cityhotels.status_code)
+    else:
+        print('HOTELES ENCONTRADOS : \n')
+        for hotel in response:
+            if hotel["type"] == "hotel-offers":
+                nombre = hotel["hotel"]["name"]
+                print('Nombre del hotel => ' + nombre)
+
     pass
 
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
-    ab1 = Process(target=agentbehavior1, args=(cola1,))
+    ab1 = Process(target=agentbehavior1)
     ab1.start()
 
     # Ponemos en marcha el servidor

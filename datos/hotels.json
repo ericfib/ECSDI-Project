@@ -1,0 +1,388 @@
+[
+    {
+        "type": "hotel-offers",
+        "hotel": {
+            "type": "hotel",
+            "hotelId": "HSBCNAGY",
+            "chainCode": "HS",
+            "dupeId": "700053954",
+            "name": "Catalu\u00f1a",
+            "rating": "2",
+            "cityCode": "BCN",
+            "latitude": 41.38548,
+            "longitude": 2.1718,
+            "hotelDistance": {
+                "distance": 0.2,
+                "distanceUnit": "KM"
+            },
+            "address": {
+                "lines": [
+                    "SANTA ANNA, 24"
+                ],
+                "postalCode": "8002",
+                "cityName": "BARCELONA",
+                "countryCode": "ES"
+            },
+            "contact": {
+                "phone": "(34) 933019150",
+                "fax": "(34) 933189403",
+                "email": "hcatalunya@hotelcatalunya.net"
+            },
+            "description": {
+                "lang": "en",
+                "text": "The hotel Cataluna in Barcelona offers its guests 40 rooms, all renovated in 2006. The rooms feature bath/toilet, satellite TV, Wi-Fi access and air-conditioning. A fax and copy service is available for the guests at the reception."
+            },
+            "amenities": [
+                "24_HOUR_FRONT_DESK",
+                "MULTILINGUAL_STAFF",
+                "ELEVATOR",
+                "INTERNET_SERVICES",
+                "SAFE_DEPOSIT_BOX",
+                "VENDING_MACHINES",
+                "WIRELESS_CONNECTIVITY",
+                "DOCTOR_ON_CALL",
+                "COFFEE_SHOP",
+                "CAR_RENTAL",
+                "EXPRESS_CHECK_OUT",
+                "EXPRESS_CHECK_IN",
+                "CAR_RENTAL",
+                "TOUR_DESK",
+                "LAUNDRY_SERVICE",
+                "ATM/CASH_MACHINE",
+                "BEACH",
+                "WATER_SPORTS"
+            ],
+            "media": [
+                {
+                    "uri": "http://uat.multimediarepository.testing.amadeus.com/cmr/retrieve/hotel/C6DE359F99B249B0B4A6F197D6235765",
+                    "category": "EXTERIOR"
+                }
+            ]
+        },
+        "available": true,
+        "offers": [
+            {
+                "id": "C68PEGV3GP",
+                "checkInDate": "2021-05-20",
+                "checkOutDate": "2021-05-21",
+                "rateCode": "RAC",
+                "commission": {
+                    "percentage": "4.00"
+                },
+                "room": {
+                    "type": "ROH",
+                    "typeEstimated": {
+                        "category": "STANDARD_ROOM"
+                    },
+                    "description": {
+                        "text": "TradeFair-Rate\nStandard room A standard room consists of a room with shower-toilet or bathtub-toilet."
+                    }
+                },
+                "guests": {
+                    "adults": 1
+                },
+                "price": {
+                    "currency": "EUR",
+                    "total": "95.00",
+                    "variations": {
+                        "average": {
+                            "total": "95.00"
+                        },
+                        "changes": [
+                            {
+                                "startDate": "2021-05-20",
+                                "endDate": "2021-05-21",
+                                "total": "95.00"
+                            }
+                        ]
+                    }
+                },
+                "policies": {
+                    "guarantee": {
+                        "acceptedPayments": {
+                            "creditCards": [
+                                "DC",
+                                "DN",
+                                "VI",
+                                "MC",
+                                "CA",
+                                "AX"
+                            ],
+                            "methods": [
+                                "CREDIT_CARD"
+                            ]
+                        }
+                    },
+                    "paymentType": "guarantee",
+                    "cancellation": {
+                        "numberOfNights": 1,
+                        "deadline": "2021-05-18T22:59:00+02:00"
+                    }
+                }
+            }
+        ],
+        "self": "https://test.api.amadeus.com/v2/shopping/hotel-offers/by-hotel?hotelId=HSBCNAGY"
+    },
+    {
+        "type": "hotel-offers",
+        "hotel": {
+            "type": "hotel",
+            "hotelId": "HSBCNAKP",
+            "chainCode": "HS",
+            "dupeId": "700025712",
+            "name": "Acta Atrium Palace",
+            "rating": "4",
+            "cityCode": "BCN",
+            "latitude": 41.39094,
+            "longitude": 2.17068,
+            "hotelDistance": {
+                "distance": 0.4,
+                "distanceUnit": "KM"
+            },
+            "address": {
+                "lines": [
+                    "GRAN VIA CORTS CATALANES, 656"
+                ],
+                "postalCode": "8010",
+                "cityName": "BARCELONA",
+                "countryCode": "ES"
+            },
+            "contact": {
+                "phone": "(34) 933428000",
+                "fax": "(34) 934540500",
+                "email": "atriumpalace@actahotels.com"
+            },
+            "description": {
+                "lang": "en",
+                "text": "The 4-star hotel Acta Atrium Palace in Barcelona is located in a neoclassical building from 1888 and offers modern interiors. The 71 rooms are comfortably arranged. Furthermore, the hotel features a bar, a restaurant and a conference room. A swimming pool, a sauna, a jacuzzi and fitness area are at the guests' disposal, too."
+            },
+            "amenities": [
+                "24_HOUR_FRONT_DESK",
+                "MULTILINGUAL_STAFF",
+                "CASINO",
+                "DOCTOR_ON_CALL",
+                "ELEVATOR",
+                "INTERNET_SERVICES",
+                "BANQUETING_FACILITIES",
+                "RESTAURANT",
+                "LOUNGE",
+                "SWIMMING_POOL",
+                "INDOOR_POOL",
+                "SAUNA",
+                "CONCIERGE",
+                "DRIVING_RANGE",
+                "NIGHT_CLUB",
+                "WIRELESS_CONNECTIVITY",
+                "SAFE_DEPOSIT_BOX",
+                "DOCTOR_ON_CALL",
+                "COFFEE_SHOP",
+                "CAR_RENTAL",
+                "PORTER/BELLBOY",
+                "CONFERENCE_FACILITIES",
+                "LAUNDRY_SERVICE",
+                "ROOM_SERVICE",
+                "24_HOUR_ROOM_SERVICE",
+                "FIRE_DETECTORS",
+                "VIDEO_SURVEILANCE",
+                "INDOOR_TENNIS",
+                "TENNIS",
+                "BEACH",
+                "WATER_SPORTS",
+                "FISHING",
+                "BOATING"
+            ],
+            "media": [
+                {
+                    "uri": "http://uat.multimediarepository.testing.amadeus.com/cmr/retrieve/hotel/36DF7B0F830B440E85D460CCAA8303B5",
+                    "category": "LOBBY"
+                }
+            ]
+        },
+        "available": true,
+        "offers": [
+            {
+                "id": "T23WCUV498",
+                "checkInDate": "2021-05-20",
+                "checkOutDate": "2021-05-21",
+                "rateCode": "PRO",
+                "rateFamilyEstimated": {
+                    "code": "PRO",
+                    "type": "P"
+                },
+                "commission": {
+                    "percentage": "4.00"
+                },
+                "room": {
+                    "type": "ROH",
+                    "typeEstimated": {
+                        "category": "STANDARD_ROOM"
+                    },
+                    "description": {
+                        "text": "Hot Deal\nStandard room A standard room consists of a room with shower-toilet or bathtub-toilet."
+                    }
+                },
+                "guests": {
+                    "adults": 1
+                },
+                "price": {
+                    "currency": "EUR",
+                    "total": "140.96",
+                    "variations": {
+                        "average": {
+                            "total": "140.96"
+                        },
+                        "changes": [
+                            {
+                                "startDate": "2021-05-20",
+                                "endDate": "2021-05-21",
+                                "total": "140.96"
+                            }
+                        ]
+                    }
+                },
+                "policies": {
+                    "deposit": {
+                        "acceptedPayments": {
+                            "creditCards": [
+                                "DC",
+                                "DN",
+                                "VI",
+                                "MC",
+                                "CA",
+                                "AX"
+                            ],
+                            "methods": [
+                                "CREDIT_CARD"
+                            ]
+                        }
+                    },
+                    "paymentType": "deposit",
+                    "cancellation": {
+                        "deadline": "2021-05-18T20:02:00+02:00"
+                    }
+                }
+            }
+        ],
+        "self": "https://test.api.amadeus.com/v2/shopping/hotel-offers/by-hotel?hotelId=HSBCNAKP"
+    },
+    {
+        "type": "hotel-offers",
+        "hotel": {
+            "type": "hotel",
+            "hotelId": "HLBCN116",
+            "chainCode": "HL",
+            "dupeId": "700001463",
+            "name": "ALEXANDRA BARCELONA A DT BY HILTON",
+            "rating": "4",
+            "cityCode": "BCN",
+            "latitude": 41.39306,
+            "longitude": 2.1615,
+            "hotelDistance": {
+                "distance": 1.0,
+                "distanceUnit": "KM"
+            },
+            "address": {
+                "lines": [
+                    "MALLORCA 251"
+                ],
+                "postalCode": "08008",
+                "cityName": "BARCELONA",
+                "countryCode": "ES"
+            },
+            "contact": {
+                "phone": "34-93-4677166",
+                "fax": "34-93-4880258"
+            },
+            "amenities": [
+                "BUSINESS_CENTER",
+                "MEETING_ROOMS",
+                "RESTAURANT",
+                "SERVICE_DOGS_ALLOWED",
+                "ACCESSIBLE_PARKING",
+                "GIFT_SHOP",
+                "JACUZZI",
+                "LAUNDRY_SERVICE",
+                "MASSAGE",
+                "PARKING",
+                "SIGHTSEEING",
+                "AIR_CONDITIONING",
+                "HAIR_DRYER",
+                "MINIBAR",
+                "NON_SMOKING_ROOMS",
+                "PC_HOOKUP_IN_ROOM",
+                "DIRECT_DIAL_PHONE",
+                "FIRST_AID_STAF",
+                "INTERIOR_ROOM_ENTRY",
+                "EMERGENCY_LIGHTING",
+                "FIRE_DETECTORS",
+                "EXTINGUISHERS",
+                "RESTRICTED_PUBLIC_ACCESS",
+                "SAFE_DEPOSIT_BOX",
+                "SMOKE_DETECTOR",
+                "SPRINKLERS",
+                "SPA",
+                "FITNESS_CENTER"
+            ],
+            "media": [
+                {
+                    "uri": "http://uat.multimediarepository.testing.amadeus.com/cmr/retrieve/hotel/78D9206625E3469F991A5605E2E0E463",
+                    "category": "EXTERIOR"
+                }
+            ]
+        },
+        "available": true,
+        "offers": [
+            {
+                "id": "GHD29XBXPR",
+                "checkInDate": "2021-05-20",
+                "checkOutDate": "2021-05-21",
+                "rateCode": "RAC",
+                "rateFamilyEstimated": {
+                    "code": "BAR",
+                    "type": "P"
+                },
+                "commission": {
+                    "percentage": "8.00"
+                },
+                "room": {
+                    "type": "B1Q",
+                    "typeEstimated": {
+                        "category": "SUPERIOR_ROOM",
+                        "beds": 1,
+                        "bedType": "QUEEN"
+                    },
+                    "description": {
+                        "text": "FLEXIBLE RATE\nQUEEN SUPERIOR ROOM\nWIFI/37 INCH TV/HYDRATIC SHOWER OR BATH/IRON"
+                    }
+                },
+                "guests": {
+                    "adults": 1
+                },
+                "price": {
+                    "currency": "EUR",
+                    "base": "115.00",
+                    "total": "116.21",
+                    "variations": {
+                        "average": {
+                            "base": "115.00"
+                        },
+                        "changes": [
+                            {
+                                "startDate": "2021-05-20",
+                                "endDate": "2021-05-21",
+                                "base": "115.00"
+                            }
+                        ]
+                    }
+                },
+                "policies": {
+                    "paymentType": "guarantee",
+                    "cancellation": {
+                        "deadline": "2021-05-18T23:59:00+02:00"
+                    }
+                }
+            }
+        ],
+        "self": "https://test.api.amadeus.com/v2/shopping/hotel-offers/by-hotel?hotelId=HLBCN116"
+    }
+]

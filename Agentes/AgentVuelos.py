@@ -84,7 +84,7 @@ def vuelos():
     g = Graph()
 
     # Carga el grafo RDF desde el fichero
-    ontofile = gzip.open('../FlightRoutes.ttl.gz')
+    ontofile = gzip.open('../datos/FlightRoutes.ttl.gz')
     g.parse(ontofile, format='turtle')
 
     # Consulta al grafo los aeropuertos dentro de la caja definida por las coordenadas
