@@ -3,7 +3,8 @@
 from multiprocessing import Process, Queue
 import socket
 
-from rdflib import Namespace, Graph
+from AgentUtil.ACLMessages import get_agent_info, send_message, build_message, get_message_properties, register_agent
+from rdflib import Namespace, Graph, Literal, URIRef, RDF, XSD
 from flask import Flask, request, render_template
 
 from AgentUtil.FlaskServer import shutdown_server
@@ -12,6 +13,8 @@ from AgentUtil.Agent import Agent
 __author__ = 'arnau'
 
 # Configuration stuff
+from AgentUtil.OntoNamespaces import ACL, ECSDI
+
 hostname = socket.gethostname()
 port = 9000
 
@@ -22,8 +25,8 @@ mss_cnt = 0
 
 # Datos del Agente
 
-AgentePersonal = Agent('AgenteViaje',
-                       agn.AgenteSimple,
+AgenteViaje = Agent('AgenteViaje',
+                       agn.AgenteViaje,
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
 
@@ -52,18 +55,61 @@ def comunicacion():
     pass
 
 
-def get_activities(city, cultural, ludic, festivity):
+def get_activities(g, peticion_plan):
     g = Graph()
     return g
 
 
-def get_hotels(city, min_price, max_price, dep_date, ret_date):
-    g = Graph()
+def get_hotels(g, peticion_plan):
+    ag_hoteles = get_agent_info(agn.PlannerAgent, DirectoryAgent, AgenteViaje, get_count())
+    gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_hoteles.uri,
+                                       msgcnt=get_count(),
+                                       content=peticion_plan), ag_hoteles.address)
+    return gresp
+
+
+def get_flights(g, peticion_plan):
+    ag_flights = get_agent_info(agn.PlannerAgent, DirectoryAgent, AgenteViaje, get_count())
+    gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_flights.uri,
+                                       msgcnt=get_count(),
+                                       content=peticion_plan), ag_flights.address)
+    return gresp
+
+
+def add_to_graph(g, ontology, dato, ontology_dato):
+    g.add((ontology_dato, RDF.type, ECSDI.ciudad))
+    g.add((ontology_dato, ECSDI.nombre, Literal(dato, datatype=XSD.string)))
+    g.add((ontology, ECSDI.tiene_como_origen, URIRef(ontology_dato)))
     return g
 
 
-def get_flights(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price):
+def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
+                                  cultural, ludic, festivity, aloj_min_price, aloj_max_price, peticion_plan, n):
     g = Graph()
+
+    ciudad_origen = ECSDI['ciudad' + str(n)]
+    g = add_to_graph(g, peticion_plan, origin, ciudad_origen)
+    ciudad_destino = ECSDI['ciudad' + str(n)]
+    g = add_to_graph(g, peticion_plan, destination, ciudad_destino)
+    data_inicio = ECSDI['fecha_inicial' + str(n)]
+    g = add_to_graph(g, peticion_plan, dep_date, data_inicio)
+    data_fin = ECSDI['fecha_final' + str(n)]
+    g = add_to_graph(g, peticion_plan, ret_date, data_fin)
+    ludica = ECSDI['porcentaje_actividad_ludica' + str(n)]
+    g = add_to_graph(g, peticion_plan, ludic, ludica)
+    cultura = ECSDI['porcentaje_actividad_cultural' + str(n)]
+    g = add_to_graph(g, peticion_plan, cultural, cultura)
+    festiva = ECSDI['porcentaje_actividad_festiva' + str(n)]
+    g = add_to_graph(g, peticion_plan, festivity, festiva)
+    r_al_max = ECSDI['rango_precio_alojamiento_max' + str(n)]
+    g = add_to_graph(g, peticion_plan, flight_max_price, r_al_max)
+    r_al_min = ECSDI['rango_precio_alojamiento_min' + str(n)]
+    g = add_to_graph(g, peticion_plan, flight_min_price, r_al_min)
+    r_fl_max = ECSDI['rango_precio_vuelo_max' + str(n)]
+    g = add_to_graph(g, peticion_plan, aloj_max_price, r_fl_max)
+    r_fl_min = ECSDI['rango_precio_vuelo_min' + str(n)]
+    g = add_to_graph(g, peticion_plan, aloj_min_price, r_fl_min)
+
     return g
 
 
@@ -84,9 +130,13 @@ def form():
         ludic = request.form['lact']
         festivity = request.form['fact']
 
-        activities = get_activities(destination, cultural, ludic, festivity)
-        hotels = get_hotels(destination, hotel_min_price, hotel_max_price, dep_date, ret_date)
-        flights = get_flights(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price)
+        n = get_count()
+        peticion_plan = ECSDI['peticion_de_plan' + str(n)]
+        g = create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
+                                          cultural, ludic, festivity, hotel_min_price, hotel_max_price, peticion_plan, n)
+        activities = get_activities(g, peticion_plan)
+        hotels = get_hotels(g, peticion_plan)
+        flights = get_flights(g, peticion_plan)
 
         result = activities + hotels + flights
 
@@ -103,6 +153,14 @@ def stop():
     tidyup()
     shutdown_server()
     return "Parando Servidor"
+
+
+def get_count():
+    global mss_cnt
+    if not mss_cnt:
+        mss_cnt = 0
+    mss_cnt += 1
+    return mss_cnt
 
 
 def tidyup():
