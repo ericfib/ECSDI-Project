@@ -21,7 +21,7 @@ import os
 from rdflib import Namespace, Graph
 from flask import Flask
 from dotenv import load_dotenv
-
+from amadeus import Client, ResponseError
 
 from AgentUtil.FlaskServer import shutdown_server
 from AgentUtil.Agent import Agent
@@ -59,10 +59,12 @@ cola1 = Queue()
 # Flask stuff
 app = Flask(__name__)
 
-# API KEYS
+# APIs
 load_dotenv()
+
 AMADEUS_KEY = os.getenv("AMADEUS_API_KEY")
 AMADEUS_SECRET = os.getenv("AMADEUS_API_SECRET")
+amazon = Client()
 
 
 @app.route("/comm")
