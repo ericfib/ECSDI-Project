@@ -16,18 +16,22 @@ Asume que el agente de registro esta en el puerto 9000
 
 from multiprocessing import Process, Queue
 import socket
+import os
 
 from rdflib import Namespace, Graph
 from flask import Flask
+from dotenv import load_dotenv
+from amadeus import Client, ResponseError
 
 from AgentUtil.FlaskServer import shutdown_server
 from AgentUtil.Agent import Agent
+from AgentUtil.DSO import ONTOLOGY
 
 __author__ = 'javier'
 
 # Configuration stuff
 hostname = socket.gethostname()
-port = 9010
+port = 9011
 
 agn = Namespace("http://www.agentes.org#")
 
@@ -54,6 +58,13 @@ cola1 = Queue()
 
 # Flask stuff
 app = Flask(__name__)
+
+# APIs
+load_dotenv()
+
+AMADEUS_KEY = os.getenv("AMADEUS_API_KEY")
+AMADEUS_SECRET = os.getenv("AMADEUS_API_SECRET")
+amazon = Client()
 
 
 @app.route("/comm")
@@ -92,6 +103,11 @@ def agentbehavior1(cola):
 
     :return:
     """
+    pass
+
+
+def buscar_alojamientos():
+    #PROGRAMAR MUCHO
     pass
 
 
