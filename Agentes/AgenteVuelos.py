@@ -80,84 +80,51 @@ def stop():
     return "Parando Servidor"
 
 
-def vuelos():
+def vuelos(origin="Barcelona", destination="Paris"):
+    global originAirport
+    global destAirport
+
     g = Graph()
 
     # Carga el grafo RDF desde el fichero
-    ontofile = gzip.open('../FlightRoutes.ttl.gz')
+    ontofile = gzip.open('FlightRoutes.ttl.gz')
     g.parse(ontofile, format='turtle')
 
-    # Consulta al grafo los aeropuertos dentro de la caja definida por las coordenadas
-    qres = g.query(
-        """
-        prefix tio:<http://purl.org/tio/ns#>
-        prefix geo:<http://www.w3.org/2003/01/geo/wgs84_pos#>
-        prefix dbp:<http://dbpedia.org/ontology/>
-        Select ?f
-        where {
-            ?f rdf:type dbp:Airport .
-            ?f geo:lat ?lat .
-            ?f geo:long ?lon .
-            Filter ( ?lat < "41.7"^^xsd:float &&
-                     ?lat > "41.0"^^xsd:float &&
-                     ?lon < "2.3"^^xsd:float &&
-                     ?lon > "2.0"^^xsd:float)
-            }
-        LIMIT 30
-        """,
-        initNs=dict(tio=TIO))
+    # Se decide el aeropuerto segun la ciudad de origen
+    if origin == "Barcelona":
+        originAirport="http://dbpedia.org/resource/Barcelona%E2%80%93El_Prat_Airport"
+    elif origin == "Paris":
+        originAirport="http://dbpedia.org/resource/Charles_de_Gaulle_Airport"
+    elif origin == "Berlin":
+        originAirport="http://dbpedia.org/resource/Berlin_Tegel_Airport"
 
-    # Recorre los resultados y se queda con el ultimo
-    for r in qres:
-        ap = r['f']
+    # Se decide el aeropuerto segun la ciudad de destino
+    if destination == "Barcelona":
+        destAirport="http://dbpedia.org/resource/Barcelona%E2%80%93El_Prat_Airport"
+    elif destination == "Paris":
+        destAirport="http://dbpedia.org/resource/Charles_de_Gaulle_Airport"
+    elif destination == "Berlin":
+        destAirport="http://dbpedia.org/resource/Berlin_Tegel_Airport"
 
 
-    # Consulta todos los vuelos que conectan con ese aeropuerto
-    destinoquery = """
-        prefix tio:<http://purl.org/tio/ns#>
-        Select *
-        where {
-            ?f rdf:type tio:Flight.
-            ?f tio:flightNo ?fn.
-            ?f tio:to <%s>.
-            ?f tio:from ?t.
-            ?f tio:operatedBy ?o.
-            }
-        LIMIT 3
-        """ % ap
-    
-    destinores = g.query(destinoquery, initNs=dict(tio=TIO))
-    
-
+    # Se buscan vuelos con el aeropuerto de origen y destino
     origenquery = """
         prefix tio:<http://purl.org/tio/ns#>
-        Select *
+        Select ?vuelo ?fromall ?toall
         where {
             ?vuelo rdf:type tio:Flight .
-            ?vuelo tio:to ?allTo .
-            ?vuelo tio:from <%s> .    
+            ?vuelo tio:to ?toall .
+            ?vuelo tio:from ?fromall .
+            ?vuelo tio:to <"""+destAirport+"""> .
+            ?vuelo tio:from <"""+originAirport+"""> .
             }
-        LIMIT 3
-        """ % ap
+        """
 
-    origenres = g.query(origenquery, initNs=dict(tio=TIO))
-   
-    # Imprime los resultados
+    qres = g.query(origenquery, initNs=dict(tio=TIO))
     print()
-    print("VUELOS DESDE BARCELONA")
-    for row in origenres:
-        print("EL VUELO " , row['vuelo'])
-        print("SALE DESDE " , ap)
-        print("Y VA HASTA " , row['allTo'])
-        print()
-
-    print()
-    print("VUELOS HACIA BARCELONA")
-    for row in destinores:
-        print("EL VUELO " , row['fn'])
-        print("SALE DESDE " , row['t'])
-        print("Y VA HASTA " , ap)
-        print()
+    for row in qres.result:
+        print(row)
+    return qres
 
 def tidyup():
     """
@@ -173,7 +140,6 @@ def agentbehavior1():
 
     :return:
     """
-    vuelos()
 
 
 if __name__ == '__main__':
