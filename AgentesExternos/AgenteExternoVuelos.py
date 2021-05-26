@@ -38,7 +38,7 @@ mss_cnt = 0
 
 # Datos del Agente
 
-AgenteVuelos = Agent('AgenteVuelos',
+AgenteExternoVuelos = Agent('AgenteExternoVuelos',
                        agn.AgenteSimple,
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
