@@ -25,7 +25,7 @@ from amadeus import Client, ResponseError
 
 from AgentUtil.FlaskServer import shutdown_server
 from AgentUtil.Agent import Agent
-from AgentUtil.DSO import ONTOLOGY
+from AgentUtil.OntoNamespaces import ECSDI, ACL
 
 __author__ = 'javier'
 
@@ -33,16 +33,21 @@ __author__ = 'javier'
 hostname = socket.gethostname()
 port = 9011
 
+# Directory Service Graph
+dsgraph = Graph()
+dsgraph.bind('acl', ACL)
+dsgraph.bind('ecsdi', ECSDI)
+
 agn = Namespace("http://www.agentes.org#")
-# namespace = ONTOLOGY
 
 # Contador de mensajes
 mss_cnt = 0
 
+
 # Datos del Agente
 
-AgentePersonal = Agent('AgenteSimple',
-                       agn.AgenteSimple,
+AgenteAlojamientos = Agent('AgenteAlojamientos',
+                       agn.AgenteAlojamientos,
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
 
@@ -105,15 +110,15 @@ def agentbehavior1():
     pricemin = '200'
     arrivaldate = '2021-12-12'
     departuredate = '2021-12-25'
-    buscar_alojamientos(city, pricemax, pricemin, arrivaldate, departuredate, 1)
+    buscar_alojamientos_externos(city)
     pass
 
 
-def buscar_alojamientos(city, pricemax, pricemin, arrivaldate, departuredate, iscentric):
-    pricerange = pricemax + '-' + pricemin
+def buscar_alojamientos_externos(city):
+
     # DATE HA DE SER STRING YYYY-MM-DD
     # CALL
-    cityhotels = amadeus.shopping.hotel_offers.get(cityCode=city)
+    cityhotels = amadeus.shopping.hotel_offers.get(cityCode=city, page=25)
 
     response = cityhotels.data
 
@@ -130,8 +135,7 @@ def buscar_alojamientos(city, pricemax, pricemin, arrivaldate, departuredate, is
         print('HOTELES ENCONTRADOS : \n')
         for hotel in response:
             if hotel["type"] == "hotel-offers":
-                nombre = hotel["hotel"]["name"]
-                print('Nombre del hotel => ' + nombre)
+                pass
 
     pass
 
