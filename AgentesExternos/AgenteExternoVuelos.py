@@ -39,7 +39,7 @@ mss_cnt = 0
 # Datos del Agente
 
 AgenteExternoVuelos = Agent('AgenteExternoVuelos',
-                       agn.AgenteSimple,
+                       agn.AgenteExternoVuelos,
                        'http://%s:%d/comm' % (hostname, port),
                        'http://%s:%d/Stop' % (hostname, port))
 
@@ -130,22 +130,35 @@ def vuelos(origin="Barcelona", destination="Paris"):
 def tidyup():
     """
     Acciones previas a parar el agente
-
     """
-    pass
+    global cola1
+    cola1.put(0)
 
 
-def agentbehavior1():
+def agentbehavior1(cola):
     """
     Un comportamiento del agente
-
     :return:
     """
+    # Registramos el agente
+    gr = register_message()
+
+    # Escuchando la cola hasta que llegue un 0
+    fin = False
+    while not fin:
+        while cola.empty():
+            pass
+        v = cola.get()
+        if v == 0:
+            fin = True
+        else:
+            print(v)
+
 
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
-    ab1 = Process(target=agentbehavior1)
+    ab1 = Process(target=agentbehavior1, args=(cola1,))
     ab1.start()
 
     # Ponemos en marcha el servidor
@@ -153,4 +166,4 @@ if __name__ == '__main__':
 
     # Esperamos a que acaben los behaviors
     ab1.join()
-    print('The End')
+    logger.info('The End')
