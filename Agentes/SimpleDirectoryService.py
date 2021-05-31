@@ -31,6 +31,7 @@ from AgentUtil.Agent import Agent
 from AgentUtil.ACLMessages import build_message, get_message_properties
 from AgentUtil.Logging import config_logger
 from AgentUtil.DSO import ONTOLOGY
+from AgentUtil.OntoNamespaces import DSO
 from AgentUtil.Util import gethostname
 import socket
 
