@@ -17,24 +17,81 @@ import gzip
 
 from multiprocessing import Process, Queue
 import socket
+from random import randrange
+from datetime import timedelta
+from datetime import datetime
+import random
 
 from rdflib import Namespace, Graph
 from flask import Flask
 
+import argparse
+from rdflib import Namespace, Graph, Literal, URIRef
+from rdflib.namespace import FOAF, RDF
+
 from AgentUtil.FlaskServer import shutdown_server
+from AgentUtil.ACLMessages import build_message, send_message, register_agent, get_message_properties, get_agent_info
 from AgentUtil.Agent import Agent
-from AgentUtil.OntoNamespaces import TIO
+from AgentUtil.Logging import config_logger
+from AgentUtil.OntoNamespaces import ECSDI,ACL,TIO
 
 __author__ = 'javier'
 
+# Definimos los parametros de la linea de comandos
+from AgentUtil.Util import gethostname
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--open', help="Define si el servidor esta abierto al exterior o no", action='store_true',
+                    default=False)
+parser.add_argument('--verbose', help="Genera un log de la comunicacion del servidor web", action='store_true',
+                    default=False)
+parser.add_argument('--port', type=int, help="Puerto de comunicacion del agente")
+parser.add_argument('--dhost', help="Host del agente de directorio")
+parser.add_argument('--dport', type=int, help="Puerto de comunicacion del agente de directorio")
+
+# Logging
+logger = config_logger(level=1)
+
+# parsing de los parametros de la linea de comandos
+args = parser.parse_args()
 # Configuration stuff
-hostname = socket.gethostname()
-port = 9010
+if args.port is None:
+    port = 9001
+else:
+    port = args.port
+
+if args.open:
+    hostname = '0.0.0.0'
+    hostaddr = gethostname()
+else:
+    hostaddr = hostname = socket.gethostname()
+
+print('DS Hostname =', hostaddr)
+
+if args.dport is None:
+    dport = 9000
+else:
+    dport = args.dport
+
+if args.dhost is None:
+    dhostname = socket.gethostname()
+else:
+    dhostname = args.dhost
+# Directory Service Graph
+dsgraph = Graph()
+dsgraph.bind('acl', ACL)
+dsgraph.bind('ecsdi', ECSDI)
 
 agn = Namespace("http://www.agentes.org#")
 
 # Contador de mensajes
 mss_cnt = 0
+
+# Contador de mensajes
+def get_count():
+    global mss_cnt
+    mss_cnt += 1
+    return mss_cnt
 
 # Datos del Agente
 
@@ -64,8 +121,60 @@ def comunicacion():
     Entrypoint de comunicacion
     """
     global dsgraph
-    global mss_cnt
-    pass
+    print("PETICION DE VUELOS MEDIANTE BD RECIBIDA")
+
+    message = request.args['content']
+
+    grafo_mensaje_entrante = Graph()
+    grespuesta = Graph()
+    grafo_mensaje_entrante.parse(data=message)
+
+    msg = get_message_properties(grafo_mensaje_entrante)
+
+    if msg is None:
+        grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteExternoVuelos.uri,
+                                   msgcnt=mss_cnt)
+
+    else:
+        # obtener performativa
+        perf = msg['performative']
+
+        if perf != ACL.request:
+            # Si no es un request, respondemos que no hemos entendido el mensaje
+            grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteExternoVuelos.uri,
+                                       msgcnt=mss_cnt)
+
+        else:
+            if 'content' in msg:
+                content = msg['content']
+                accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
+
+                # hacer lo que pide la accion
+                if accion == ECSDI.Peticion_Vuelos:
+                    
+                    # ciudades
+                    origen = gm.value(subject=content, predicate=ECSDI.tiene_como_origen)
+                    destino = gm.value(subject=content, predicate=ECSDI.tiene_como_destino)
+                    
+                    # valores
+                    ciudad_origen = gm.value(subject=origen, predicate=ECSDI.nombre)
+                    ciudad_destino = gm.value(subject=destino, predicate=ECSDI.nombre)
+                    # falta coger el rango de precios y el rango de fechas
+                    
+                    grespuesta = buscar_alojamientos_externos(ciudad_origen, ciudad_destino, ini_date='1/1/2021 1:30 AM', fin_date='1/1/2022 1:30 AM', min_price=50, max_price=200)
+
+                    grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteExternoVuelos.uri,
+                                               msgcnt=mss_cnt, receiver=msg['sender'])
+                else:
+                    grespuesta = build_message(Graph(), ACL['not-understood'],
+                                               sender=AgenteExternoVuelos.uri,
+                                               msgcnt=mss_cnt)
+            else:
+                grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteExternoVuelos.uri,
+                                           msgcnt=mss_cnt)
+
+    serialize = grespuesta.serialize(format='xml')
+    return serialize, 200
 
 
 @app.route("/Stop")
@@ -79,12 +188,25 @@ def stop():
     shutdown_server()
     return "Parando Servidor"
 
+def random_date(start, end):
+    """
+    This function will return a random datetime between two datetime 
+    objects.
+    """
+    delta = end - start
+    int_delta = (delta.days * 24 * 60 * 60) + delta.seconds
+    random_second = randrange(int_delta)
+    return start + timedelta(seconds=random_second)
 
-def vuelos(origin="Barcelona", destination="Paris"):
+def buscar_vuelos_externos(origin="Barcelona", destination="Paris", ini_date='1/1/2021 1:30 AM', fin_date='1/1/2022 1:30 AM', min_price=50, max_price=200):
     global originAirport
     global destAirport
 
     g = Graph()
+    grafo_vuelos = Graph()
+    grafo_vuelos.bind('ECSDI', ECSDI)
+
+    content = ECSDI['Respuesta_Alojamiento' + str(get_count())]
 
     # Carga el grafo RDF desde el fichero
     ontofile = gzip.open('../datos/FlightRoutes.ttl.gz')
@@ -111,21 +233,64 @@ def vuelos(origin="Barcelona", destination="Paris"):
     # Se buscan vuelos con el aeropuerto de origen y destino
     origenquery = """
         prefix tio:<http://purl.org/tio/ns#>
-        Select ?vuelo ?fromall ?toall
+        Select ?vuelo ?fromall ?toall ?comp
         where {
             ?vuelo rdf:type tio:Flight .
             ?vuelo tio:to ?toall .
             ?vuelo tio:from ?fromall .
+            ?vuelo tio:operatedBy ?comp .
             ?vuelo tio:to <"""+destAirport+"""> .
             ?vuelo tio:from <"""+originAirport+"""> .
             }
         """
 
     qres = g.query(origenquery, initNs=dict(tio=TIO))
+    
     print()
+
+    dat1 = datetime.strptime(ini_date, '%m/%d/%Y %I:%M %p')
+    dat2 = datetime.strptime(fin_date, '%m/%d/%Y %I:%M %p')
+    
+    fecha_salida = random_date(dat1, dat2)
+    fecha_llegada = random_date(fecha_salida, dat2)
+
+    precio = random.randint(min_price,max_price)
+
     for row in qres.result:
-        print(row)
-    return qres
+        print(row[3])
+
+        vuelo = ECSDI['vuelo' + str(get_count())]
+        compania = ECSDI['compañia' + str(get_count())]
+        origen = ECSDI['aeropuerto'+str(get_count())] # hay que añadir aeropuerto a la onto
+        destino = ECSDI['aeropuerto'+str(get_count())]
+
+        # Compania
+        grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
+        grafo_vuelos.add((compania, ECSDI.nombre, Literal(row[3])))
+
+        # Llega a
+        grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((destino, ECSDI.nombre, Literal(row[2])))
+
+        # Sale_de
+        grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((origen, ECSDI.nombre, Literal(row[1])))
+
+
+        # Transporte
+        grafo_vuelos.add((vuelo, RDF.type, ECSDI.vuelo))
+        grafo_vuelos.add((vuelo, ECSDI.tiene_como_destino, URIRef(destino)))
+        grafo_vuelos.add((vuelo, ECSDI.tiene_como_origen, URIRef(origen)))
+        grafo_vuelos.add((vuelo, ECSDI.importe, Literal(precio))) # comprobar que importe sea atributo de vuelo
+        grafo_vuelos.add((vuelo, ECSDI.ofrece_vuelo, URIRef(compania)))
+        grafo_vuelos.add((vuelo, ECSDI.llegada, Literal(fecha_salida)))
+        grafo_vuelos.add((vuelo, ECSDI.salida, Literal(fecha_llegada)))
+        # grafo_vuelos.add((content, ECSDI.se_constituye_de_transportes, URIRef(transporte)))
+    # Devolvemos el grafo de vuelos
+    logger.info('DEVOLVEMOS EL GRAFO DE VUELOS')
+    return grafo_vuelos
+        
+
 
 def tidyup():
     """
@@ -135,16 +300,18 @@ def tidyup():
     cola1.put(0)
 
 
-def agentbehavior1(cola):
+def agentbehavior1():
     """
     Un comportamiento del agente
     :return:
     """
     # Registramos el agente
-    gr = register_message()
+    #gr = register_message()
+
+    buscar_vuelos_externos(origin="Barcelona", destination="Paris", ini_date='1/1/2021 1:30 AM', fin_date='1/1/2022 1:30 AM', min_price=50, max_price=200)
 
     # Escuchando la cola hasta que llegue un 0
-    fin = False
+    """fin = False
     while not fin:
         while cola.empty():
             pass
@@ -152,13 +319,13 @@ def agentbehavior1(cola):
         if v == 0:
             fin = True
         else:
-            print(v)
+            print(v)"""
 
 
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
-    ab1 = Process(target=agentbehavior1, args=(cola1,))
+    ab1 = Process(target=agentbehavior1)
     ab1.start()
 
     # Ponemos en marcha el servidor
