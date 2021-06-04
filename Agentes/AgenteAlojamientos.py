@@ -13,23 +13,21 @@ Asume que el agente de registro esta en el puerto 9000
 
 @author: javier
 """
-import json
 from multiprocessing import Process, Queue
 import socket
-import os
 
 import argparse
-from rdflib import Namespace, Graph, Literal, URIRef
-from rdflib.namespace import FOAF, RDF
+from rdflib import Namespace, Graph
+from rdflib.namespace import RDF
 
 from flask import Flask, request
 
 
 from AgentUtil.FlaskServer import shutdown_server
-from AgentUtil.ACLMessages import build_message, send_message, register_agent, get_message_properties, get_agent_info
+from AgentUtil.ACLMessages import build_message, register_agent, get_message_properties
 from AgentUtil.Agent import Agent
 from AgentUtil.Logging import config_logger
-from AgentUtil.OntoNamespaces import ECSDI, ACL
+from AgentUtil.OntoNamespaces import ACL, ECSDI
 
 __author__ = 'javier'
 

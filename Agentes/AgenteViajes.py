@@ -13,10 +13,10 @@ from AgentUtil.Agent import Agent
 __author__ = 'arnau'
 
 # Configuration stuff
-from AgentUtil.OntoNamespaces import ACL, ECSDI, DSO
+from AgentUtil.OntoNamespaces import ACL, DSO, ECSDI
 
 hostname = socket.gethostname()
-port = 9001
+port = 9002
 
 agn = Namespace("http://www.agentes.org#")
 
@@ -45,9 +45,9 @@ cola1 = Queue()
 app = Flask(__name__)
 
 # Agentes
-ag_hoteles = None
-ag_flights = None
-ag_activity = None
+ag_hoteles = Agent('', '', '', None)
+ag_flights = Agent('', '', '', None)
+ag_activity = Agent('', '', '', None)
 
 
 def directory_search_message(type):
@@ -95,6 +95,8 @@ def comunicacion():
 
 
 def get_activities(g, peticion_plan):
+    if ag_activity.address == '':
+        read_agent(agn.AgenteActividades, ag_activity)
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_activity.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_activity.address)
@@ -102,6 +104,8 @@ def get_activities(g, peticion_plan):
 
 
 def get_hotels(g, peticion_plan):
+    if ag_hoteles.address == '':
+        read_agent(agn.AgenteAlojamientos, ag_hoteles)
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_hoteles.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_hoteles.address)
@@ -109,7 +113,8 @@ def get_hotels(g, peticion_plan):
 
 
 def get_flights(g, peticion_plan):
-    ag_flights = get_agent_info(agn.PlannerAgent, DirectoryAgent, AgenteViaje, get_count())
+    if ag_flights.address == '':
+        read_agent(agn.AgenteVuelos, ag_flights)
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_flights.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_flights.address)
@@ -178,11 +183,11 @@ def form():
         peticion_plan = ECSDI['peticion_de_plan' + str(n)]
         g = create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
                                           cultural, ludic, festivity, hotel_min_price, hotel_max_price, peticion_plan, n)
-        activities = get_activities(g, peticion_plan)
+        # activities = get_activities(g, peticion_plan)
         hotels = get_hotels(g, peticion_plan)
-        flights = get_flights(g, peticion_plan)
+        # flights = get_flights(g, peticion_plan)
 
-        result = activities + hotels + flights
+        # result = activities + hotels + flights
 
         return render_template('formulario.html')
 
@@ -215,25 +220,22 @@ def tidyup():
     pass
 
 
-def read_agent(tipus):
+def read_agent(tipus, agente):
     gr = directory_search_message(tipus)
     msg = gr.value(predicate=RDF.type, object=ACL.FipaAclMessage)
     content = gr.value(subject=msg, predicate=ACL.content)
     ragn_addr = gr.value(subject=content, predicate=DSO.Address)
     ragn_uri = gr.value(subject=content, predicate=DSO.Uri)
-    return Agent(tipus, ragn_addr, ragn_uri, None)
+    agente.uri = ragn_uri
+    agente.address = ragn_addr
 
 
 def agentbehavior1(cola):
-    global ag_flights, ag_hoteles, ag_activity, agn
-    ag_flights = read_agent(DSO.AgenteVuelos)
-    ag_hoteles = read_agent(DSO.AgenteAlojamientos)
-    ag_activity = read_agent(DSO.AgenteActividades)
-
+    pass
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
-    ab1 = Process(target=agentbehavior1, args=(cola1,))
+    ab1 = Process(target=agentbehavior1, args=(cola1, ))
     ab1.start()
 
     # Ponemos en marcha el servidor
