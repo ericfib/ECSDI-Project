@@ -66,7 +66,7 @@ else:
 print('DS Hostname =', hostaddr)
 
 if args.dport is None:
-    dport = 9000
+    dport = 9011
 else:
     dport = args.dport
 
@@ -195,8 +195,23 @@ def agentbehavior1():
 
     :return:
     """
+    gr = register_message()
 
     pass
+
+def register_message():
+    """
+    Envia un mensaje de registro al servicio de registro
+    usando una performativa Request y una accion Register del
+    servicio de directorio
+    :param gmess:
+    :return:
+    """
+
+    logger.info('Nos registramos')
+
+    gr = register_agent(AgenteAlojamientosExternoAmadeus, DirectoryAgent, AgenteAlojamientosExternoAmadeus.uri, get_count())
+    return gr
 
 
 def buscar_alojamientos_externos():

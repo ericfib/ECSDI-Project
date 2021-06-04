@@ -214,13 +214,14 @@ def tidyup():
     """
     pass
 
-def read_agent(type):
-    gr = directory_search_message(type)
+
+def read_agent(tipus):
+    gr = directory_search_message(tipus)
     msg = gr.value(predicate=RDF.type, object=ACL.FipaAclMessage)
     content = gr.value(subject=msg, predicate=ACL.content)
     ragn_addr = gr.value(subject=content, predicate=DSO.Address)
     ragn_uri = gr.value(subject=content, predicate=DSO.Uri)
-    return Agent(type, ragn_addr, ragn_uri, None)
+    return Agent(tipus, ragn_addr, ragn_uri, None)
 
 
 def agentbehavior1(cola):
