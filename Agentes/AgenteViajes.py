@@ -16,7 +16,7 @@ __author__ = 'arnau'
 from AgentUtil.OntoNamespaces import ACL, DSO, ECSDI
 
 hostname = socket.gethostname()
-port = 9002
+port = 9005
 
 agn = Namespace("http://www.agentes.org#")
 
@@ -96,7 +96,10 @@ def comunicacion():
 
 def get_activities(g, peticion_plan):
     if ag_activity.address == '':
+        logger.info('Buscando Agente de Actividades...')
         read_agent(agn.AgenteActividades, ag_activity)
+        logger.info('Encontrado')
+    logger.info('Pidiendo actividades al agente de Actividades')
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_activity.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_activity.address)
@@ -105,7 +108,10 @@ def get_activities(g, peticion_plan):
 
 def get_hotels(g, peticion_plan):
     if ag_hoteles.address == '':
+        logger.info('Buscando Agente de Alojamientos...')
         read_agent(agn.AgenteAlojamientos, ag_hoteles)
+        logger.info('Encontrado')
+    logger.info('Pidiendo alojamientos al agente de Alojamientos')
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_hoteles.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_hoteles.address)
@@ -114,7 +120,10 @@ def get_hotels(g, peticion_plan):
 
 def get_flights(g, peticion_plan):
     if ag_flights.address == '':
+        logger.info('Buscando Agente de Vuelos...')
         read_agent(agn.AgenteVuelos, ag_flights)
+        logger.info('Encontrado')
+    logger.info('Pidiendo vuelos al agente de Vuelos')
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_flights.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_flights.address)

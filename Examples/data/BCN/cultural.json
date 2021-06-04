@@ -1,0 +1,262 @@
+{
+  "data": [
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "9CB40CB5D0",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/9CB40CB5D0",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.39165,
+        "longitude": 2.164772
+      },
+      "name": "Casa Batlló",
+      "category": "SIGHTS",
+      "rank": 5,
+      "tags": [
+        "sightseeing",
+        "sights",
+        "museum",
+        "landmark",
+        "tourguide",
+        "restaurant",
+        "attraction",
+        "activities",
+        "commercialplace",
+        "shopping",
+        "souvenir"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "5F1CED3994",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/5F1CED3994",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.39148,
+        "longitude": 2.164981
+      },
+      "name": "Casa Amatller",
+      "category": "SIGHTS",
+      "rank": 100,
+      "tags": [
+        "sightseeing",
+        "sights",
+        "museum",
+        "landmark",
+        "restaurant",
+        "tourguide",
+        "historicplace",
+        "historic",
+        "attraction",
+        "commercialplace",
+        "activities",
+        "shopping",
+        "events"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "D63A55B6E4",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/D63A55B6E4",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.386612,
+        "longitude": 2.16377
+      },
+      "name": "University of Barcelona",
+      "category": "SIGHTS",
+      "rank": 200,
+      "tags": [
+        "college",
+        "university",
+        "education",
+        "sightseeing",
+        "sights",
+        "historicplace",
+        "historic",
+        "restaurant",
+        "shopping",
+        "attraction",
+        "activities",
+        "tourguide"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "229984B0D6",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/229984B0D6",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.39365,
+        "longitude": 2.16216
+      },
+      "name": "Lasarte",
+      "category": "SIGHTS",
+      "rank": 200,
+      "tags": [
+        "sightseeing",
+        "restaurant"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "EF3ED4E499",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/EF3ED4E499",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.388935,
+        "longitude": 2.170394
+      },
+      "name": "Teatre Tívoli",
+      "category": "SIGHTS",
+      "rank": 200,
+      "tags": [
+        "theater",
+        "sightseeing",
+        "activities",
+        "culturalcenter",
+        "musicvenue",
+        "attraction",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "93C2B5BB7F",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/93C2B5BB7F",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.387463,
+        "longitude": 2.162675
+      },
+      "name": "Cosmo",
+      "category": "SIGHTS",
+      "rank": 300,
+      "tags": [
+        "sightseeing",
+        "artgallerie",
+        "restaurant",
+        "bar",
+        "commercialplace",
+        "attraction"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "7EEBC06688",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/7EEBC06688",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38333,
+        "longitude": 2.166944
+      },
+      "name": "Barcelona Museum of Contemporary Art",
+      "category": "SIGHTS",
+      "rank": 400,
+      "tags": [
+        "sightseeing",
+        "attraction",
+        "museum",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "9B6D06F80D",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/9B6D06F80D",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.381706,
+        "longitude": 2.162475
+      },
+      "name": "Renoir Floridablanca",
+      "category": "SIGHTS",
+      "rank": 500,
+      "tags": [
+        "sightseeing",
+        "theater",
+        "activities",
+        "cine",
+        "attraction",
+        "transport",
+        "cheap",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "68D8EF8276",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/68D8EF8276",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.383614,
+        "longitude": 2.164715
+      },
+      "name": "Fantastik",
+      "category": "SIGHTS",
+      "rank": 500,
+      "tags": [
+        "sightseeing",
+        "shopping",
+        "gift",
+        "kids",
+        "library",
+        "commercialplace"
+      ]
+    }
+  ],
+  "meta": {
+    "count": 9,
+    "links": {
+      "self": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=SIGHTS",
+      "last": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=SIGHTS",
+      "first": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=SIGHTS",
+      "up": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=SIGHTS"
+    }
+  }
+}

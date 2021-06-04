@@ -166,7 +166,7 @@ def comunicacion():
                                            msgcnt=mss_cnt)
 
     serialize = grespuesta.serialize(format='xml')
-    return serialize, 200
+    return serialize
 
 
 @app.route("/Stop")
@@ -252,24 +252,24 @@ def buscar_alojamientos_externos():
                         centrico = hotel["hotel"]["hotelDistance"]["distance"] <= 1
 
                         grafo_hoteles.add((alojamiento, RDF.type, ECSDI.Alojamiento))
-                        grafo_hoteles.add((alojamiento, RDF.fecha_inicial, Literal(hotel["hotel"]["startDate"])))
-                        grafo_hoteles.add((alojamiento, RDF.fecha_final, Literal(hotel["hotel"]["endDate"])))
-                        grafo_hoteles.add((alojamiento, RDF.id_alojamiento, Literal(hotel["hotel"]["hotelId"])))
-                        grafo_hoteles.add((alojamiento, RDF.nombre, Literal(hotel["hotel"]["name"])))
-                        grafo_hoteles.add((alojamiento, RDF.centrico, Literal(centrico)))
-                        grafo_hoteles.add((alojamiento, RDF.importe, Literal(hotel["offers"]["price"]["total"])))
+                        grafo_hoteles.add((alojamiento, ECSDI.fecha_inicial, Literal(hotel["hotel"]["startDate"])))
+                        grafo_hoteles.add((alojamiento, ECSDI.fecha_final, Literal(hotel["hotel"]["endDate"])))
+                        grafo_hoteles.add((alojamiento, ECSDI.id_alojamiento, Literal(hotel["hotel"]["hotelId"])))
+                        grafo_hoteles.add((alojamiento, ECSDI.nombre, Literal(hotel["hotel"]["name"])))
+                        grafo_hoteles.add((alojamiento, ECSDI.centrico, Literal(centrico)))
+                        grafo_hoteles.add((alojamiento, ECSDI.importe, Literal(hotel["offers"]["price"]["total"])))
 
                         # proveedor_alojamientos
                         grafo_hoteles.add((proveedor_alojamientos, RDF.type, ECSDI.Proveedor_alojamiento))
-                        grafo_hoteles.add((proveedor_alojamientos, RDF.nombre, Literal(hotel["hotel"]["chainCode"])))
+                        grafo_hoteles.add((proveedor_alojamientos, ECSDI.nombre, Literal(hotel["hotel"]["chainCode"])))
 
                         # ciudad NOT SURE DE SI FA FALTA
                         grafo_hoteles.add((ciudad, RDF.type, ECSDI.Ciudad))
-                        grafo_hoteles.add((ciudad, RDF.nombre, Literal(city)))
+                        grafo_hoteles.add((ciudad, ECSDI.nombre, Literal(city)))
 
                         # relacions
-                        grafo_hoteles.add((alojamiento, RDF.tiene_ubicacion, URIRef(localizacion)))
-                        grafo_hoteles.add((alojamiento, RDF.es_ofrecido_por, URIRef(proveedor_alojamientos)))
+                        grafo_hoteles.add((alojamiento, ECSDI.tiene_ubicacion, URIRef(localizacion)))
+                        grafo_hoteles.add((alojamiento, ECSDI.es_ofrecido_por, URIRef(proveedor_alojamientos)))
 
     return grafo_hoteles
 
