@@ -100,6 +100,7 @@ def get_activities(g, peticion_plan):
         read_agent(agn.AgenteActividades, ag_activity)
         logger.info('Encontrado')
     logger.info('Pidiendo actividades al agente de Actividades')
+    g.add((peticion_plan, RDF.type, ECSDI.Peticion_Actividades))
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_activity.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_activity.address)
@@ -112,6 +113,7 @@ def get_hotels(g, peticion_plan):
         read_agent(agn.AgenteAlojamientos, ag_hoteles)
         logger.info('Encontrado')
     logger.info('Pidiendo alojamientos al agente de Alojamientos')
+    g.add((peticion_plan, RDF.type, ECSDI.Peticion_Alojamientos))
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_hoteles.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_hoteles.address)
@@ -124,6 +126,7 @@ def get_flights(g, peticion_plan):
         read_agent(agn.AgenteVuelos, ag_flights)
         logger.info('Encontrado')
     logger.info('Pidiendo vuelos al agente de Vuelos')
+    g.add((peticion_plan, RDF.type, ECSDI.Peticion_Vuelos))
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_flights.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_flights.address)
@@ -133,12 +136,11 @@ def get_flights(g, peticion_plan):
 def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
                                   cultural, ludic, festivity, aloj_min_price, aloj_max_price, peticion_plan, n):
     g = Graph()
-
-    ciudad_origen = ECSDI['ciudad' + str(n)]
+    ciudad_origen = ECSDI['ciudad_origen' + str(n)]
     g.add((ciudad_origen, RDF.type, ECSDI.ciudad))
     g.add((ciudad_origen, ECSDI.nombre, Literal(origin)))
     g.add((peticion_plan, ECSDI.ciudad_origen, ciudad_origen))
-    ciudad_destino = ECSDI['ciudad' + str(n)]
+    ciudad_destino = ECSDI['ciudad_destino' + str(n)]
     g.add((ciudad_destino, RDF.type, ECSDI.ciudad))
     g.add((ciudad_destino, ECSDI.nombre, Literal(destination)))
     g.add((peticion_plan, ECSDI.ciudad_destino, ciudad_destino))
@@ -203,8 +205,8 @@ def form():
         peticion_plan = ECSDI['peticion_de_plan' + str(n)]
         g = create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
                                           cultural, ludic, festivity, hotel_min_price, hotel_max_price, peticion_plan, n)
-        # activities = get_activities(g, peticion_plan)
-        hotels = get_hotels(g, peticion_plan)
+        activities = get_activities(g, peticion_plan)
+        # hotels = get_hotels(g, peticion_plan)
         # flights = get_flights(g, peticion_plan)
 
         # result = activities + hotels + flights

@@ -222,9 +222,10 @@ def buscar_actividades_externos():
                                                                           'code': 'PAR'}]
     types = {'cultural': 'SIGHTS', 'ludica': 'NIGHTLIFE',
              'festiva': 'RESTAURANT, SHOPPING'}
+    ECSDI_LIST = [ECSDI.Cultural, ECSDI.Ludica, ECSDI.Festiva]
     content = ECSDI['Respuesta_Actividades' + str(get_count())]
-    for i, city in enumerate(array_city):
-        for key, t in types.items():
+    for city in array_city:
+        for i, (key, t) in enumerate(types.items()):
             try:
                 activities = amadeus.reference_data.locations.points_of_interest.get(latitude=city['lat'],
                                                                                      longitud=city['long'],
@@ -232,9 +233,9 @@ def buscar_actividades_externos():
             except ResponseError:
                 with open(file_str % (city['code'], key)) as file:
                     activities = json.load(file)
-            for j, item in enumerate(activities.get('data')):
-                actividad = ECSDI[key + '-' + str(i * j)]
-                grafo_actividades.add((actividad, RDF.type, ECSDI.Actividad))
+            for item in activities.get('data'):
+                actividad = ECSDI[key + '-' + str(get_count())]
+                grafo_actividades.add((actividad, RDF.type, ECSDI_LIST[i]))
                 grafo_actividades.add((actividad, ECSDI.nombre, Literal(item["name"])))
                 grafo_actividades.add((actividad, ECSDI.ciudad, Literal(city['code'])))
     return grafo_actividades

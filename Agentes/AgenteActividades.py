@@ -13,6 +13,8 @@ Asume que el agente de registro esta en el puerto 9000
 
 @author: javier
 """
+from datetime import datetime
+from functools import lru_cache
 from multiprocessing import Process, Queue
 import socket
 
@@ -170,15 +172,54 @@ def reload_data():
     gresp.serialize(destination='../datos/actividades.ttl', format='turtle')
 
 
+@lru_cache(maxsize=None)
+def get_n_actividades(n, city, type):
+    gres = Graph()
+    g = Graph()
+    g.parse('../datos/actividades.ttl', format='turtle')
+    act_list = g.triples((None, RDF.type, type))
+    if act_list is not None:
+        while n > 0:
+            next_act_uri = next(act_list)[0]
+            if str(g.value(subject=next_act_uri, predicate=ECSDI.ciudad)) == city:
+                n -= 1
+                name = g.value(subject=next_act_uri, predicate=ECSDI.nombre)
+                gres.add((next_act_uri, RDF.type, ECSDI.Actividad))
+                gres.add((next_act_uri, ECSDI.nombre, name))
+    return gres
+
+
 def get_actividades(g, content):
-    ciudad_origen = g.value(subject=content, predicate=ECSDI.ciudad_origen)
-    ciudad_origen_v = g.value(subject=ciudad_origen, predicate=ECSDI.nombre)
+    ciudad_dict = {'barcelona': 'BCN', 'paris': 'PAR'}
+    ciudad_destino = g.value(subject=content, predicate=ECSDI.ciudad_destino)
+    ciudad_destino_v = str(g.value(subject=ciudad_destino, predicate=ECSDI.nombre))
 
     fecha_inicial = g.value(subject=content, predicate=ECSDI.fecha_inicio)
     fecha_inicial_v = g.value(subject=fecha_inicial, predicate=ECSDI.fecha)
+    fecha_inicial_date = datetime.strptime(fecha_inicial_v, '%Y-%m-%d')
 
-    fecha_inicial = g.value(subject=content, predicate=ECSDI.fecha_inicio)
-    fecha_inicial_v = g.value(subject=fecha_inicial, predicate=ECSDI.fecha)
+    fecha_final = g.value(subject=content, predicate=ECSDI.fecha_final)
+    fecha_final_v = g.value(subject=fecha_final, predicate=ECSDI.fecha)
+    fecha_final_date = datetime.strptime(fecha_final_v, '%Y-%m-%d')
+
+    ludica = g.value(subject=content, predicate=ECSDI.ludica)
+    ludica_v = int(g.value(subject=ludica, predicate=ECSDI.tipo))
+
+    cultural = g.value(subject=content, predicate=ECSDI.cultural)
+    cultural_v = int(g.value(subject=cultural, predicate=ECSDI.tipo))
+
+    festiva = g.value(subject=content, predicate=ECSDI.festiva)
+    festiva_v = int(g.value(subject=festiva, predicate=ECSDI.tipo))
+
+    days = (fecha_final_date - fecha_inicial_date).days
+    actividades_ludicas = int((days * 2) * (ludica_v / (ludica_v + cultural_v + festiva_v)))
+    actividades_culturales = int((days * 2) * (cultural_v / (ludica_v + cultural_v + festiva_v)))
+    actividades_festivas = int((days * 2) * (festiva_v / (ludica_v + cultural_v + festiva_v)))
+    g = Graph()
+    g += get_n_actividades(actividades_ludicas, ciudad_dict[ciudad_destino_v.lower()], ECSDI.Ludica)
+    g += get_n_actividades(actividades_culturales, ciudad_dict[ciudad_destino_v.lower()], ECSDI.Cultural)
+    g += get_n_actividades(actividades_festivas, ciudad_dict[ciudad_destino_v.lower()], ECSDI.Festiva)
+    return g
 
 
 @app.route("/comm")
@@ -210,7 +251,7 @@ def comunicacion():
                 content = msg['content']
 
                 accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
-                if accion == ECSDI.Peticion_Alojamientos:
+                if accion == ECSDI.Peticion_Actividades:
                     grespuesta = get_actividades(grafo_mensaje_entrante, content)
                 else:
                     grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteActividades.uri,
@@ -222,7 +263,7 @@ def comunicacion():
                                        msgcnt=mss_cnt)
 
     serialize = grespuesta.serialize(format='xml')
-    return serialize, 200
+    return serialize
 
 
 @app.route("/Stop")
@@ -252,9 +293,6 @@ def agentbehavior1():
     :return:
     """
     gr = register_message()
-
-
-
 
 
 def register_message():
