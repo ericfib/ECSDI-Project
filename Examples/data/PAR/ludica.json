@@ -1,0 +1,276 @@
+{
+  "data": [
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "827AC5CF93",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/827AC5CF93",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.85677,
+        "longitude": 2.345903
+      },
+      "name": "Île de la Cité",
+      "category": "RESTAURANT",
+      "rank": 5,
+      "tags": [
+        "restaurant",
+        "tourguide",
+        "attraction",
+        "professionalservices",
+        "landmark",
+        "activities"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "535BF3BF6D",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/535BF3BF6D",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.85028,
+        "longitude": 2.34232
+      },
+      "name": "Bouillon Racine",
+      "category": "RESTAURANT",
+      "rank": 5,
+      "tags": [
+        "restaurant",
+        "sightseeing",
+        "shopping",
+        "transport",
+        "events",
+        "brasserie"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "31451ED4F2",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/31451ED4F2",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.850277,
+        "longitude": 2.344722
+      },
+      "name": "Rue Du Sommerard",
+      "category": "RESTAURANT",
+      "rank": 10,
+      "tags": [
+        "restaurant"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "F0607DF3A9",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/F0607DF3A9",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.852657,
+        "longitude": 2.346962
+      },
+      "name": "Shakespeare and Company",
+      "category": "SHOPPING",
+      "rank": 15,
+      "tags": [
+        "library",
+        "shopping",
+        "activities",
+        "attraction",
+        "tourguide",
+        "sightseeing",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "9442FB017A",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/9442FB017A",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.851704,
+        "longitude": 2.356713
+      },
+      "name": "Berthillon",
+      "category": "RESTAURANT",
+      "rank": 30,
+      "tags": [
+        "restaurant",
+        "tourguide",
+        "sightseeing",
+        "shopping",
+        "icecream",
+        "fastfood",
+        "transport",
+        "tea",
+        "attraction",
+        "activities"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "0EF68EC5E6",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/0EF68EC5E6",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.85304,
+        "longitude": 2.338731
+      },
+      "name": "Le Procope",
+      "category": "RESTAURANT",
+      "rank": 30,
+      "tags": [
+        "restaurant",
+        "sightseeing",
+        "professionalservices",
+        "bar",
+        "commercialplace",
+        "transport",
+        "events",
+        "shopping"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "2F90DF9226",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/2F90DF9226",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.857292,
+        "longitude": 2.357423
+      },
+      "name": "Les Philosophes",
+      "category": "RESTAURANT",
+      "rank": 30,
+      "tags": [
+        "restaurant",
+        "sightseeing",
+        "shopping",
+        "transport",
+        "patio",
+        "garden",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "3DE9521D1F",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/3DE9521D1F",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.851948,
+        "longitude": 2.338622
+      },
+      "name": "L'Avant Comptoir",
+      "category": "RESTAURANT",
+      "rank": 50,
+      "tags": [
+        "restaurant",
+        "sightseeing",
+        "tapas",
+        "seafood",
+        "bar",
+        "cheap",
+        "bistro"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "1FBC640828",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/1FBC640828",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.85879,
+        "longitude": 2.358595
+      },
+      "name": "Le Marais",
+      "category": "RESTAURANT",
+      "rank": 50,
+      "tags": [
+        "restaurant",
+        "activities",
+        "attraction",
+        "tourguide",
+        "bar",
+        "sightseeing",
+        "sights",
+        "historicplace",
+        "historic"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "FF516C46C9",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/FF516C46C9",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.857986,
+        "longitude": 2.357996
+      },
+      "name": "Le Colimaçon",
+      "category": "RESTAURANT",
+      "rank": 50,
+      "tags": [
+        "restaurant"
+      ]
+    }
+  ],
+  "meta": {
+    "count": 98,
+    "links": {
+      "self": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=RESTAURANT,SHOPPING",
+      "next": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=10&categories=RESTAURANT,SHOPPING",
+      "last": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=90&categories=RESTAURANT,SHOPPING",
+      "first": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=RESTAURANT,SHOPPING",
+      "up": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=RESTAURANT,SHOPPING"
+    }
+  }
+}

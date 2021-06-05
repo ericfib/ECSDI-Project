@@ -1,0 +1,219 @@
+{
+  "data": [
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "CD376B6E95",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/CD376B6E95",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.8604,
+        "longitude": 2.34055
+      },
+      "name": "Le Fumoir",
+      "category": "NIGHTLIFE",
+      "rank": 50,
+      "tags": [
+        "restaurant",
+        "bar",
+        "sightseeing",
+        "nightlife",
+        "tourguide",
+        "activities",
+        "pub",
+        "attraction",
+        "transport",
+        "events",
+        "club",
+        "patio",
+        "garden",
+        "shopping",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "7B2394A5EC",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/7B2394A5EC",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.855026,
+        "longitude": 2.337923
+      },
+      "name": "Prescription Cocktail Club",
+      "category": "NIGHTLIFE",
+      "rank": 200,
+      "tags": [
+        "bar",
+        "club",
+        "nightlife",
+        "sightseeing",
+        "restaurant",
+        "attraction",
+        "nightclub",
+        "commercialplace",
+        "transport",
+        "events",
+        "activities"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "74CBD2B740",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/74CBD2B740",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.8574,
+        "longitude": 2.35627
+      },
+      "name": "The Lizard Lounge",
+      "category": "NIGHTLIFE",
+      "rank": 400,
+      "tags": [
+        "bar",
+        "pub",
+        "restaurant",
+        "club",
+        "nightlife",
+        "burger",
+        "fastfood",
+        "events",
+        "transport",
+        "shopping",
+        "sports",
+        "activities"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "86E9158E36",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/86E9158E36",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.85197,
+        "longitude": 2.34236
+      },
+      "name": "Castor Club",
+      "category": "NIGHTLIFE",
+      "rank": 500,
+      "tags": [
+        "bar",
+        "nightlife",
+        "pub",
+        "tourguide",
+        "sightseeing",
+        "activities",
+        "attraction",
+        "transport"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "D65A48FCBD",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/D65A48FCBD",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.84574,
+        "longitude": 2.34214
+      },
+      "name": "Le Crocodile",
+      "category": "NIGHTLIFE",
+      "rank": 1000,
+      "tags": [
+        "bar",
+        "nightlife",
+        "pub",
+        "sights",
+        "sightseeing",
+        "restaurant",
+        "club",
+        "activities"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "CA54A4AB71",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/CA54A4AB71",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.85598,
+        "longitude": 2.33977
+      },
+      "name": "The Highlander",
+      "category": "NIGHTLIFE",
+      "rank": 1000,
+      "tags": [
+        "bar",
+        "sports",
+        "pub",
+        "transport",
+        "activities",
+        "restaurant",
+        "events",
+        "club",
+        "shopping"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "CCCF6E9E8A",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/CCCF6E9E8A",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.84775,
+        "longitude": 2.34025
+      },
+      "name": "Le Rostand",
+      "category": "NIGHTLIFE",
+      "rank": 1000,
+      "tags": [
+        "nightlife",
+        "bar",
+        "restaurant"
+      ]
+    }
+  ],
+  "meta": {
+    "count": 7,
+    "links": {
+      "self": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=NIGHTLIFE",
+      "last": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=NIGHTLIFE",
+      "first": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=NIGHTLIFE",
+      "up": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=NIGHTLIFE"
+    }
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "data": [
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "AA8E41776E",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/AA8E41776E",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.852966,
+        "longitude": 2.349902
+      },
+      "name": "Cathédrale Notre-Dame de Paris",
+      "category": "SIGHTS",
+      "rank": 5,
+      "tags": [
+        "church",
+        "sightseeing",
+        "restaurant",
+        "tourguide",
+        "sights",
+        "temple",
+        "landmark",
+        "historicplace",
+        "historic",
+        "attraction",
+        "activities",
+        "professionalservices",
+        "sports",
+        "bike",
+        "rental",
+        "commercialplace",
+        "outdoorplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "EC7AE15DF5",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/EC7AE15DF5",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.860825,
+        "longitude": 2.352633
+      },
+      "name": "Centre Pompidou",
+      "category": "SIGHTS",
+      "rank": 5,
+      "tags": [
+        "museum",
+        "sightseeing",
+        "restaurant",
+        "artgallerie",
+        "tourguide",
+        "sights",
+        "transport",
+        "activities",
+        "attraction",
+        "shopping",
+        "square",
+        "parking",
+        "professionalservices",
+        "bus",
+        "theater",
+        "events",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "0736828224",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/0736828224",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.85492,
+        "longitude": 2.34523
+      },
+      "name": "Sainte Chapelle",
+      "category": "SIGHTS",
+      "rank": 10,
+      "tags": [
+        "church",
+        "sightseeing",
+        "temple",
+        "landmark",
+        "tourguide",
+        "sights",
+        "restaurant",
+        "museum",
+        "historicplace",
+        "historic",
+        "mosque",
+        "synagogue",
+        "buddhist",
+        "attraction",
+        "activities",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "8E0ACA101B",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/8E0ACA101B",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.855724,
+        "longitude": 2.345146
+      },
+      "name": "Palais de Justice de Paris",
+      "category": "SIGHTS",
+      "rank": 15,
+      "tags": [
+        "sightseeing",
+        "sights",
+        "historicplace",
+        "historic",
+        "restaurant",
+        "attraction",
+        "activities",
+        "tourguide",
+        "commercialplace",
+        "landmark"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "F5679BCB4B",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/F5679BCB4B",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.857483,
+        "longitude": 2.337078
+      },
+      "name": "Institut de France",
+      "category": "SIGHTS",
+      "rank": 15,
+      "tags": [
+        "restaurant",
+        "tourguide",
+        "landmark",
+        "sightseeing",
+        "sights",
+        "historicplace",
+        "historic",
+        "attraction",
+        "activities",
+        "education",
+        "college",
+        "university"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "0D67E644ED",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/0D67E644ED",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.85654,
+        "longitude": 2.342508
+      },
+      "name": "Place Dauphine",
+      "category": "SIGHTS",
+      "rank": 30,
+      "tags": [
+        "sightseeing",
+        "tourguide",
+        "sights",
+        "historicplace",
+        "historic",
+        "restaurant",
+        "attraction",
+        "square",
+        "activities",
+        "commercialplace",
+        "beauty&spas",
+        "park"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "89EE626242",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/89EE626242",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.856674,
+        "longitude": 2.339038
+      },
+      "name": "Monnaie de Paris",
+      "category": "SIGHTS",
+      "rank": 30,
+      "tags": [
+        "museum",
+        "sightseeing",
+        "sights",
+        "historicplace",
+        "historic",
+        "restaurant",
+        "commercialplace",
+        "shopping",
+        "transport"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "B11BB58D37",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/B11BB58D37",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.85715,
+        "longitude": 2.34084
+      },
+      "name": "Vedettes du Pont Neuf",
+      "category": "SIGHTS",
+      "rank": 30,
+      "tags": [
+        "tourguide",
+        "sightseeing",
+        "attraction",
+        "activities",
+        "professionalservices",
+        "commercialplace",
+        "transport",
+        "boat",
+        "education",
+        "shopping",
+        "sights",
+        "historicplace",
+        "historic"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "29AB6DD4F2",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/29AB6DD4F2",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.855137,
+        "longitude": 2.358925
+      },
+      "name": "Maison Européenne de la Photographie",
+      "category": "SIGHTS",
+      "rank": 50,
+      "tags": [
+        "museum",
+        "sightseeing",
+        "tourguide",
+        "sights",
+        "attraction",
+        "library",
+        "commercialplace",
+        "activities"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "AD32FF8450",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/AD32FF8450",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 48.854286,
+        "longitude": 2.344713
+      },
+      "name": "Pont Saint Michel",
+      "category": "SIGHTS",
+      "rank": 50,
+      "tags": [
+        "bridge",
+        "sightseeing",
+        "parking",
+        "commercialplace",
+        "attraction",
+        "transport",
+        "train",
+        "trainstation",
+        "restaurant"
+      ]
+    }
+  ],
+  "meta": {
+    "count": 37,
+    "links": {
+      "self": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=SIGHTS",
+      "next": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=10&categories=SIGHTS",
+      "last": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=30&categories=SIGHTS",
+      "first": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=SIGHTS",
+      "up": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.85341&longitude=2.3488&radius=1&page[limit]=10&page[offset]=0&categories=SIGHTS"
+    }
+  }
+}

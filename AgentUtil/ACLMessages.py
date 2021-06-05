@@ -121,7 +121,7 @@ def register_agent(origin_agent, directory_agent, type_, msg_cnt):
     reg_obj = agn[origin_agent.name + '-Register']
     gmess.add((reg_obj, RDF.type, DSO.Register))
     gmess.add((reg_obj, DSO.Uri, origin_agent.uri))
-    gmess.add((reg_obj, FOAF.Name, Literal(origin_agent.name)))
+    gmess.add((reg_obj, FOAF.name, Literal(origin_agent.name)))
     gmess.add((reg_obj, DSO.Address, Literal(origin_agent.address)))
     gmess.add((reg_obj, DSO.AgentType, type_))
     # Lo metemos en un envoltorio FIPA-ACL y lo enviamos

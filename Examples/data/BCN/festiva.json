@@ -1,0 +1,283 @@
+{
+  "data": [
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "15C8B8148C",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/15C8B8148C",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.392677,
+        "longitude": 2.153942
+      },
+      "name": "Dry Martini",
+      "category": "NIGHTLIFE",
+      "rank": 100,
+      "tags": [
+        "bar",
+        "restaurant",
+        "nightlife",
+        "club",
+        "sightseeing",
+        "attraction",
+        "activities"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "3A57D0BB08",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/3A57D0BB08",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.39371,
+        "longitude": 2.16484
+      },
+      "name": "Les Gens Que J'aime",
+      "category": "NIGHTLIFE",
+      "rank": 200,
+      "tags": [
+        "sightseeing",
+        "bar",
+        "pub",
+        "restaurant",
+        "club",
+        "commercialplace",
+        "shopping"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "A500740EA0",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/A500740EA0",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38612,
+        "longitude": 2.167663
+      },
+      "name": "Belushi's Barcelona",
+      "category": "NIGHTLIFE",
+      "rank": 400,
+      "tags": [
+        "bar",
+        "restaurant",
+        "sports",
+        "attraction",
+        "pub",
+        "grills",
+        "events",
+        "club",
+        "games",
+        "shopping",
+        "transport",
+        "patio",
+        "garden",
+        "sightseeing",
+        "commercialplace",
+        "activities"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "1174B93A71",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/1174B93A71",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38842,
+        "longitude": 2.163971
+      },
+      "name": "Arena Madre",
+      "category": "NIGHTLIFE",
+      "rank": 400,
+      "tags": [
+        "bar",
+        "tourguide",
+        "sightseeing",
+        "activities",
+        "attraction",
+        "gayfriendly",
+        "shopping",
+        "cheap",
+        "restaurant",
+        "professionalservices",
+        "pub",
+        "club",
+        "nightclub"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "FB9B5C80D7",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/FB9B5C80D7",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.3936,
+        "longitude": 2.153365
+      },
+      "name": "Slow Barcelona",
+      "category": "NIGHTLIFE",
+      "rank": 500,
+      "tags": [
+        "bar",
+        "activities",
+        "club",
+        "musicvenue",
+        "events",
+        "attraction",
+        "tourguide",
+        "restaurant",
+        "sightseeing",
+        "commercialplace",
+        "dance",
+        "shopping"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "B78B50AB73",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/B78B50AB73",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.39544,
+        "longitude": 2.152594
+      },
+      "name": "Bling Bling",
+      "category": "NIGHTLIFE",
+      "rank": 1000,
+      "tags": [
+        "attraction",
+        "bar",
+        "club",
+        "nightclub",
+        "activities",
+        "tourguide",
+        "shopping"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "873E05961C",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/873E05961C",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.390446,
+        "longitude": 2.155613
+      },
+      "name": "La Fira",
+      "category": "NIGHTLIFE",
+      "rank": 1000,
+      "tags": [
+        "bar",
+        "club",
+        "nightclub",
+        "nightlife",
+        "sightseeing",
+        "tourguide",
+        "attraction",
+        "activities",
+        "restaurant",
+        "events",
+        "transport",
+        "patio",
+        "garden",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "0D75B46D5F",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/0D75B46D5F",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38574,
+        "longitude": 2.158476
+      },
+      "name": "Plata Bar Barcelona",
+      "category": "NIGHTLIFE",
+      "rank": 1000,
+      "tags": [
+        "bar",
+        "tourguide",
+        "sightseeing",
+        "activities",
+        "restaurant",
+        "attraction"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "1AC47EB5C0",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/1AC47EB5C0",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38642,
+        "longitude": 2.166146
+      },
+      "name": "Scobies Irish Pub",
+      "category": "NIGHTLIFE",
+      "rank": 1000,
+      "tags": [
+        "restaurant",
+        "pub",
+        "bar",
+        "events",
+        "club",
+        "shopping",
+        "transport",
+        "sports"
+      ]
+    }
+  ],
+  "meta": {
+    "count": 9,
+    "links": {
+      "self": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=NIGHTLIFE",
+      "last": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=NIGHTLIFE",
+      "first": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=NIGHTLIFE",
+      "up": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=NIGHTLIFE"
+    }
+  }
+}

@@ -13,20 +13,24 @@ Asume que el agente de registro esta en el puerto 9000
 
 @author: javier
 """
+import json
 from multiprocessing import Process, Queue
 import socket
+import os
 
 import argparse
-from rdflib import Namespace, Graph
-from rdflib.namespace import RDF, FOAF
+from rdflib import Namespace, Graph, Literal, URIRef
+from rdflib.namespace import FOAF, RDF
 
 from flask import Flask, request
+from dotenv import load_dotenv
+from amadeus import Client, ResponseError
 
 from AgentUtil.FlaskServer import shutdown_server
-from AgentUtil.ACLMessages import build_message, register_agent, get_message_properties, send_message
+from AgentUtil.ACLMessages import build_message, send_message, register_agent, get_message_properties, get_agent_info
 from AgentUtil.Agent import Agent
 from AgentUtil.Logging import config_logger
-from AgentUtil.OntoNamespaces import ACL, ECSDI, DSO
+from AgentUtil.OntoNamespaces import ECSDI, ACL
 
 __author__ = 'javier'
 
@@ -44,12 +48,13 @@ parser.add_argument('--dport', type=int, help="Puerto de comunicacion del agente
 
 # Logging
 logger = config_logger(level=1)
+file_str = '../Examples/data/%s/%s.json'
 
 # parsing de los parametros de la linea de comandos
 args = parser.parse_args()
 # Configuration stuff
 if args.port is None:
-    port = 9001
+    port = 9013
 else:
     port = args.port
 
@@ -62,7 +67,7 @@ else:
 print('DS Hostname =', hostaddr)
 
 if args.dport is None:
-    dport = 9012
+    dport = 9011
 else:
     dport = args.dport
 
@@ -90,8 +95,8 @@ def get_count():
 # Datos del Agente
 
 
-AgenteAlojamientos = Agent('AgenteAlojamientos',
-                                         agn.AgenteAlojamientos,
+AgenteAlojamientosExternoAmadeus = Agent('AgenteActividadesExternoAmadeus',
+                                         agn.ActividadesExternoAmadeus,
                                          'http://%s:%d/comm' % (hostname, port),
                                          'http://%s:%d/Stop' % (hostname, port))
 
@@ -106,38 +111,12 @@ cola1 = Queue()
 # Flask stuff
 app = Flask(__name__)
 
-def directory_search_message(type):
-    """
-    Busca en el servicio de registro mandando un
-    mensaje de request con una accion Seach del servicio de directorio
+# APIs
+load_dotenv()
+AMADEUS_KEY = os.getenv("AMADEUS_API_KEY")
+AMADEUS_SECRET = os.getenv("AMADEUS_API_SECRET")
+amadeus = Client(client_id=AMADEUS_KEY, client_secret=AMADEUS_SECRET)
 
-    Podria ser mas adecuado mandar un query-ref y una descripcion de registo
-    con variables
-
-    :param type:
-    :return:
-    """
-    global mss_cnt
-    logger.info('Buscamos en el servicio de registro')
-
-    gmess = Graph()
-
-    gmess.bind('foaf', FOAF)
-    gmess.bind('dso', DSO)
-    reg_obj = agn[AgenteAlojamientos.name + '-search']
-    gmess.add((reg_obj, RDF.type, DSO.Search))
-    gmess.add((reg_obj, DSO.AgentType, type))
-
-    msg = build_message(gmess, perf=ACL.request,
-                        sender=AgenteAlojamientos.uri,
-                        receiver=DirectoryAgent.uri,
-                        content=reg_obj,
-                        msgcnt=mss_cnt)
-    gr = send_message(msg, DirectoryAgent.address)
-    mss_cnt += 1
-    logger.info('Recibimos informacion del agente')
-
-    return gr
 
 @app.route("/comm")
 def comunicacion():
@@ -156,45 +135,39 @@ def comunicacion():
     msg = get_message_properties(grafo_mensaje_entrante)
 
     if msg is None:
-        grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientos.uri,
+        grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientosExternoAmadeus.uri,
                                    msgcnt=mss_cnt)
 
     else:
         # obtener performativa
         perf = msg['performative']
 
-        if perf == ACL.request:
-            if 'content' in msg:
-                content = msg['content']
-
-                accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
-                if accion == ECSDI.Peticion_Alojamientos:
-                    # PROCESAR PARAMETROS QUE ENVIA ARNAU I BUSCARLOS EN CACHE/FICHERO, O PEDIR A AGENTE EXTERNO
-                    pass
-                else:
-                    grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientos.uri,
-                                               msgcnt=mss_cnt)
-
-
-        # elif perf == ACL.inform:
-        #     if 'content' in msg:
-        #         content = msg['content']
-        #
-        #         accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
-        #         if accion == ECSDI.Res:
-        #             # GUARDAR EN FICHERO/CACHE LA RESPUESTA DEL AGENTE EXTERNO
-        #             pass
-        #         else:
-        #             grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientos.uri,
-        #                                        msgcnt=mss_cnt)
-
-        else:
+        if perf != ACL.request:
             # Si no es un request, respondemos que no hemos entendido el mensaje
-            grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientos.uri,
+            grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientosExternoAmadeus.uri,
                                        msgcnt=mss_cnt)
 
+        else:
+            if 'content' in msg:
+                content = msg['content']
+                accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
+
+                # hacer lo que pide la accion
+                if accion == ECSDI.Peticion_Alojamientos:
+                    grespuesta = buscar_actividades_externos()
+
+                    grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteAlojamientosExternoAmadeus.uri,
+                                               msgcnt=mss_cnt, receiver=msg['sender'])
+                else:
+                    grespuesta = build_message(Graph(), ACL['not-understood'],
+                                               sender=AgenteAlojamientosExternoAmadeus.uri,
+                                               msgcnt=mss_cnt)
+            else:
+                grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientosExternoAmadeus.uri,
+                                           msgcnt=mss_cnt)
+
     serialize = grespuesta.serialize(format='xml')
-    return serialize, 200
+    return serialize
 
 
 @app.route("/Stop")
@@ -223,11 +196,10 @@ def agentbehavior1():
 
     :return:
     """
+    buscar_actividades_externos()
     gr = register_message()
 
-
-
-
+    pass
 
 def register_message():
     """
@@ -240,9 +212,32 @@ def register_message():
 
     logger.info('Nos registramos')
 
-    gr = register_agent(AgenteAlojamientos, DirectoryAgent, AgenteAlojamientos.uri, get_count())
+    gr = register_agent(AgenteAlojamientosExternoAmadeus, DirectoryAgent, AgenteAlojamientosExternoAmadeus.uri, get_count())
     return gr
 
+
+def buscar_actividades_externos():
+    grafo_actividades = Graph()
+    grafo_actividades.bind('ECSDI', ECSDI)
+    array_city = [{'lat': '41.38879', 'long': '2.15899', 'code': 'BCN'}, {'lat': '48.85341', 'long': '2.3488',
+                                                                          'code': 'PAR'}]
+    types = {'cultural': 'SIGHTS', 'ludica': 'NIGHTLIFE',
+             'festiva': 'RESTAURANT, SHOPPING'}
+    content = ECSDI['Respuesta_Actividades' + str(get_count())]
+    for i, city in enumerate(array_city):
+        for key, t in types.items():
+            try:
+                activities = amadeus.reference_data.locations.points_of_interest.get(latitude=city['lat'],
+                                                                                     longitud=city['long'],
+                                                                                     radius=5, categories=t)
+            except ResponseError:
+                with open(file_str % (city['code'], key)) as file:
+                    activities = json.load(file)
+            for j, item in enumerate(activities.get('data')):
+                actividad = ECSDI[key + '-' + str(i * j)]
+                grafo_actividades.add((actividad, RDF.type, ECSDI.Actividad))
+                grafo_actividades.add((actividad, ECSDI.nombre, Literal(item["name"])))
+    return grafo_actividades
 
 
 
