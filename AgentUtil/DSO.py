@@ -52,6 +52,7 @@ ONTOLOGY = ClosedNamespace(
         'Usuario',
         'Agente',
         'Localizacion',
+        'Aeropuerto',
         'Respuesta_Vuelos',
         'Respuesta_Plan',
         'Proveedor_de_vuelos',

@@ -150,18 +150,9 @@ def comunicacion():
                 accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
 
                 # hacer lo que pide la accion
-                if accion == ECSDI.Peticion_Vuelos:
-                    
-                    # ciudades
-                    origen = gm.value(subject=content, predicate=ECSDI.tiene_como_origen)
-                    destino = gm.value(subject=content, predicate=ECSDI.tiene_como_destino)
-                    
-                    # valores
-                    ciudad_origen = gm.value(subject=origen, predicate=ECSDI.nombre)
-                    ciudad_destino = gm.value(subject=destino, predicate=ECSDI.nombre)
-                    # falta coger el rango de precios y el rango de fechas
-                    
-                    grespuesta = buscar_alojamientos_externos(ciudad_origen, ciudad_destino, ini_date='1/1/2021 1:30 AM', fin_date='1/1/2022 1:30 AM', min_price=50, max_price=200)
+                if accion == ECSDI.Peticion_Vuelos:     
+                   
+                    grespuesta = buscar_alojamientos_externos()
 
                     grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteExternoVuelos.uri,
                                                msgcnt=mss_cnt, receiver=msg['sender'])
@@ -198,7 +189,7 @@ def random_date(start, end):
     random_second = randrange(int_delta)
     return start + timedelta(seconds=random_second)
 
-def buscar_vuelos_externos(origin="Barcelona", destination="Paris", ini_date='1/1/2021 1:30 AM', fin_date='1/1/2022 1:30 AM', min_price=50, max_price=200):
+def buscar_vuelos_externos():
     global originAirport
     global destAirport
 
@@ -213,25 +204,13 @@ def buscar_vuelos_externos(origin="Barcelona", destination="Paris", ini_date='1/
 
     g.parse(ontofile, format='turtle')
 
-    # Se decide el aeropuerto segun la ciudad de origen
-    if origin == "Barcelona":
-        originAirport="http://dbpedia.org/resource/Barcelona%E2%80%93El_Prat_Airport"
-    elif origin == "Paris":
-        originAirport="http://dbpedia.org/resource/Charles_de_Gaulle_Airport"
-    elif origin == "Berlin":
-        originAirport="http://dbpedia.org/resource/Berlin_Tegel_Airport"
-
-    # Se decide el aeropuerto segun la ciudad de destino
-    if destination == "Barcelona":
-        destAirport="http://dbpedia.org/resource/Barcelona%E2%80%93El_Prat_Airport"
-    elif destination == "Paris":
-        destAirport="http://dbpedia.org/resource/Charles_de_Gaulle_Airport"
-    elif destination == "Berlin":
-        destAirport="http://dbpedia.org/resource/Berlin_Tegel_Airport"
+    
+    bcn = "http://dbpedia.org/resource/Barcelona%E2%80%93El_Prat_Airport"
+    prs = "http://dbpedia.org/resource/Charles_de_Gaulle_Airport"
 
 
     # Se buscan vuelos con el aeropuerto de origen y destino
-    origenquery = """
+    origenquerypb = """
         prefix tio:<http://purl.org/tio/ns#>
         Select ?vuelo ?fromall ?toall ?comp
         where {
@@ -239,29 +218,42 @@ def buscar_vuelos_externos(origin="Barcelona", destination="Paris", ini_date='1/
             ?vuelo tio:to ?toall .
             ?vuelo tio:from ?fromall .
             ?vuelo tio:operatedBy ?comp .
-            ?vuelo tio:to <"""+destAirport+"""> .
-            ?vuelo tio:from <"""+originAirport+"""> .
+            ?vuelo tio:to <"""+bcn+"""> .
+            ?vuelo tio:from <"""+prs+"""> .
             }
         """
 
-    qres = g.query(origenquery, initNs=dict(tio=TIO))
+    qpb = g.query(origenquerypb, initNs=dict(tio=TIO))
+
     
-    print()
+    ini_date='1/1/2021'
+    fin_date='1/1/2022'
+    min_price=50
+    max_price=250
 
-    dat1 = datetime.strptime(ini_date, '%m/%d/%Y %I:%M %p')
-    dat2 = datetime.strptime(fin_date, '%m/%d/%Y %I:%M %p')
+    dat_origen = datetime.strptime(ini_date+' 6:30 AM', '%d/%m/%Y %I:%M %p')
+    dat_destino = datetime.strptime(fin_date+' 6:30 AM', '%d/%m/%Y %I:%M %p')
     
-    fecha_salida = random_date(dat1, dat2)
-    fecha_llegada = random_date(fecha_salida, dat2)
 
-    precio = random.randint(min_price,max_price)
+    for row in qpb.result:
+        print(row)
+        fecha_salida=random_date(dat_origen,dat_destino)
+        fecha_salida_origen = random_date(fecha_salida, fecha_salida+timedelta(hours=14))
+        fecha_llegada_origen = random_date(fecha_salida_origen+timedelta(hours=3), fecha_salida_origen+timedelta(hours=5))
+    
+        precio_origen = random.randint(min_price,max_price)
 
-    for row in qres.result:
-        print(row[3])
+        print(fecha_salida_origen)
+        print(fecha_llegada_origen)
 
-        vuelo = ECSDI['vuelo' + str(get_count())]
-        compania = ECSDI['compañia' + str(get_count())]
-        origen = ECSDI['aeropuerto'+str(get_count())] # hay que añadir aeropuerto a la onto
+        print(precio_origen)
+
+
+        # COMPROBAR QUE TODO EXISTA Y SI NO, AÑADIRLO!
+        vuelo_origen = ECSDI['vuelo' + str(get_count())]
+        vuelo_destino = ECSDI['vuelo' + str(get_count())]
+        compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
+        origen = ECSDI['aeropuerto'+str(get_count())]
         destino = ECSDI['aeropuerto'+str(get_count())]
 
         # Compania
@@ -277,20 +269,89 @@ def buscar_vuelos_externos(origin="Barcelona", destination="Paris", ini_date='1/
         grafo_vuelos.add((origen, ECSDI.nombre, Literal(row[1])))
 
 
-        # Transporte
-        grafo_vuelos.add((vuelo, RDF.type, ECSDI.vuelo))
-        grafo_vuelos.add((vuelo, ECSDI.tiene_como_destino, URIRef(destino)))
-        grafo_vuelos.add((vuelo, ECSDI.tiene_como_origen, URIRef(origen)))
-        grafo_vuelos.add((vuelo, ECSDI.importe, Literal(precio))) # comprobar que importe sea atributo de vuelo
-        grafo_vuelos.add((vuelo, ECSDI.ofrece_vuelo, URIRef(compania)))
-        grafo_vuelos.add((vuelo, ECSDI.llegada, Literal(fecha_salida)))
-        grafo_vuelos.add((vuelo, ECSDI.salida, Literal(fecha_llegada)))
-        # grafo_vuelos.add((content, ECSDI.se_constituye_de_transportes, URIRef(transporte)))
+        # Vuelo origen
+        grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.vuelo))
+        grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
+        grafo_vuelos.add((vuelo_origen, ECSDI.importe, Literal(precio_origen))) # comprobar que importe sea atributo de vuelo
+        grafo_vuelos.add((vuelo_origen, ECSDI.es_ofrecido_por, URIRef(compania)))
+        grafo_vuelos.add((vuelo_origen, ECSDI.fecha_inicial, Literal(fecha_salida_origen)))
+        grafo_vuelos.add((vuelo_origen, ECSDI.fecha_final, Literal(fecha_llegada_origen)))
+
+
+    # Se buscan vuelos con el aeropuerto de origen y destino
+    origenquerybp = """
+        prefix tio:<http://purl.org/tio/ns#>
+        Select ?vuelo ?fromall ?toall ?comp
+        where {
+            ?vuelo rdf:type tio:Flight .
+            ?vuelo tio:to ?toall .
+            ?vuelo tio:from ?fromall .
+            ?vuelo tio:operatedBy ?comp .
+            ?vuelo tio:to <"""+prs+"""> .
+            ?vuelo tio:from <"""+bcn+"""> .
+            }
+        """
+
+    qbp = g.query(origenquerybp, initNs=dict(tio=TIO))
+
+    for row in qbp.result:
+        print(row)
+        fecha_llegada=random_date(dat_origen,dat_destino)
+        fecha_salida_destino = random_date(fecha_llegada, fecha_llegada+timedelta(hours=14))
+        fecha_llegada_destino = random_date(fecha_salida_destino+timedelta(hours=3), fecha_salida_destino+timedelta(hours=5))
+
+        precio_destino = random.randint(min_price,max_price)
+
+        print(fecha_salida_destino)
+        print(fecha_llegada_destino)
+
+        print(precio_destino)
+
+        # COMPROBAR QUE TODO EXISTA Y SI NO, AÑADIRLO!
+        vuelo_origen = ECSDI['vuelo' + str(get_count())]
+        vuelo_destino = ECSDI['vuelo' + str(get_count())]
+        compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
+        origen = ECSDI['aeropuerto'+str(get_count())]
+        destino = ECSDI['aeropuerto'+str(get_count())]
+
+        # Compania
+        grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
+        grafo_vuelos.add((compania, ECSDI.nombre, Literal(row[3])))
+
+        # Llega a
+        grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((destino, ECSDI.nombre, Literal(row[2])))
+
+        # Sale_de
+        grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((origen, ECSDI.nombre, Literal(row[1])))
+
+        # Vuelo destino
+        grafo_vuelos.add((vuelo_destino, RDF.type, ECSDI.vuelo))
+        grafo_vuelos.add((vuelo_destino, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
+        grafo_vuelos.add((vuelo_destino, ECSDI.importe, Literal(precio_destino))) # comprobar que importe sea atributo de vuelo
+        grafo_vuelos.add((vuelo_destino, ECSDI.es_ofrecido_por, URIRef(compania)))
+        grafo_vuelos.add((vuelo_destino, ECSDI.fecha_inicial, Literal(fecha_salida_destino)))
+        grafo_vuelos.add((vuelo_destino, ECSDI.fecha_final, Literal(fecha_llegada_destino)))
+
+
     # Devolvemos el grafo de vuelos
     logger.info('DEVOLVEMOS EL GRAFO DE VUELOS')
     return grafo_vuelos
         
+def register_message():
+    """
+    Envia un mensaje de registro al servicio de registro
+    usando una performativa Request y una accion Register del
+    servicio de directorio
+    :param gmess:
+    :return:
+    """
 
+    logger.info('Nos registramos')
+
+    gr = register_agent(AgenteExternoVuelos, DirectoryAgent, AgenteExternoVuelos.uri, get_count())
+    return gr
 
 def tidyup():
     """
@@ -306,12 +367,12 @@ def agentbehavior1():
     :return:
     """
     # Registramos el agente
-    #gr = register_message()
+    gr = register_message()
 
-    buscar_vuelos_externos(origin="Barcelona", destination="Paris", ini_date='1/1/2021 1:30 AM', fin_date='1/1/2022 1:30 AM', min_price=50, max_price=200)
+    buscar_vuelos_externos()
 
     # Escuchando la cola hasta que llegue un 0
-    """fin = False
+   fin = False
     while not fin:
         while cola.empty():
             pass
@@ -319,7 +380,7 @@ def agentbehavior1():
         if v == 0:
             fin = True
         else:
-            print(v)"""
+            print(v)
 
 
 
