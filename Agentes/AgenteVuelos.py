@@ -6,64 +6,181 @@ Agente que se registra como agente de hoteles y espera peticiones
 @author: javier
 """
 
+from datetime import datetime
+from functools import lru_cache
 from multiprocessing import Process, Queue
-import logging
-import argparse
-
-from flask import Flask, request
-from rdflib import Graph, Namespace, Literal
-from rdflib.namespace import FOAF, RDF
-
-
-from AgentUtil.ACL import ACL
-from AgentUtil.FlaskServer import shutdown_server
-from AgentUtil.ACLMessages import build_message, send_message, get_message_properties, register_agent
-from AgentUtil.Agent import Agent
-from AgentUtil.Logging import config_logger
-from AgentUtil.OntoNamespaces import ACL, DSO, ECSDI
-from AgentUtil.Util import gethostname
 import socket
 
+import argparse
 
-#Configuration stuff
-hostname = socket.gethostname()
-port = 9010
+from apscheduler.schedulers.background import BackgroundScheduler
+from rdflib import Namespace, Graph
+from rdflib.namespace import RDF, FOAF
+
+from flask import Flask, request
+
+from AgentUtil.FlaskServer import shutdown_server
+from AgentUtil.ACLMessages import build_message, register_agent, get_message_properties, send_message
+from AgentUtil.Agent import Agent
+from AgentUtil.Logging import config_logger
+from AgentUtil.OntoNamespaces import ACL, ECSDI, DSO
+
+__author__ = 'javier'
+
+# Definimos los parametros de la linea de comandos
+from AgentUtil.Util import gethostname
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--open', help="Define si el servidor esta abierto al exterior o no", action='store_true',
+                    default=False)
+parser.add_argument('--verbose', help="Genera un log de la comunicacion del servidor web", action='store_true',
+                    default=False)
+parser.add_argument('--port', type=int, help="Puerto de comunicacion del agente")
+parser.add_argument('--dhost', help="Host del agente de directorio")
+parser.add_argument('--dport', type=int, help="Puerto de comunicacion del agente de directorio")
+
+# Logging
+logger = config_logger(level=1)
+
+# parsing de los parametros de la linea de comandos
+args = parser.parse_args()
+# Configuration stuff
+if args.port is None:
+    port = 9001
+else:
+    port = args.port
+
+if args.open:
+    hostname = '0.0.0.0'
+    hostaddr = gethostname()
+else:
+    hostaddr = hostname = socket.gethostname()
+
+print('DS Hostname =', hostaddr)
+
+if args.dport is None:
+    dport = 9002
+else:
+    dport = args.dport
+
+if args.dhost is None:
+    dhostname = socket.gethostname()
+else:
+    dhostname = args.dhost
+# Directory Service Graph
+dsgraph = Graph()
+dsgraph.bind('acl', ACL)
+dsgraph.bind('ecsdi', ECSDI)
 
 agn = Namespace("http://www.agentes.org#")
 
 # Contador de mensajes
 mss_cnt = 0
 
+sched = BackgroundScheduler()
 
-# Logging
-logger = config_logger(level=1)
+# Agentes
+ag_vuelos_ext = [Agent('', '', '', None),Agent('', '', '', None)]
+
+
+
+def get_count():
+    global mss_cnt
+    mss_cnt += 1
+    return mss_cnt
+
+
 # Datos del Agente
 
+
 AgenteVuelos = Agent('AgenteVuelos',
-                       agn.AgenteVuelos,
-                       'http://%s:%d/comm' % (hostname, port),
-                       'http://%s:%d/Stop' % (hostname, port))
+                                         agn.AgenteVuelos,
+                                         'http://%s:%d/comm' % (hostname, port),
+                                         'http://%s:%d/Stop' % (hostname, port))
 
 # Directory agent address
 DirectoryAgent = Agent('DirectoryAgent',
                        agn.Directory,
                        'http://%s:9000/Register' % hostname,
                        'http://%s:9000/Stop' % hostname)
-
-# Global triplestore graph
-dsgraph = Graph()
-
 cola1 = Queue()
 
 # Flask stuff
 app = Flask(__name__)
 
-agn_externo = [Agent('', '', '', None), Agent('', '', '', None)]
+def directory_search_message(type):
+    """
+    Busca en el servicio de registro mandando un
+    mensaje de request con una accion Seach del servicio de directorio
 
-def get_count():
+    Podria ser mas adecuado mandar un query-ref y una descripcion de registo
+    con variables
+
+    :param type:
+    :return:
+    """
     global mss_cnt
+    logger.info('Buscamos en el servicio de registro')
+
+    gmess = Graph()
+
+    gmess.bind('foaf', FOAF)
+    gmess.bind('dso', DSO)
+    reg_obj = agn[AgenteVuelos.name + '-search']
+    gmess.add((reg_obj, RDF.type, DSO.Search))
+    gmess.add((reg_obj, DSO.AgentType, type))
+
+    msg = build_message(gmess, perf=ACL.request,
+                        sender=AgenteVuelos.uri,
+                        receiver=DirectoryAgent.uri,
+                        content=reg_obj,
+                        msgcnt=mss_cnt)
+    gr = send_message(msg, DirectoryAgent.address)
     mss_cnt += 1
-    return mss_cnt
+    logger.info('Recibimos informacion del agente')
+
+    return gr
+
+def read_agent(tipus, agente):
+    gr = directory_search_message(tipus)
+    msg = gr.value(predicate=RDF.type, object=ACL.FipaAclMessage)
+    content = gr.value(subject=msg, predicate=ACL.content)
+    ragn_addr = gr.value(subject=content, predicate=DSO.Address)
+    ragn_uri = gr.value(subject=content, predicate=DSO.Uri)
+    agente.uri = ragn_uri
+    agente.address = ragn_addr
+
+def get_vuelos():
+    global ag
+    if mss_cnt % 2 != 0:
+        ag = ag_vuelos_ext[0]
+        if ag.address == '':
+            logger.info('Contactando Agente de alojamientos externo...')
+            read_agent(agn.AgenteExternoVuelos, ag)
+    else:
+        ag = ag_vuelos_ext[1]
+        logger.info('Contactando Agente de alojamientos externo amadeus...')
+        if ag.address == '':
+            read_agent(agn.AgenteExternoVuelosAmadeus, ag)
+
+    g = Graph()
+
+    peticion_vuelos = ECSDI['peticion_vuelos' + str(get_count())]
+    g.add((peticion_vuelos, RDF.type, ECSDI.Peticion_Vuelos))
+
+    gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteVuelos.uri, receiver=ag.uri,
+                                   msgcnt=mss_cnt,
+                                   content=peticion_vuelos), ag.address)
+
+    logger.info('Todo ha ido bien')
+    gresp.serialize(destination='../datos/vuelos.ttl', format='turtle')
+
+
+def reload_data():
+
+
+    logger.info('Refrescando datos... haha')
+    get_vuelos()
 
 
 def register_message():
@@ -81,6 +198,9 @@ def register_message():
     return gr
 
 
+    # sched.add_job(get_alojamientos, 'cron', day='*', hour='12')
+
+
 @app.route("/iface", methods=['GET', 'POST'])
 def browser_iface():
     """
@@ -94,6 +214,7 @@ def browser_iface():
 def stop():
     """
     Entrypoint que para el agente
+
     :return:
     """
     tidyup()
@@ -104,90 +225,82 @@ def stop():
 @app.route("/comm")
 def comunicacion():
     """
-    Communication Entrypoint
+    Entrypoint de comunicacion
     """
-    logger.info('Peticion de informacion recibida')
-    global dsGraph
+    global dsgraph
+    print("PETICION DE VUELOS RECIBIDA")
 
     message = request.args['content']
-    gm = Graph()
-    gm.parse(data=message)
 
-    msgdic = get_message_properties(gm)
+    grafo_mensaje_entrante = Graph()
+    grespuesta = Graph()
+    grafo_mensaje_entrante.parse(data=message)
 
-    gr = Graph()
-    if msgdic is None:
+    msg = get_message_properties(grafo_mensaje_entrante)
+    if msg is None:
         # Si no es, respondemos que no hemos entendido el mensaje
         gr = build_message(Graph(),
                            ACL['not-understood'],
                            sender=AgenteVuelos.uri,
-                           msgcnt=get_count())
+                           msgcnt=mss_cnt)
     else:
-        # Obtenemos la performativa
-        if msgdic['performative'] != ACL.request:
-            # Si no es un request, respondemos que no hemos entendido el mensaje
-            gr = build_message(Graph(),
-                               ACL['not-understood'],
-                               sender=AgenteVuelos.uri,
-                               msgcnt=get_count())
+        # obtener performativa
+        perf = msg['performative']
+
+        if perf == ACL.request:
+            if 'content' in msg:
+                content = msg['content']
+
+                accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
+                if accion == ECSDI.Peticion_Vuelos:
+                    # PROCESAR PARAMETROS QUE ENVIA ARNAU I BUSCARLOS EN CACHE/FICHERO, O PEDIR A AGENTE EXTERNO
+                    pass
+                else:
+                    grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteVuelos.uri,
+                                               msgcnt=mss_cnt)
+
+
+        # elif perf == ACL.inform:
+        #     if 'content' in msg:
+        #         content = msg['content']
+        #
+        #         accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
+        #         if accion == ECSDI.Res:
+        #             # GUARDAR EN FICHERO/CACHE LA RESPUESTA DEL AGENTE EXTERNO
+        #             pass
+        #         else:
+        #             grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteVuelos.uri,
+        #                                        msgcnt=mss_cnt)
+
         else:
-            # Extraemos el objeto del contenido que ha de ser una accion de la ontologia de acciones del agente
-            # de registro
+            # Si no es un request, respondemos que no hemos entendido el mensaje
+            grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteVuelos.uri,
+                                       msgcnt=mss_cnt)
 
-            # Averiguamos el tipo de la accion
-            if 'content' in msgdic:
-                content = msgdic['content']
-                accion = gm.value(subject=content, predicate=RDF.type)
-                
-                # if accion == ECSDI.Peticion_Vuelos:
-                    # Aqui enviaremos un mensaje al AgenteExternoVuelos de request para obtener los datos
-                    # Por ahora simplemente retornamos un Inform-done
-                    
-            gr = build_message(Graph(),
-                               ACL['inform'],
-                               sender=AgenteVuelos.uri,
-                               msgcnt=mss_cnt,
-                               receiver=msgdic['sender'], )
-    mss_cnt += 1
-
-    logger.info('Respondemos a la peticion')
-
-    return gr.serialize(format='xml')
+    serialize = grespuesta.serialize(format='xml')
+    return serialize, 200
 
 
 def tidyup():
     """
     Acciones previas a parar el agente
     """
-    global cola1
-    cola1.put(0)
+    pass
 
-
-def agentbehavior1(cola):
+def agentbehavior1():
     """
     Un comportamiento del agente
     :return:
     """
-    # Registramos el agente
     gr = register_message()
-
-    # Escuchando la cola hasta que llegue un 0
-    fin = False
-    while not fin:
-        while cola.empty():
-            pass
-        v = cola.get()
-        if v == 0:
-            fin = True
-        else:
-            print(v)
+    reload_data()
 
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
-    ab1 = Process(target=agentbehavior1, args=(cola1,))
+    ab1 = Process(target=agentbehavior1)
     ab1.start()
-
+    sched.start()
     # Ponemos en marcha el servidor
     app.run(host=hostname, port=port)
 
