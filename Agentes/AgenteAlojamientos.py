@@ -13,13 +13,16 @@ Asume que el agente de registro esta en el puerto 9000
 
 @author: javier
 """
-from multiprocessing import Process, Queue
+import gzip
 import socket
+from multiprocessing import Process, Queue
+from functools import lru_cache
+
 
 import argparse
 
 from apscheduler.schedulers.background import BackgroundScheduler
-from rdflib import Namespace, Graph
+from rdflib import Namespace, Graph, URIRef
 from rdflib.namespace import RDF, FOAF
 
 from flask import Flask, request
@@ -188,24 +191,22 @@ def comunicacion():
 
                 accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
                 if accion == ECSDI.Peticion_Alojamientos:
-                    # PROCESAR PARAMETROS QUE ENVIA ARNAU I BUSCARLOS EN CACHE/FICHERO, O PEDIR A AGENTE EXTERNO
+                    ciudad_dict = {'barcelona': 'BCN', 'paris': 'PAR'}
+
+                    precio_max_v = str(grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.rango_precio_alojamiento_max))
+                    precio_min_v = str(grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.rango_precio_alojamiento_min))
+                    ciudad_destino_v = str(grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.ciudad_destino))
+                    fecha_inicial_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_inicio)
+                    fecha_final_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_final)
+
+                    grespuesta = get_alojamientos(ciudad_dict[ciudad_destino_v.lower()], precio_max_v, precio_min_v , fecha_inicial_v, fecha_final_v)
+
+                    grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteAlojamientos.uri,
+                                               msgcnt=mss_cnt, receiver=msg['sender'])
                     pass
                 else:
                     grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientos.uri,
                                                msgcnt=mss_cnt)
-
-
-        # elif perf == ACL.inform:
-        #     if 'content' in msg:
-        #         content = msg['content']
-        #
-        #         accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
-        #         if accion == ECSDI.Res:
-        #             # GUARDAR EN FICHERO/CACHE LA RESPUESTA DEL AGENTE EXTERNO
-        #             pass
-        #         else:
-        #             grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientos.uri,
-        #                                        msgcnt=mss_cnt)
 
         else:
             # Si no es un request, respondemos que no hemos entendido el mensaje
@@ -213,7 +214,7 @@ def comunicacion():
                                        msgcnt=mss_cnt)
 
     serialize = grespuesta.serialize(format='xml')
-    return serialize, 200
+    return serialize
 
 
 @app.route("/Stop")
@@ -243,9 +244,9 @@ def agentbehavior1():
     :return:
     """
     gr = register_message()
-    reload_data()
+    #reload_data()
 
-def get_alojamientos():
+def fetch_alojamientos():
     if ag_alojamientos_ext.address == '':
         logger.info('Contactando Agente de alojamientos externo...')
         read_agent(agn.AgenteAlojamientosExternoAmadeus, ag_alojamientos_ext)
@@ -260,13 +261,48 @@ def get_alojamientos():
 
     gresp.serialize(destination='../datos/alojamientos.ttl', format='turtle')
 
+#@ttl_cache(maxsize=1000000, ttl=10 * 60)
+def get_alojamientos(city, pricemax, pricemin, dateIni, dateFi):
+
+    gresp = Graph()
+    gresp.bind('ECSDI', ECSDI)
+
+    content = ECSDI['Respuesta_Alojamientos'+ str(get_count())]
+
+    g = Graph()
+    g.bind('ECSDI', ECSDI)
+    g.parse('../datos/alojamientos.ttl', format='turtle')
+
+    queryobj = """
+        prefix ecsdi:<http://www.semanticweb.org/eric/ontologies/2021/4/ecsdiOntology#>
+        Select ?Alojamiento 
+        Where {
+            ?Alojamiento ecsdi:ciudad "%s" .
+            ?Alojamiento ecsdi:importe ?price
+            FILTER(?price <= "%s" && ?price >= "%s")
+        }
+        LIMIT 1
+    """ %(city, pricemax, pricemin)
+
+    qpb = g.query(queryobj, initNs=dict(ecsdi=ECSDI))
+
+    alojamientoURI = qpb.result[0][0]
+    precioFinal = g.value(subject=alojamientoURI, predicate=ECSDI.importe)
+    nombreFinal = g.value(subject=alojamientoURI, predicate=ECSDI.nombre)
+    coordenadasFinal = g.value(subject=alojamientoURI, predicate=ECSDI.coordenadas)
+
+
+    gresp.add((alojamientoURI, RDF.type, ECSDI.Alojamiento))
+    gresp.add((alojamientoURI, ECSDI.importe, precioFinal))
+    gresp.add((alojamientoURI, ECSDI.nombre, nombreFinal))
+    gresp.add((alojamientoURI, ECSDI.coordenadas, coordenadasFinal))
+
+    return gresp
+
 
 def reload_data():
-
-
-    logger.info('Refrescando datos... haha')
-    get_alojamientos()
-
+    logger.info('Refrescando datos...')
+    fetch_alojamientos()
 
 
 def register_message():
@@ -284,7 +320,7 @@ def register_message():
     return gr
 
 
-    # sched.add_job(get_alojamientos, 'cron', day='*', hour='12')
+sched.add_job(reload_data, 'cron', day='*', hour='12')
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors

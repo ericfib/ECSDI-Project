@@ -187,10 +187,10 @@ def create_result(origin, destination, dep_date, ret_date, flight_min_price, fli
     g = create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
                                       cultural, ludic, festivity, hotel_min_price, hotel_max_price, centrico,
                                       peticion_plan, n)
-    activities = get_activities(g, peticion_plan)
-    # hotels = get_hotels(g, peticion_plan)
+    # activities = get_activities(g, peticion_plan)
+    hotels = get_hotels(g, peticion_plan)
     # flights = get_flights(g, peticion_plan)
-    return {'activities': activities}
+    # return {'activities': activities}
 
 
 @app.route("/iface", methods=['GET', 'POST'])

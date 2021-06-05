@@ -240,12 +240,11 @@ def buscar_alojamientos_externos():
                     if hotel["type"] == "hotel-offers":
                         iter = str(get_count())
                         alojamiento = ECSDI['alojamiento'+ iter]
-                        proveedor_alojamientos = ECSDI['proveedor_alojamientos' + iter]
-                        ciudad = ECSDI['ciudad']
-                        localizacion = ECSDI['localizacion' + iter]
+                        coordenadas = ECSDI['coordenadas' + iter]
 
                         # localizacion
-                        grafo_hoteles.add((localizacion, RDF.type, ECSDI.Localizacion))
+                        grafo_hoteles.add((coordenadas, RDF.type, ECSDI.Localizacion))
+
 
                         # alojamiento
                         centrico = hotel["hotel"]["hotelDistance"]["distance"] <= 1
@@ -255,18 +254,9 @@ def buscar_alojamientos_externos():
                         grafo_hoteles.add((alojamiento, ECSDI.nombre, Literal(hotel["hotel"]["name"])))
                         grafo_hoteles.add((alojamiento, ECSDI.centrico, Literal(centrico)))
                         grafo_hoteles.add((alojamiento, ECSDI.importe, Literal(hotel["offers"][0]["price"]["total"])))
-
-                        # proveedor_alojamientos
-                        grafo_hoteles.add((proveedor_alojamientos, RDF.type, ECSDI.Proveedor_alojamiento))
-                        grafo_hoteles.add((proveedor_alojamientos, ECSDI.nombre, Literal(hotel["hotel"]["chainCode"])))
-
-                        # ciudad NOT SURE DE SI FA FALTA
-                        grafo_hoteles.add((ciudad, RDF.type, ECSDI.Ciudad))
-                        grafo_hoteles.add((ciudad, ECSDI.nombre, Literal(city)))
-
-                        # relacions
-                        grafo_hoteles.add((alojamiento, ECSDI.tiene_ubicacion, URIRef(localizacion)))
-                        grafo_hoteles.add((alojamiento, ECSDI.es_ofrecido_por, URIRef(proveedor_alojamientos)))
+                        grafo_hoteles.add((alojamiento, ECSDI.coordenadas, Literal(str(hotel["hotel"]["latitude"]) + ', ' +
+                                                                             str(hotel["hotel"]["longitude"]))))
+                        grafo_hoteles.add((alojamiento, ECSDI.ciudad, Literal(city)))
 
     return grafo_hoteles
 
