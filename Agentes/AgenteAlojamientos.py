@@ -17,6 +17,8 @@ from multiprocessing import Process, Queue
 import socket
 
 import argparse
+
+from apscheduler.schedulers.background import BackgroundScheduler
 from rdflib import Namespace, Graph
 from rdflib.namespace import RDF, FOAF
 
@@ -62,7 +64,7 @@ else:
 print('DS Hostname =', hostaddr)
 
 if args.dport is None:
-    dport = 9012
+    dport = 9002
 else:
     dport = args.dport
 
@@ -79,6 +81,12 @@ agn = Namespace("http://www.agentes.org#")
 
 # Contador de mensajes
 mss_cnt = 0
+
+sched = BackgroundScheduler()
+
+# Agentes
+ag_alojamientos_ext = Agent('', '', '', None)
+
 
 
 def get_count():
@@ -138,6 +146,17 @@ def directory_search_message(type):
     logger.info('Recibimos informacion del agente')
 
     return gr
+
+
+def read_agent(tipus, agente):
+    gr = directory_search_message(tipus)
+    msg = gr.value(predicate=RDF.type, object=ACL.FipaAclMessage)
+    content = gr.value(subject=msg, predicate=ACL.content)
+    ragn_addr = gr.value(subject=content, predicate=DSO.Address)
+    ragn_uri = gr.value(subject=content, predicate=DSO.Uri)
+    agente.uri = ragn_uri
+    agente.address = ragn_addr
+
 
 @app.route("/comm")
 def comunicacion():
@@ -224,8 +243,29 @@ def agentbehavior1():
     :return:
     """
     gr = register_message()
+    reload_data()
+
+def get_alojamientos():
+    if ag_alojamientos_ext.address == '':
+        logger.info('Contactando Agente de alojamientos externo...')
+        read_agent(agn.AgenteAlojamientosExternoAmadeus, ag_alojamientos_ext)
+    g = Graph()
+
+    peticion_alojamientos = ECSDI['peticion_alojamientos' + str(get_count())]
+    g.add((peticion_alojamientos, RDF.type, ECSDI.Peticion_Alojamientos))
+
+    gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteAlojamientos.uri, receiver=ag_alojamientos_ext.uri,
+                                       msgcnt=get_count(),
+                                       content=peticion_alojamientos), ag_alojamientos_ext.address)
+
+    gresp.serialize(destination='../datos/alojamientos.ttl', format='turtle')
 
 
+def reload_data():
+
+
+    logger.info('Refrescando datos... haha')
+    get_alojamientos()
 
 
 
@@ -244,12 +284,13 @@ def register_message():
     return gr
 
 
-
+    # sched.add_job(get_alojamientos, 'cron', day='*', hour='12')
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
     ab1 = Process(target=agentbehavior1)
     ab1.start()
+    sched.start()
 
     # Ponemos en marcha el servidor
     app.run(host=hostname, port=port)

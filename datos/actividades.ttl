@@ -1,0 +1,148 @@
+@prefix ECSDI: <http://www.semanticweb.org/eric/ontologies/2021/4/ecsdiOntology#> .
+@prefix acl: <http://www.nuin.org/ontology/fipa/acl#> .
+
+ECSDI:cultural-0 a ECSDI:Actividad ;
+    ECSDI:ciudad "BCN",
+        "PAR" ;
+    ECSDI:nombre "Barcelona Museum of Contemporary Art",
+        "Casa Amatller",
+        "Casa Batlló",
+        "Cathédrale Notre-Dame de Paris",
+        "Cosmo",
+        "Fantastik",
+        "Lasarte",
+        "Renoir Floridablanca",
+        "Teatre Tívoli",
+        "University of Barcelona" .
+
+ECSDI:cultural-1 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Centre Pompidou" .
+
+ECSDI:cultural-2 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Sainte Chapelle" .
+
+ECSDI:cultural-3 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Palais de Justice de Paris" .
+
+ECSDI:cultural-4 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Institut de France" .
+
+ECSDI:cultural-5 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Place Dauphine" .
+
+ECSDI:cultural-6 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Monnaie de Paris" .
+
+ECSDI:cultural-7 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Vedettes du Pont Neuf" .
+
+ECSDI:cultural-8 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Maison Européenne de la Photographie" .
+
+ECSDI:cultural-9 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Pont Saint Michel" .
+
+ECSDI:festiva-0 a ECSDI:Actividad ;
+    ECSDI:ciudad "BCN",
+        "PAR" ;
+    ECSDI:nombre "Arena Madre",
+        "Belushi's Barcelona",
+        "Bling Bling",
+        "Dry Martini",
+        "La Fira",
+        "Le Fumoir",
+        "Les Gens Que J'aime",
+        "Plata Bar Barcelona",
+        "Scobies Irish Pub",
+        "Slow Barcelona" .
+
+ECSDI:festiva-1 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Prescription Cocktail Club" .
+
+ECSDI:festiva-2 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "The Lizard Lounge" .
+
+ECSDI:festiva-3 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Castor Club" .
+
+ECSDI:festiva-4 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Le Crocodile" .
+
+ECSDI:festiva-5 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "The Highlander" .
+
+ECSDI:festiva-6 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Le Rostand" .
+
+ECSDI:ludica-0 a ECSDI:Actividad ;
+    ECSDI:ciudad "BCN",
+        "PAR" ;
+    ECSDI:nombre "Brunch & Cake",
+        "Cervecería Catalana",
+        "Cinc Sentits",
+        "Ciudad Condal",
+        "Flax & Kale",
+        "La Flauta",
+        "Maitea",
+        "Osmosis",
+        "Tapas 24",
+        "Teresa Carles",
+        "Île de la Cité" .
+
+ECSDI:ludica-1 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Bouillon Racine" .
+
+ECSDI:ludica-2 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Rue Du Sommerard" .
+
+ECSDI:ludica-3 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Shakespeare and Company" .
+
+ECSDI:ludica-4 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Berthillon" .
+
+ECSDI:ludica-5 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Le Procope" .
+
+ECSDI:ludica-6 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Les Philosophes" .
+
+ECSDI:ludica-7 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "L'Avant Comptoir" .
+
+ECSDI:ludica-8 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Le Marais" .
+
+ECSDI:ludica-9 a ECSDI:Actividad ;
+    ECSDI:ciudad "PAR" ;
+    ECSDI:nombre "Le Colimaçon" .
+
+<message-8526003799374891848-0001> a acl:FipaAclMessage,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    acl:performative acl:inform- ;
+    acl:receiver <http://www.agentes.org#AgenteActividades> ;
+    acl:sender <http://www.agentes.org#AgenteActividadesExternoAmadeus> .
+

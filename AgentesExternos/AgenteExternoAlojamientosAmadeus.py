@@ -53,7 +53,7 @@ logger = config_logger(level=1)
 args = parser.parse_args()
 # Configuration stuff
 if args.port is None:
-    port = 9001
+    port = 9012
 else:
     port = args.port
 
@@ -232,18 +232,17 @@ def buscar_alojamientos_externos():
             # TRATAMIENTO RESPUESTA
             # grafo = Graph('dso', namespace)
 
-            code = cityhotels.status_code
 
             if cityhotels.status_code != 200:
-                print('Error al buscar hoteles: ' + cityhotels.status_code)
+                logger.info('Error al buscar hoteles: ' + cityhotels.status_code)
             else:
                 for hotel in response:
                     if hotel["type"] == "hotel-offers":
-                        j += 1
-                        alojamiento = ECSDI['alojamiento' + city + str(i * j)]
-                        proveedor_alojamientos = ECSDI['proveedor_alojamientos' + city + str(i * j)]
+                        iter = str(get_count())
+                        alojamiento = ECSDI['alojamiento'+ iter]
+                        proveedor_alojamientos = ECSDI['proveedor_alojamientos' + iter]
                         ciudad = ECSDI['ciudad']
-                        localizacion = ECSDI['localizacion' + city + str(i * j)]
+                        localizacion = ECSDI['localizacion' + iter]
 
                         # localizacion
                         grafo_hoteles.add((localizacion, RDF.type, ECSDI.Localizacion))
@@ -252,12 +251,10 @@ def buscar_alojamientos_externos():
                         centrico = hotel["hotel"]["hotelDistance"]["distance"] <= 1
 
                         grafo_hoteles.add((alojamiento, RDF.type, ECSDI.Alojamiento))
-                        grafo_hoteles.add((alojamiento, ECSDI.fecha_inicial, Literal(hotel["hotel"]["startDate"])))
-                        grafo_hoteles.add((alojamiento, ECSDI.fecha_final, Literal(hotel["hotel"]["endDate"])))
                         grafo_hoteles.add((alojamiento, ECSDI.id_alojamiento, Literal(hotel["hotel"]["hotelId"])))
                         grafo_hoteles.add((alojamiento, ECSDI.nombre, Literal(hotel["hotel"]["name"])))
                         grafo_hoteles.add((alojamiento, ECSDI.centrico, Literal(centrico)))
-                        grafo_hoteles.add((alojamiento, ECSDI.importe, Literal(hotel["offers"]["price"]["total"])))
+                        grafo_hoteles.add((alojamiento, ECSDI.importe, Literal(hotel["offers"][0]["price"]["total"])))
 
                         # proveedor_alojamientos
                         grafo_hoteles.add((proveedor_alojamientos, RDF.type, ECSDI.Proveedor_alojamiento))

@@ -23,7 +23,7 @@ from datetime import datetime
 import random
 
 from rdflib import Namespace, Graph
-from flask import Flask
+from flask import Flask, request
 
 import argparse
 from rdflib import Namespace, Graph, Literal, URIRef
@@ -56,7 +56,7 @@ logger = config_logger(level=1)
 args = parser.parse_args()
 # Configuration stuff
 if args.port is None:
-    port = 9001
+    port = 9021
 else:
     port = args.port
 
@@ -152,7 +152,7 @@ def comunicacion():
                 # hacer lo que pide la accion
                 if accion == ECSDI.Peticion_Vuelos:     
                    
-                    grespuesta = buscar_alojamientos_externos()
+                    grespuesta = buscar_vuelos_externos()
 
                     grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteExternoVuelos.uri,
                                                msgcnt=mss_cnt, receiver=msg['sender'])
@@ -370,18 +370,6 @@ def agentbehavior1():
     gr = register_message()
 
     buscar_vuelos_externos()
-
-    # Escuchando la cola hasta que llegue un 0
-   fin = False
-    while not fin:
-        while cola.empty():
-            pass
-        v = cola.get()
-        if v == 0:
-            fin = True
-        else:
-            print(v)
-
 
 
 if __name__ == '__main__':

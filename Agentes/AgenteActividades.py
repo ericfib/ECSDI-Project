@@ -13,24 +13,22 @@ Asume que el agente de registro esta en el puerto 9000
 
 @author: javier
 """
-import json
 from multiprocessing import Process, Queue
 import socket
-import os
 
 import argparse
-from rdflib import Namespace, Graph, Literal, URIRef
-from rdflib.namespace import FOAF, RDF
+
+from apscheduler.schedulers.background import BackgroundScheduler
+from rdflib import Namespace, Graph
+from rdflib.namespace import RDF, FOAF
 
 from flask import Flask, request
-from dotenv import load_dotenv
-from amadeus import Client, ResponseError
 
 from AgentUtil.FlaskServer import shutdown_server
-from AgentUtil.ACLMessages import build_message, send_message, register_agent, get_message_properties, get_agent_info
+from AgentUtil.ACLMessages import build_message, register_agent, get_message_properties, send_message
 from AgentUtil.Agent import Agent
 from AgentUtil.Logging import config_logger
-from AgentUtil.OntoNamespaces import ECSDI, ACL
+from AgentUtil.OntoNamespaces import ACL, ECSDI, DSO
 
 __author__ = 'javier'
 
@@ -48,13 +46,12 @@ parser.add_argument('--dport', type=int, help="Puerto de comunicacion del agente
 
 # Logging
 logger = config_logger(level=1)
-file_str = '../Examples/data/%s/%s.json'
 
 # parsing de los parametros de la linea de comandos
 args = parser.parse_args()
 # Configuration stuff
 if args.port is None:
-    port = 9013
+    port = 9003
 else:
     port = args.port
 
@@ -67,7 +64,7 @@ else:
 print('DS Hostname =', hostaddr)
 
 if args.dport is None:
-    dport = 9011
+    dport = 9012
 else:
     dport = args.dport
 
@@ -85,6 +82,8 @@ agn = Namespace("http://www.agentes.org#")
 # Contador de mensajes
 mss_cnt = 0
 
+sched = BackgroundScheduler()
+
 
 def get_count():
     global mss_cnt
@@ -95,8 +94,8 @@ def get_count():
 # Datos del Agente
 
 
-AgenteAlojamientosExternoAmadeus = Agent('AgenteActividadesExternoAmadeus',
-                                         agn.AgenteActividadesExternoAmadeus,
+AgenteActividades = Agent('AgenteActividades',
+                                         agn.AgenteActividades,
                                          'http://%s:%d/comm' % (hostname, port),
                                          'http://%s:%d/Stop' % (hostname, port))
 
@@ -106,16 +105,80 @@ DirectoryAgent = Agent('DirectoryAgent',
                        'http://%s:9000/Register' % hostname,
                        'http://%s:9000/Stop' % hostname)
 
+agn_externo = Agent('', '', '', None)
+
 cola1 = Queue()
 
 # Flask stuff
 app = Flask(__name__)
 
-# APIs
-load_dotenv()
-AMADEUS_KEY = os.getenv("AMADEUS_API_KEY")
-AMADEUS_SECRET = os.getenv("AMADEUS_API_SECRET")
-amadeus = Client(client_id=AMADEUS_KEY, client_secret=AMADEUS_SECRET)
+def directory_search_message(type):
+    """
+    Busca en el servicio de registro mandando un
+    mensaje de request con una accion Seach del servicio de directorio
+
+    Podria ser mas adecuado mandar un query-ref y una descripcion de registo
+    con variables
+
+    :param type:
+    :return:
+    """
+    global mss_cnt
+    logger.info('Buscamos en el servicio de registro')
+
+    gmess = Graph()
+
+    gmess.bind('foaf', FOAF)
+    gmess.bind('dso', DSO)
+    reg_obj = agn[AgenteActividades.name + '-search']
+    gmess.add((reg_obj, RDF.type, DSO.Search))
+    gmess.add((reg_obj, DSO.AgentType, type))
+
+    msg = build_message(gmess, perf=ACL.request,
+                        sender=AgenteActividades.uri,
+                        receiver=DirectoryAgent.uri,
+                        content=reg_obj,
+                        msgcnt=mss_cnt)
+    gr = send_message(msg, DirectoryAgent.address)
+    mss_cnt += 1
+    logger.info('Recibimos informacion del agente')
+
+    return gr
+
+def read_agent(tipus, agente):
+    gr = directory_search_message(tipus)
+    msg = gr.value(predicate=RDF.type, object=ACL.FipaAclMessage)
+    content = gr.value(subject=msg, predicate=ACL.content)
+    ragn_addr = gr.value(subject=content, predicate=DSO.Address)
+    ragn_uri = gr.value(subject=content, predicate=DSO.Uri)
+    agente.uri = ragn_uri
+    agente.address = ragn_addr
+
+def reload_data():
+    if agn_externo.address == '':
+        logger.info('Buscando Agente de Alojamientos...')
+        read_agent(agn.AgenteActividadesExternoAmadeus, agn_externo)
+        logger.info('Encontrado')
+    g = Graph()
+    peticion_actividades = ECSDI['peticion_actividades' + str(get_count())]
+    g.add((peticion_actividades, RDF.type, ECSDI.Peticion_Actividades))
+
+    gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteActividades.uri, receiver=agn_externo.uri,
+                                       msgcnt=get_count(),
+                                       content=peticion_actividades), agn_externo.address)
+
+    gresp.serialize(destination='../datos/actividades.ttl', format='turtle')
+
+
+def get_actividades(g, content):
+    ciudad_origen = g.value(subject=content, predicate=ECSDI.ciudad_origen)
+    ciudad_origen_v = g.value(subject=ciudad_origen, predicate=ECSDI.nombre)
+
+    fecha_inicial = g.value(subject=content, predicate=ECSDI.fecha_inicio)
+    fecha_inicial_v = g.value(subject=fecha_inicial, predicate=ECSDI.fecha)
+
+    fecha_inicial = g.value(subject=content, predicate=ECSDI.fecha_inicio)
+    fecha_inicial_v = g.value(subject=fecha_inicial, predicate=ECSDI.fecha)
 
 
 @app.route("/comm")
@@ -124,7 +187,7 @@ def comunicacion():
     Entrypoint de comunicacion
     """
     global dsgraph
-    logger.info("PETICION DE ALOJAMIENTOS RECIBIDA")
+    print("PETICION DE ALOJAMIENTOS RECIBIDA")
 
     message = request.args['content']
 
@@ -135,39 +198,31 @@ def comunicacion():
     msg = get_message_properties(grafo_mensaje_entrante)
 
     if msg is None:
-        grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientosExternoAmadeus.uri,
+        grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteActividades.uri,
                                    msgcnt=mss_cnt)
 
     else:
         # obtener performativa
         perf = msg['performative']
 
-        if perf != ACL.request:
-            # Si no es un request, respondemos que no hemos entendido el mensaje
-            grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientosExternoAmadeus.uri,
-                                       msgcnt=mss_cnt)
-
-        else:
+        if perf == ACL.request:
             if 'content' in msg:
                 content = msg['content']
+
                 accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
-
-                # hacer lo que pide la accion
-                if accion == ECSDI.Peticion_Actividades:
-                    grespuesta = buscar_actividades_externos()
-
-                    grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteAlojamientosExternoAmadeus.uri,
-                                               msgcnt=mss_cnt, receiver=msg['sender'])
+                if accion == ECSDI.Peticion_Alojamientos:
+                    grespuesta = get_actividades(grafo_mensaje_entrante, content)
                 else:
-                    grespuesta = build_message(Graph(), ACL['not-understood'],
-                                               sender=AgenteAlojamientosExternoAmadeus.uri,
+                    grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteActividades.uri,
                                                msgcnt=mss_cnt)
-            else:
-                grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientosExternoAmadeus.uri,
-                                           msgcnt=mss_cnt)
+
+        else:
+            # Si no es un request, respondemos que no hemos entendido el mensaje
+            grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteActividades.uri,
+                                       msgcnt=mss_cnt)
 
     serialize = grespuesta.serialize(format='xml')
-    return serialize
+    return serialize, 200
 
 
 @app.route("/Stop")
@@ -198,7 +253,9 @@ def agentbehavior1():
     """
     gr = register_message()
 
-    pass
+
+
+
 
 def register_message():
     """
@@ -211,39 +268,18 @@ def register_message():
 
     logger.info('Nos registramos')
 
-    gr = register_agent(AgenteAlojamientosExternoAmadeus, DirectoryAgent, AgenteAlojamientosExternoAmadeus.uri, get_count())
+    gr = register_agent(AgenteActividades, DirectoryAgent, AgenteActividades.uri, get_count())
     return gr
 
 
-def buscar_actividades_externos():
-    grafo_actividades = Graph()
-    grafo_actividades.bind('ECSDI', ECSDI)
-    array_city = [{'lat': '41.38879', 'long': '2.15899', 'code': 'BCN'}, {'lat': '48.85341', 'long': '2.3488',
-                                                                          'code': 'PAR'}]
-    types = {'cultural': 'SIGHTS', 'ludica': 'NIGHTLIFE',
-             'festiva': 'RESTAURANT, SHOPPING'}
-    content = ECSDI['Respuesta_Actividades' + str(get_count())]
-    for i, city in enumerate(array_city):
-        for key, t in types.items():
-            try:
-                activities = amadeus.reference_data.locations.points_of_interest.get(latitude=city['lat'],
-                                                                                     longitud=city['long'],
-                                                                                     radius=5, categories=t)
-            except ResponseError:
-                with open(file_str % (city['code'], key)) as file:
-                    activities = json.load(file)
-            for j, item in enumerate(activities.get('data')):
-                actividad = ECSDI[key + '-' + str(i * j)]
-                grafo_actividades.add((actividad, RDF.type, ECSDI.Actividad))
-                grafo_actividades.add((actividad, ECSDI.nombre, Literal(item["name"])))
-                grafo_actividades.add((actividad, ECSDI.ciudad, Literal(city['code'])))
-    return grafo_actividades
-
+sched.add_job(reload_data, 'cron', day='*', hour='12')
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
+    sched.start()
     ab1 = Process(target=agentbehavior1)
     ab1.start()
+
 
     # Ponemos en marcha el servidor
     app.run(host=hostname, port=port)

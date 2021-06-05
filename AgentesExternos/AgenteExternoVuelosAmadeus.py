@@ -17,15 +17,18 @@ import json
 from multiprocessing import Process, Queue
 import socket
 import os
+from pprint import PrettyPrinter
 
 from rdflib import Namespace, Graph
 from flask import Flask
 from dotenv import load_dotenv
 from amadeus import Client, ResponseError
 
+from AgentUtil.ACLMessages import register_agent
 from AgentUtil.FlaskServer import shutdown_server
 from AgentUtil.Agent import Agent
 from AgentUtil.OntoNamespaces import ECSDI, ACL
+from AgentUtil.Logging import config_logger
 
 __author__ = 'javier'
 
@@ -42,6 +45,14 @@ agn = Namespace("http://www.agentes.org#")
 
 # Contador de mensajes
 mss_cnt = 0
+
+def get_count():
+    global mss_cnt
+    mss_cnt += 1
+    return mss_cnt
+
+# Logging
+logger = config_logger(level=1)
 
 # Datos del Agente
 
@@ -114,6 +125,20 @@ def tidyup():
     """
     global cola1
     cola1.put(0)
+
+def register_message():
+    """
+    Envia un mensaje de registro al servicio de registro
+    usando una performativa Request y una accion Register del
+    servicio de directorio
+    :param gmess:
+    :return:
+    """
+
+    logger.info('Nos registramos')
+
+    gr = register_agent(AgenteExternoVuelosAmadeus, DirectoryAgent, AgenteExternoVuelosAmadeus.uri, get_count())
+    return gr
 
 
 def agentbehavior1(cola):

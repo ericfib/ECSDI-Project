@@ -14,12 +14,13 @@ from flask import Flask, request
 from rdflib import Graph, Namespace, Literal
 from rdflib.namespace import FOAF, RDF
 
+
 from AgentUtil.ACL import ACL
 from AgentUtil.FlaskServer import shutdown_server
-from AgentUtil.ACLMessages import build_message, send_message, get_message_properties
+from AgentUtil.ACLMessages import build_message, send_message, get_message_properties, register_agent
 from AgentUtil.Agent import Agent
 from AgentUtil.Logging import config_logger
-from AgentUtil.DSO import DSO
+from AgentUtil.OntoNamespaces import ACL, DSO, ECSDI
 from AgentUtil.Util import gethostname
 import socket
 
@@ -33,6 +34,9 @@ agn = Namespace("http://www.agentes.org#")
 # Contador de mensajes
 mss_cnt = 0
 
+
+# Logging
+logger = config_logger(level=1)
 # Datos del Agente
 
 AgenteVuelos = Agent('AgenteVuelos',
@@ -54,6 +58,7 @@ cola1 = Queue()
 # Flask stuff
 app = Flask(__name__)
 
+agn_externo = [Agent('', '', '', None), Agent('', '', '', None)]
 
 def get_count():
     global mss_cnt
@@ -72,7 +77,7 @@ def register_message():
 
     logger.info('Nos registramos')
 
-    gr = register_agent(AgGestordeTransporte, DirectoryAgent, AgGestordeTransporte.uri, get_count())
+    gr = register_agent(AgenteVuelos, DirectoryAgent, AgenteVuelos.uri, get_count())
     return gr
 
 
@@ -115,7 +120,7 @@ def comunicacion():
         # Si no es, respondemos que no hemos entendido el mensaje
         gr = build_message(Graph(),
                            ACL['not-understood'],
-                           sender=AgGestordeTransporte.uri,
+                           sender=AgenteVuelos.uri,
                            msgcnt=get_count())
     else:
         # Obtenemos la performativa
@@ -123,7 +128,7 @@ def comunicacion():
             # Si no es un request, respondemos que no hemos entendido el mensaje
             gr = build_message(Graph(),
                                ACL['not-understood'],
-                               sender=DirectoryAgent.uri,
+                               sender=AgenteVuelos.uri,
                                msgcnt=get_count())
         else:
             # Extraemos el objeto del contenido que ha de ser una accion de la ontologia de acciones del agente
@@ -140,7 +145,7 @@ def comunicacion():
                     
             gr = build_message(Graph(),
                                ACL['inform'],
-                               sender=InfoAgent.uri,
+                               sender=AgenteVuelos.uri,
                                msgcnt=mss_cnt,
                                receiver=msgdic['sender'], )
     mss_cnt += 1
@@ -176,7 +181,6 @@ def agentbehavior1(cola):
             fin = True
         else:
             print(v)
-
 
 
 if __name__ == '__main__':

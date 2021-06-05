@@ -1,0 +1,705 @@
+@prefix ECSDI: <http://www.semanticweb.org/eric/ontologies/2021/4/ecsdiOntology#> .
+@prefix acl: <http://www.nuin.org/ontology/fipa/acl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ECSDI:alojamientoBCN1 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN1 ;
+    ECSDI:id_alojamiento "HSBCNAGY" ;
+    ECSDI:importe "109.00" ;
+    ECSDI:nombre "Cataluña" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN1 .
+
+ECSDI:alojamientoBCN10 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN10 ;
+    ECSDI:id_alojamiento "HSBCNAKP" ;
+    ECSDI:importe "920.00" ;
+    ECSDI:nombre "Acta Atrium Palace" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN10 .
+
+ECSDI:alojamientoBCN12 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN12 ;
+    ECSDI:id_alojamiento "HLBCN116",
+        "HSBCNAKP" ;
+    ECSDI:importe "136.21",
+        "920.00" ;
+    ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON",
+        "Acta Atrium Palace" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN12 .
+
+ECSDI:alojamientoBCN14 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN14 ;
+    ECSDI:id_alojamiento "HSBCNAKP" ;
+    ECSDI:importe "920.00" ;
+    ECSDI:nombre "Acta Atrium Palace" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN14 .
+
+ECSDI:alojamientoBCN15 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN15 ;
+    ECSDI:id_alojamiento "HLBCN116" ;
+    ECSDI:importe "136.21" ;
+    ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN15 .
+
+ECSDI:alojamientoBCN16 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN16 ;
+    ECSDI:id_alojamiento "HSBCNAKP" ;
+    ECSDI:importe "920.00" ;
+    ECSDI:nombre "Acta Atrium Palace" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN16 .
+
+ECSDI:alojamientoBCN18 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN18 ;
+    ECSDI:id_alojamiento "HLBCN116",
+        "HSBCNAKP" ;
+    ECSDI:importe "136.21",
+        "920.00" ;
+    ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON",
+        "Acta Atrium Palace" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN18 .
+
+ECSDI:alojamientoBCN2 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN2 ;
+    ECSDI:id_alojamiento "HSBCNAGY",
+        "HSBCNAKP" ;
+    ECSDI:importe "109.00",
+        "920.00" ;
+    ECSDI:nombre "Acta Atrium Palace",
+        "Cataluña" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN2 .
+
+ECSDI:alojamientoBCN21 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN21 ;
+    ECSDI:id_alojamiento "HLBCN116" ;
+    ECSDI:importe "136.21" ;
+    ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN21 .
+
+ECSDI:alojamientoBCN24 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN24 ;
+    ECSDI:id_alojamiento "HLBCN116" ;
+    ECSDI:importe "136.21" ;
+    ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN24 .
+
+ECSDI:alojamientoBCN27 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN27 ;
+    ECSDI:id_alojamiento "HLBCN116" ;
+    ECSDI:importe "136.21" ;
+    ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN27 .
+
+ECSDI:alojamientoBCN3 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN3 ;
+    ECSDI:id_alojamiento "HLBCN116",
+        "HSBCNAGY" ;
+    ECSDI:importe "109.00",
+        "136.21" ;
+    ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON",
+        "Cataluña" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN3 .
+
+ECSDI:alojamientoBCN4 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN4 ;
+    ECSDI:id_alojamiento "HSBCNAGY",
+        "HSBCNAKP" ;
+    ECSDI:importe "109.00",
+        "920.00" ;
+    ECSDI:nombre "Acta Atrium Palace",
+        "Cataluña" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN4 .
+
+ECSDI:alojamientoBCN5 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN5 ;
+    ECSDI:id_alojamiento "HSBCNAGY" ;
+    ECSDI:importe "109.00" ;
+    ECSDI:nombre "Cataluña" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN5 .
+
+ECSDI:alojamientoBCN6 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN6 ;
+    ECSDI:id_alojamiento "HLBCN116",
+        "HSBCNAGY",
+        "HSBCNAKP" ;
+    ECSDI:importe "109.00",
+        "136.21",
+        "920.00" ;
+    ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON",
+        "Acta Atrium Palace",
+        "Cataluña" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN6 .
+
+ECSDI:alojamientoBCN7 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN7 ;
+    ECSDI:id_alojamiento "HSBCNAGY" ;
+    ECSDI:importe "109.00" ;
+    ECSDI:nombre "Cataluña" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN7 .
+
+ECSDI:alojamientoBCN8 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN8 ;
+    ECSDI:id_alojamiento "HSBCNAGY",
+        "HSBCNAKP" ;
+    ECSDI:importe "109.00",
+        "920.00" ;
+    ECSDI:nombre "Acta Atrium Palace",
+        "Cataluña" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN8 .
+
+ECSDI:alojamientoBCN9 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosBCN9 ;
+    ECSDI:id_alojamiento "HLBCN116",
+        "HSBCNAGY" ;
+    ECSDI:importe "109.00",
+        "136.21" ;
+    ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON",
+        "Cataluña" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionBCN9 .
+
+ECSDI:alojamientoPAR1 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR1 ;
+    ECSDI:id_alojamiento "HIPARC12" ;
+    ECSDI:importe "361.88" ;
+    ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR1 .
+
+ECSDI:alojamientoPAR10 a ECSDI:Alojamiento ;
+    ECSDI:centrico false,
+        true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR10 ;
+    ECSDI:id_alojamiento "BRPARVDB",
+        "XKPAR321" ;
+    ECSDI:importe "108.00",
+        "342.75" ;
+    ECSDI:nombre "Renaissance Paris Vendome Hotel",
+        "The Demo Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR10 .
+
+ECSDI:alojamientoPAR12 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR12 ;
+    ECSDI:id_alojamiento "RTPARNOV",
+        "RTPARSOR",
+        "XKPAR321" ;
+    ECSDI:importe "108.00",
+        "164.50",
+        "212.00" ;
+    ECSDI:nombre "Hotel de Test",
+        "Novotel Paris les Halles",
+        "The Demo Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR12 .
+
+ECSDI:alojamientoPAR14 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR14 ;
+    ECSDI:id_alojamiento "XKPAR321" ;
+    ECSDI:importe "108.00" ;
+    ECSDI:nombre "The Demo Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR14 .
+
+ECSDI:alojamientoPAR15 a ECSDI:Alojamiento ;
+    ECSDI:centrico false,
+        true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR15 ;
+    ECSDI:id_alojamiento "BRPARVDB",
+        "RTPARSOR" ;
+    ECSDI:importe "164.50",
+        "342.75" ;
+    ECSDI:nombre "Hotel de Test",
+        "Renaissance Paris Vendome Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR15 .
+
+ECSDI:alojamientoPAR16 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR16 ;
+    ECSDI:id_alojamiento "RTPARNOV",
+        "XKPAR321" ;
+    ECSDI:importe "108.00",
+        "212.00" ;
+    ECSDI:nombre "Novotel Paris les Halles",
+        "The Demo Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR16 .
+
+ECSDI:alojamientoPAR18 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR18 ;
+    ECSDI:id_alojamiento "RTPARSOR",
+        "XKPAR321" ;
+    ECSDI:importe "108.00",
+        "164.50" ;
+    ECSDI:nombre "Hotel de Test",
+        "The Demo Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR18 .
+
+ECSDI:alojamientoPAR2 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR2 ;
+    ECSDI:id_alojamiento "HIPARC12",
+        "XKPAR321" ;
+    ECSDI:importe "108.00",
+        "361.88" ;
+    ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123",
+        "The Demo Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR2 .
+
+ECSDI:alojamientoPAR20 a ECSDI:Alojamiento ;
+    ECSDI:centrico false,
+        true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR20 ;
+    ECSDI:id_alojamiento "BRPARVDB",
+        "RTPARNOV" ;
+    ECSDI:importe "212.00",
+        "342.75" ;
+    ECSDI:nombre "Novotel Paris les Halles",
+        "Renaissance Paris Vendome Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR20 .
+
+ECSDI:alojamientoPAR21 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR21 ;
+    ECSDI:id_alojamiento "RTPARSOR" ;
+    ECSDI:importe "164.50" ;
+    ECSDI:nombre "Hotel de Test" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR21 .
+
+ECSDI:alojamientoPAR24 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR24 ;
+    ECSDI:id_alojamiento "RTPARNOV",
+        "RTPARSOR" ;
+    ECSDI:importe "164.50",
+        "212.00" ;
+    ECSDI:nombre "Hotel de Test",
+        "Novotel Paris les Halles" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR24 .
+
+ECSDI:alojamientoPAR25 a ECSDI:Alojamiento ;
+    ECSDI:centrico false ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR25 ;
+    ECSDI:id_alojamiento "BRPARVDB" ;
+    ECSDI:importe "342.75" ;
+    ECSDI:nombre "Renaissance Paris Vendome Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR25 .
+
+ECSDI:alojamientoPAR27 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR27 ;
+    ECSDI:id_alojamiento "RTPARSOR" ;
+    ECSDI:importe "164.50" ;
+    ECSDI:nombre "Hotel de Test" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR27 .
+
+ECSDI:alojamientoPAR28 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR28 ;
+    ECSDI:id_alojamiento "RTPARNOV" ;
+    ECSDI:importe "212.00" ;
+    ECSDI:nombre "Novotel Paris les Halles" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR28 .
+
+ECSDI:alojamientoPAR3 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR3 ;
+    ECSDI:id_alojamiento "HIPARC12",
+        "RTPARSOR" ;
+    ECSDI:importe "164.50",
+        "361.88" ;
+    ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123",
+        "Hotel de Test" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR3 .
+
+ECSDI:alojamientoPAR30 a ECSDI:Alojamiento ;
+    ECSDI:centrico false ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR30 ;
+    ECSDI:id_alojamiento "BRPARVDB" ;
+    ECSDI:importe "342.75" ;
+    ECSDI:nombre "Renaissance Paris Vendome Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR30 .
+
+ECSDI:alojamientoPAR32 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR32 ;
+    ECSDI:id_alojamiento "RTPARNOV" ;
+    ECSDI:importe "212.00" ;
+    ECSDI:nombre "Novotel Paris les Halles" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR32 .
+
+ECSDI:alojamientoPAR35 a ECSDI:Alojamiento ;
+    ECSDI:centrico false ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR35 ;
+    ECSDI:id_alojamiento "BRPARVDB" ;
+    ECSDI:importe "342.75" ;
+    ECSDI:nombre "Renaissance Paris Vendome Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR35 .
+
+ECSDI:alojamientoPAR36 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR36 ;
+    ECSDI:id_alojamiento "RTPARNOV" ;
+    ECSDI:importe "212.00" ;
+    ECSDI:nombre "Novotel Paris les Halles" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR36 .
+
+ECSDI:alojamientoPAR4 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR4 ;
+    ECSDI:id_alojamiento "HIPARC12",
+        "RTPARNOV",
+        "XKPAR321" ;
+    ECSDI:importe "108.00",
+        "212.00",
+        "361.88" ;
+    ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123",
+        "Novotel Paris les Halles",
+        "The Demo Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR4 .
+
+ECSDI:alojamientoPAR40 a ECSDI:Alojamiento ;
+    ECSDI:centrico false ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR40 ;
+    ECSDI:id_alojamiento "BRPARVDB" ;
+    ECSDI:importe "342.75" ;
+    ECSDI:nombre "Renaissance Paris Vendome Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR40 .
+
+ECSDI:alojamientoPAR45 a ECSDI:Alojamiento ;
+    ECSDI:centrico false ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR45 ;
+    ECSDI:id_alojamiento "BRPARVDB" ;
+    ECSDI:importe "342.75" ;
+    ECSDI:nombre "Renaissance Paris Vendome Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR45 .
+
+ECSDI:alojamientoPAR5 a ECSDI:Alojamiento ;
+    ECSDI:centrico false,
+        true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR5 ;
+    ECSDI:id_alojamiento "BRPARVDB",
+        "HIPARC12" ;
+    ECSDI:importe "342.75",
+        "361.88" ;
+    ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123",
+        "Renaissance Paris Vendome Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR5 .
+
+ECSDI:alojamientoPAR6 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR6 ;
+    ECSDI:id_alojamiento "HIPARC12",
+        "RTPARSOR",
+        "XKPAR321" ;
+    ECSDI:importe "108.00",
+        "164.50",
+        "361.88" ;
+    ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123",
+        "Hotel de Test",
+        "The Demo Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR6 .
+
+ECSDI:alojamientoPAR7 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR7 ;
+    ECSDI:id_alojamiento "HIPARC12" ;
+    ECSDI:importe "361.88" ;
+    ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR7 .
+
+ECSDI:alojamientoPAR8 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR8 ;
+    ECSDI:id_alojamiento "HIPARC12",
+        "RTPARNOV",
+        "XKPAR321" ;
+    ECSDI:importe "108.00",
+        "212.00",
+        "361.88" ;
+    ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123",
+        "Novotel Paris les Halles",
+        "The Demo Hotel" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR8 .
+
+ECSDI:alojamientoPAR9 a ECSDI:Alojamiento ;
+    ECSDI:centrico true ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_alojamientosPAR9 ;
+    ECSDI:id_alojamiento "HIPARC12",
+        "RTPARSOR" ;
+    ECSDI:importe "164.50",
+        "361.88" ;
+    ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123",
+        "Hotel de Test" ;
+    ECSDI:tiene_ubicacion ECSDI:localizacionPAR9 .
+
+ECSDI:ciudad a ECSDI:Ciudad ;
+    ECSDI:nombre "BCN",
+        "PAR" .
+
+<message-50206935905349566-0001> a acl:FipaAclMessage,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    acl:performative acl:inform- ;
+    acl:receiver <http://www.agentes.org#AgenteAlojamientos> ;
+    acl:sender <http://www.agentes.org#AgenteAlojamientosExternoAmadeus> .
+
+ECSDI:localizacionBCN1 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN10 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN12 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN14 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN15 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN16 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN18 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN2 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN21 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN24 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN27 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN3 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN4 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN5 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN6 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN7 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN8 a ECSDI:Localizacion .
+
+ECSDI:localizacionBCN9 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR1 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR10 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR12 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR14 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR15 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR16 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR18 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR2 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR20 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR21 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR24 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR25 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR27 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR28 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR3 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR30 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR32 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR35 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR36 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR4 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR40 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR45 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR5 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR6 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR7 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR8 a ECSDI:Localizacion .
+
+ECSDI:localizacionPAR9 a ECSDI:Localizacion .
+
+ECSDI:proveedor_alojamientosBCN1 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HS" .
+
+ECSDI:proveedor_alojamientosBCN10 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HS" .
+
+ECSDI:proveedor_alojamientosBCN12 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HL",
+        "HS" .
+
+ECSDI:proveedor_alojamientosBCN14 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HS" .
+
+ECSDI:proveedor_alojamientosBCN15 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HL" .
+
+ECSDI:proveedor_alojamientosBCN16 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HS" .
+
+ECSDI:proveedor_alojamientosBCN18 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HL",
+        "HS" .
+
+ECSDI:proveedor_alojamientosBCN2 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HS" .
+
+ECSDI:proveedor_alojamientosBCN21 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HL" .
+
+ECSDI:proveedor_alojamientosBCN24 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HL" .
+
+ECSDI:proveedor_alojamientosBCN27 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HL" .
+
+ECSDI:proveedor_alojamientosBCN3 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HL",
+        "HS" .
+
+ECSDI:proveedor_alojamientosBCN4 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HS" .
+
+ECSDI:proveedor_alojamientosBCN5 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HS" .
+
+ECSDI:proveedor_alojamientosBCN6 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HL",
+        "HS" .
+
+ECSDI:proveedor_alojamientosBCN7 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HS" .
+
+ECSDI:proveedor_alojamientosBCN8 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HS" .
+
+ECSDI:proveedor_alojamientosBCN9 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HL",
+        "HS" .
+
+ECSDI:proveedor_alojamientosPAR1 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HI" .
+
+ECSDI:proveedor_alojamientosPAR10 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "BR",
+        "XK" .
+
+ECSDI:proveedor_alojamientosPAR12 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "RT",
+        "XK" .
+
+ECSDI:proveedor_alojamientosPAR14 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "XK" .
+
+ECSDI:proveedor_alojamientosPAR15 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "BR",
+        "RT" .
+
+ECSDI:proveedor_alojamientosPAR16 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "RT",
+        "XK" .
+
+ECSDI:proveedor_alojamientosPAR18 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "RT",
+        "XK" .
+
+ECSDI:proveedor_alojamientosPAR2 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HI",
+        "XK" .
+
+ECSDI:proveedor_alojamientosPAR20 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "BR",
+        "RT" .
+
+ECSDI:proveedor_alojamientosPAR21 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "RT" .
+
+ECSDI:proveedor_alojamientosPAR24 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "RT" .
+
+ECSDI:proveedor_alojamientosPAR25 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "BR" .
+
+ECSDI:proveedor_alojamientosPAR27 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "RT" .
+
+ECSDI:proveedor_alojamientosPAR28 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "RT" .
+
+ECSDI:proveedor_alojamientosPAR3 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HI",
+        "RT" .
+
+ECSDI:proveedor_alojamientosPAR30 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "BR" .
+
+ECSDI:proveedor_alojamientosPAR32 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "RT" .
+
+ECSDI:proveedor_alojamientosPAR35 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "BR" .
+
+ECSDI:proveedor_alojamientosPAR36 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "RT" .
+
+ECSDI:proveedor_alojamientosPAR4 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HI",
+        "RT",
+        "XK" .
+
+ECSDI:proveedor_alojamientosPAR40 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "BR" .
+
+ECSDI:proveedor_alojamientosPAR45 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "BR" .
+
+ECSDI:proveedor_alojamientosPAR5 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "BR",
+        "HI" .
+
+ECSDI:proveedor_alojamientosPAR6 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HI",
+        "RT",
+        "XK" .
+
+ECSDI:proveedor_alojamientosPAR7 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HI" .
+
+ECSDI:proveedor_alojamientosPAR8 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HI",
+        "RT",
+        "XK" .
+
+ECSDI:proveedor_alojamientosPAR9 a ECSDI:Proveedor_alojamiento ;
+    ECSDI:nombre "HI",
+        "RT" .
+

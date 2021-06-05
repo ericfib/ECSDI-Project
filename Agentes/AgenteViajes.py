@@ -137,36 +137,47 @@ def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, fligh
     ciudad_origen = ECSDI['ciudad' + str(n)]
     g.add((ciudad_origen, RDF.type, ECSDI.ciudad))
     g.add((ciudad_origen, ECSDI.nombre, Literal(origin)))
+    g.add((peticion_plan, ECSDI.ciudad_origen, ciudad_origen))
     ciudad_destino = ECSDI['ciudad' + str(n)]
     g.add((ciudad_destino, RDF.type, ECSDI.ciudad))
     g.add((ciudad_destino, ECSDI.nombre, Literal(destination)))
+    g.add((peticion_plan, ECSDI.ciudad_destino, ciudad_destino))
     data_inicio = ECSDI['fecha_inicial' + str(n)]
     g.add((data_inicio, RDF.type, ECSDI.fecha))
     g.add((data_inicio, ECSDI.fecha, Literal(dep_date)))
+    g.add((peticion_plan, ECSDI.fecha_inicio, data_inicio))
     data_fin = ECSDI['fecha_final' + str(n)]
     g.add((data_fin, RDF.type, ECSDI.fecha))
     g.add((data_fin, ECSDI.fecha, Literal(ret_date)))
+    g.add((peticion_plan, ECSDI.fecha_final, data_fin))
     ludica = ECSDI['porcentaje_actividad_ludica' + str(n)]
     g.add((ludica, RDF.type, ECSDI.tipo_actividad))
     g.add((ludica, ECSDI.tipo, Literal(ludic)))
+    g.add((peticion_plan, ECSDI.ludica, ludica))
     cultura = ECSDI['porcentaje_actividad_cultural' + str(n)]
     g.add((cultura, RDF.type, ECSDI.tipo_actividad))
     g.add((cultura, ECSDI.tipo, Literal(cultural)))
+    g.add((peticion_plan, ECSDI.cultural, cultura))
     festiva = ECSDI['porcentaje_actividad_festiva' + str(n)]
     g.add((festiva, RDF.type, ECSDI.tipo_actividad))
     g.add((festiva, ECSDI.tipo, Literal(festivity)))
+    g.add((peticion_plan, ECSDI.festiva, festiva))
     r_al_max = ECSDI['rango_precio_alojamiento_max' + str(n)]
     g.add((r_al_max, RDF.type, ECSDI.rango_precio))
     g.add((r_al_max, ECSDI.numero, Literal(aloj_max_price)))
+    g.add((peticion_plan, ECSDI.rango_precio_alojamiento_max, r_al_max))
     r_al_min = ECSDI['rango_precio_alojamiento_min' + str(n)]
     g.add((r_al_min, RDF.type, ECSDI.rango_precio))
     g.add((r_al_min, ECSDI.numero, Literal(aloj_min_price)))
+    g.add((peticion_plan, ECSDI.rango_precio_alojamiento_min, r_al_min))
     r_fl_max = ECSDI['rango_precio_vuelo_max' + str(n)]
     g.add((r_fl_max, RDF.type, ECSDI.rango_precio))
     g.add((r_fl_max, ECSDI.numero, Literal(flight_max_price)))
+    g.add((peticion_plan, ECSDI.rango_precio_vuelos_max, r_fl_max))
     r_fl_min = ECSDI['rango_precio_vuelo_min' + str(n)]
     g.add((r_fl_min, RDF.type, ECSDI.rango_precio))
     g.add((r_fl_min, ECSDI.numero, Literal(flight_min_price)))
+    g.add((peticion_plan, ECSDI.rango_precio_vuelos_min, r_fl_min))
 
     return g
 
