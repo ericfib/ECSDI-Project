@@ -150,7 +150,8 @@ def get_flights(g, peticion_plan):
 
 
 def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
-                                  cultural, ludic, festivity, aloj_min_price, aloj_max_price, peticion_plan, n):
+                                  cultural, ludic, festivity, aloj_min_price, aloj_max_price, centrico, peticion_plan,
+                                  n):
     g = Graph()
     ciudad_origen = ECSDI['ciudad_origen' + str(n)]
     g.add((ciudad_origen, RDF.type, ECSDI.ciudad))
@@ -196,17 +197,22 @@ def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, fligh
     g.add((r_fl_min, RDF.type, ECSDI.rango_precio))
     g.add((r_fl_min, ECSDI.numero, Literal(flight_min_price)))
     g.add((peticion_plan, ECSDI.rango_precio_vuelos_min, r_fl_min))
+    centrico_uri = ECSDI['alojamiento_centrico' + str(n)]
+    g.add((centrico_uri, RDF.type, ECSDI.centrico))
+    g.add((centrico_uri, ECSDI.centrico, Literal(centrico)))
+    g.add((peticion_plan, ECSDI.alojamiento_centrico, centrico_uri))
 
     return g
 
 
 @ttl_cache(maxsize=1000000, ttl=10 * 60)
 def create_result(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price, cultural, ludic,
-                  festivity, hotel_min_price, hotel_max_price):
+                  festivity, hotel_min_price, hotel_max_price, centrico):
     n = get_count()
     peticion_plan = ECSDI['peticion_de_plan' + str(n)]
     g = create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
-                                      cultural, ludic, festivity, hotel_min_price, hotel_max_price, peticion_plan, n)
+                                      cultural, ludic, festivity, hotel_min_price, hotel_max_price, centrico,
+                                      peticion_plan, n)
     activities = get_activities(g, peticion_plan)
     # hotels = get_hotels(g, peticion_plan)
     # flights = get_flights(g, peticion_plan)
@@ -229,9 +235,12 @@ def form():
         cultural = request.form['cact']
         ludic = request.form['lact']
         festivity = request.form['fact']
+        centrico = request.form.get('centrico', False)
+        if centrico:
+            centrico = True
 
         result = create_result(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
-                               cultural, ludic, festivity, hotel_min_price, hotel_max_price)
+                               cultural, ludic, festivity, hotel_min_price, hotel_max_price, centrico)
 
         return render_template('result.html', activities=result['activities'])
 
