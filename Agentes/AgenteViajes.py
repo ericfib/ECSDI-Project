@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-from functools import lru_cache
 from multiprocessing import Process, Queue
 import socket
 
 from cachetools.func import ttl_cache
 
-from AgentUtil.ACLMessages import get_agent_info, send_message, build_message, get_message_properties, register_agent
-from rdflib import Namespace, Graph, Literal, URIRef, RDF, XSD, FOAF
+from AgentUtil.ACLMessages import send_message, build_message
+from rdflib import Namespace, Graph, Literal, RDF, FOAF
 from flask import Flask, request, render_template
 
 from AgentUtil.FlaskServer import shutdown_server
@@ -153,54 +152,29 @@ def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, fligh
                                   cultural, ludic, festivity, aloj_min_price, aloj_max_price, centrico, peticion_plan,
                                   n):
     g = Graph()
-    ciudad_origen = ECSDI['ciudad_origen' + str(n)]
-    g.add((ciudad_origen, RDF.type, ECSDI.ciudad))
-    g.add((ciudad_origen, ECSDI.nombre, Literal(origin)))
-    g.add((peticion_plan, ECSDI.ciudad_origen, ciudad_origen))
-    ciudad_destino = ECSDI['ciudad_destino' + str(n)]
-    g.add((ciudad_destino, RDF.type, ECSDI.ciudad))
-    g.add((ciudad_destino, ECSDI.nombre, Literal(destination)))
-    g.add((peticion_plan, ECSDI.ciudad_destino, ciudad_destino))
-    data_inicio = ECSDI['fecha_inicial' + str(n)]
-    g.add((data_inicio, RDF.type, ECSDI.fecha))
-    g.add((data_inicio, ECSDI.fecha, Literal(dep_date)))
-    g.add((peticion_plan, ECSDI.fecha_inicio, data_inicio))
-    data_fin = ECSDI['fecha_final' + str(n)]
-    g.add((data_fin, RDF.type, ECSDI.fecha))
-    g.add((data_fin, ECSDI.fecha, Literal(ret_date)))
-    g.add((peticion_plan, ECSDI.fecha_final, data_fin))
-    ludica = ECSDI['porcentaje_actividad_ludica' + str(n)]
-    g.add((ludica, RDF.type, ECSDI.tipo_actividad))
-    g.add((ludica, ECSDI.tipo, Literal(ludic)))
-    g.add((peticion_plan, ECSDI.ludica, ludica))
-    cultura = ECSDI['porcentaje_actividad_cultural' + str(n)]
-    g.add((cultura, RDF.type, ECSDI.tipo_actividad))
-    g.add((cultura, ECSDI.tipo, Literal(cultural)))
-    g.add((peticion_plan, ECSDI.cultural, cultura))
-    festiva = ECSDI['porcentaje_actividad_festiva' + str(n)]
-    g.add((festiva, RDF.type, ECSDI.tipo_actividad))
-    g.add((festiva, ECSDI.tipo, Literal(festivity)))
-    g.add((peticion_plan, ECSDI.festiva, festiva))
-    r_al_max = ECSDI['rango_precio_alojamiento_max' + str(n)]
-    g.add((r_al_max, RDF.type, ECSDI.rango_precio))
-    g.add((r_al_max, ECSDI.numero, Literal(aloj_max_price)))
-    g.add((peticion_plan, ECSDI.rango_precio_alojamiento_max, r_al_max))
-    r_al_min = ECSDI['rango_precio_alojamiento_min' + str(n)]
-    g.add((r_al_min, RDF.type, ECSDI.rango_precio))
-    g.add((r_al_min, ECSDI.numero, Literal(aloj_min_price)))
-    g.add((peticion_plan, ECSDI.rango_precio_alojamiento_min, r_al_min))
-    r_fl_max = ECSDI['rango_precio_vuelo_max' + str(n)]
-    g.add((r_fl_max, RDF.type, ECSDI.rango_precio))
-    g.add((r_fl_max, ECSDI.numero, Literal(flight_max_price)))
-    g.add((peticion_plan, ECSDI.rango_precio_vuelos_max, r_fl_max))
-    r_fl_min = ECSDI['rango_precio_vuelo_min' + str(n)]
-    g.add((r_fl_min, RDF.type, ECSDI.rango_precio))
-    g.add((r_fl_min, ECSDI.numero, Literal(flight_min_price)))
-    g.add((peticion_plan, ECSDI.rango_precio_vuelos_min, r_fl_min))
-    centrico_uri = ECSDI['alojamiento_centrico' + str(n)]
-    g.add((centrico_uri, RDF.type, ECSDI.centrico))
-    g.add((centrico_uri, ECSDI.centrico, Literal(centrico)))
-    g.add((peticion_plan, ECSDI.alojamiento_centrico, centrico_uri))
+    g.add((peticion_plan, ECSDI.ciudad_origen, Literal(origin)))
+
+    g.add((peticion_plan, ECSDI.ciudad_destino, Literal(destination)))
+
+    g.add((peticion_plan, ECSDI.fecha_inicio, Literal(dep_date)))
+
+    g.add((peticion_plan, ECSDI.fecha_final, Literal(ret_date)))
+
+    g.add((peticion_plan, ECSDI.ludica, Literal(ludic)))
+
+    g.add((peticion_plan, ECSDI.cultural, Literal(cultural)))
+
+    g.add((peticion_plan, ECSDI.festiva, Literal(festivity)))
+
+    g.add((peticion_plan, ECSDI.rango_precio_alojamiento_max, Literal(aloj_max_price)))
+
+    g.add((peticion_plan, ECSDI.rango_precio_alojamiento_min, Literal(aloj_min_price)))
+
+    g.add((peticion_plan, ECSDI.rango_precio_vuelos_max, Literal(flight_max_price)))
+
+    g.add((peticion_plan, ECSDI.rango_precio_vuelos_min, Literal(flight_min_price)))
+
+    g.add((peticion_plan, ECSDI.alojamiento_centrico, Literal(centrico)))
 
     return g
 

@@ -14,7 +14,6 @@ Asume que el agente de registro esta en el puerto 9000
 @author: javier
 """
 from datetime import datetime, timedelta
-from functools import lru_cache
 from multiprocessing import Process, Queue
 import socket
 
@@ -33,7 +32,7 @@ from AgentUtil.Agent import Agent
 from AgentUtil.Logging import config_logger
 from AgentUtil.OntoNamespaces import ACL, ECSDI, DSO
 
-__author__ = 'javier'
+__author__ = 'arnau'
 
 # Definimos los parametros de la linea de comandos
 from AgentUtil.Util import gethostname
@@ -193,6 +192,7 @@ def get_n_actividades(n, city, type):
                 gres.add((next_act_uri, ECSDI.coordenadas, coordenadas))
     return gres
 
+
 ACT_PER_DAY = 3
 
 
@@ -210,25 +210,19 @@ def add_dates(g, fecha):
 
 def get_actividades(g, content):
     ciudad_dict = {'barcelona': 'BCN', 'paris': 'PAR'}
-    ciudad_destino = g.value(subject=content, predicate=ECSDI.ciudad_destino)
-    ciudad_destino_v = str(g.value(subject=ciudad_destino, predicate=ECSDI.nombre))
+    ciudad_destino_v = str(g.value(subject=content, predicate=ECSDI.ciudad_destino))
 
-    fecha_inicial = g.value(subject=content, predicate=ECSDI.fecha_inicio)
-    fecha_inicial_v = g.value(subject=fecha_inicial, predicate=ECSDI.fecha)
+    fecha_inicial_v = g.value(subject=content, predicate=ECSDI.fecha_inicio)
     fecha_inicial_date = datetime.strptime(fecha_inicial_v, '%Y-%m-%d')
 
-    fecha_final = g.value(subject=content, predicate=ECSDI.fecha_final)
-    fecha_final_v = g.value(subject=fecha_final, predicate=ECSDI.fecha)
+    fecha_final_v = g.value(subject=content, predicate=ECSDI.fecha_final)
     fecha_final_date = datetime.strptime(fecha_final_v, '%Y-%m-%d')
 
-    ludica = g.value(subject=content, predicate=ECSDI.ludica)
-    ludica_v = int(g.value(subject=ludica, predicate=ECSDI.tipo))
+    ludica_v = int(g.value(subject=content, predicate=ECSDI.ludica))
 
-    cultural = g.value(subject=content, predicate=ECSDI.cultural)
-    cultural_v = int(g.value(subject=cultural, predicate=ECSDI.tipo))
+    cultural_v = int(g.value(subject=content, predicate=ECSDI.cultural))
 
-    festiva = g.value(subject=content, predicate=ECSDI.festiva)
-    festiva_v = int(g.value(subject=festiva, predicate=ECSDI.tipo))
+    festiva_v = int(g.value(subject=content, predicate=ECSDI.festiva))
 
     days = (fecha_final_date - fecha_inicial_date).days
     actividades_ludicas = int((days * ACT_PER_DAY) * (ludica_v / (ludica_v + cultural_v + festiva_v)))

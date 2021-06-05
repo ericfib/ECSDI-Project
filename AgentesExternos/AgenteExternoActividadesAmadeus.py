@@ -32,7 +32,7 @@ from AgentUtil.Agent import Agent
 from AgentUtil.Logging import config_logger
 from AgentUtil.OntoNamespaces import ECSDI, ACL
 
-__author__ = 'javier'
+__author__ = 'arnau'
 
 # Definimos los parametros de la linea de comandos
 from AgentUtil.Util import gethostname
