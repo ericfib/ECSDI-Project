@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
 from multiprocessing import Process, Queue
 import socket
 
@@ -130,8 +131,23 @@ def get_hotels(g, peticion_plan):
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_hoteles.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_hoteles.address)
+    uri_list = gresp.triples((None, RDF.type, ECSDI.Alojamiento))
+    uri = next(uri_list)[0]
+    nombre = str(gresp.value(subject=uri, predicate=ECSDI.nombre))
+    importe = str(gresp.value(subject=uri, predicate=ECSDI.importe))
+    coordenadas = str(gresp.value(subject=uri, predicate=ECSDI.coordenadas))
+    fecha_inicial = str(gresp.value(subject=uri, predicate=ECSDI.fecha_inical))
+    fecha_final = str(gresp.value(subject=uri, predicate=ECSDI.fecha_final))
+    fecha_final_date = datetime.strptime(fecha_final, '%Y-%m-%d')
+    fecha_inicial_date = datetime.strptime(fecha_inicial, '%Y-%m-%d')
+
+    days = (fecha_final_date - fecha_inicial_date).days
+
     logger.info('Recibidos')
-    return gresp
+    return {'nombre': nombre, 'importe': importe, 'coordenadas': coordenadas,
+            'fecha_inicial': fecha_inicial_date.strftime("%d-%m-%Y"),
+            'fecha_final': fecha_final_date.strftime("%d-%m-%Y"),
+            'precioFinal': "{:.2f}".format(round(days*float(importe), 2))}
 
 
 def get_flights(g, peticion_plan):
@@ -187,10 +203,10 @@ def create_result(origin, destination, dep_date, ret_date, flight_min_price, fli
     g = create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
                                       cultural, ludic, festivity, hotel_min_price, hotel_max_price, centrico,
                                       peticion_plan, n)
-    # activities = get_activities(g, peticion_plan)
-    hotels = get_hotels(g, peticion_plan)
+    activities = get_activities(g, peticion_plan)
+    hotel = get_hotels(g, peticion_plan)
     # flights = get_flights(g, peticion_plan)
-    # return {'activities': activities}
+    return {'activities': activities, 'hotel': hotel}
 
 
 @app.route("/iface", methods=['GET', 'POST'])
@@ -216,7 +232,7 @@ def form():
         result = create_result(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
                                cultural, ludic, festivity, hotel_min_price, hotel_max_price, centrico)
 
-        return render_template('result.html', activities=result['activities'])
+        return render_template('result.html', activities=result['activities'], hotel=result['hotel'])
 
 
 @app.route("/Stop")

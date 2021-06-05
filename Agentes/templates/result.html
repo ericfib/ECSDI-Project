@@ -6,11 +6,20 @@
 </head>
 <body>
     <h1>Plan your travel: Result</h1>
+    <h2>Alojamiento: {{ hotel.nombre }}</h2>
+    <ul>
+        <li><a href="https://www.google.com/maps/search/?api=1&query={{ hotel.coordenadas|urlencode }}">Localización</a></li>
+        <li><p><strong>Des de el dia:</strong> {{ hotel.fecha_inicial }}</p></li>
+        <li><p><strong>Hasta el dia:</strong> {{ hotel.fecha_final }}</p></li>
+        <li><p><strong>Precio/dia:</strong> {{ hotel.importe }}€</p></li>
+        <li><p><strong>Precio total:</strong> {{ hotel.precioFinal }}€</p></li>
+    </ul>
     <h2>Activities</h2>
     <ul>
         {% for act in activities %}
             <li><p>{{ act.fecha }}: <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ act.coordenadas|urlencode }}">{{ act.nombre }}</a></p></li>
         {% endfor %}
     </ul>
+
 </body>
 </html>

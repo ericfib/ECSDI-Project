@@ -22,6 +22,7 @@ from functools import lru_cache
 import argparse
 
 from apscheduler.schedulers.background import BackgroundScheduler
+from cachetools.func import ttl_cache
 from rdflib import Namespace, Graph, URIRef
 from rdflib.namespace import RDF, FOAF
 
@@ -261,7 +262,8 @@ def fetch_alojamientos():
 
     gresp.serialize(destination='../datos/alojamientos.ttl', format='turtle')
 
-#@ttl_cache(maxsize=1000000, ttl=10 * 60)
+
+@ttl_cache(maxsize=1000000, ttl=10 * 60)
 def get_alojamientos(city, pricemax, pricemin, dateIni, dateFi):
 
     gresp = Graph()
@@ -296,6 +298,8 @@ def get_alojamientos(city, pricemax, pricemin, dateIni, dateFi):
     gresp.add((alojamientoURI, ECSDI.importe, precioFinal))
     gresp.add((alojamientoURI, ECSDI.nombre, nombreFinal))
     gresp.add((alojamientoURI, ECSDI.coordenadas, coordenadasFinal))
+    gresp.add((alojamientoURI, ECSDI.fecha_inical, dateIni))
+    gresp.add((alojamientoURI, ECSDI.fecha_final, dateFi))
 
     return gresp
 
