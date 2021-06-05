@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-
+from functools import lru_cache
 from multiprocessing import Process, Queue
 import socket
 
+from cachetools.func import ttl_cache
+
 from AgentUtil.ACLMessages import get_agent_info, send_message, build_message, get_message_properties, register_agent
-from rdflib import Namespace, Graph, Literal, URIRef, RDF, XSD, logger, FOAF
+from rdflib import Namespace, Graph, Literal, URIRef, RDF, XSD, FOAF
 from flask import Flask, request, render_template
 
 from AgentUtil.FlaskServer import shutdown_server
@@ -13,6 +15,7 @@ from AgentUtil.Agent import Agent
 __author__ = 'arnau'
 
 # Configuration stuff
+from AgentUtil.Logging import config_logger
 from AgentUtil.OntoNamespaces import ACL, DSO, ECSDI
 
 hostname = socket.gethostname()
@@ -23,12 +26,15 @@ agn = Namespace("http://www.agentes.org#")
 # Contador de mensajes
 mss_cnt = 0
 
+# Logging
+logger = config_logger(level=1)
+
 # Datos del Agente
 
 AgenteViaje = Agent('AgenteViaje',
-                       agn.AgenteViaje,
-                       'http://%s:%d/comm' % (hostname, port),
-                       'http://%s:%d/Stop' % (hostname, port))
+                    agn.AgenteViaje,
+                    'http://%s:%d/comm' % (hostname, port),
+                    'http://%s:%d/Stop' % (hostname, port))
 
 # Directory agent address
 DirectoryAgent = Agent('DirectoryAgent',
@@ -62,7 +68,6 @@ def directory_search_message(type):
     :return:
     """
     global mss_cnt
-    logger.info('Buscamos en el servicio de registro')
 
     gmess = Graph()
 
@@ -79,7 +84,6 @@ def directory_search_message(type):
                         msgcnt=mss_cnt)
     gr = send_message(msg, DirectoryAgent.address)
     mss_cnt += 1
-    logger.info('Recibimos informacion del agente')
 
     return gr
 
@@ -99,12 +103,22 @@ def get_activities(g, peticion_plan):
         logger.info('Buscando Agente de Actividades...')
         read_agent(agn.AgenteActividades, ag_activity)
         logger.info('Encontrado')
-    logger.info('Pidiendo actividades al agente de Actividades')
+    logger.info('Pidiendo actividades al agente de Actividades...')
     g.add((peticion_plan, RDF.type, ECSDI.Peticion_Actividades))
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_activity.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_activity.address)
-    return gresp
+    result = []
+    act_list = gresp.triples((None, RDF.type, ECSDI.Actividad))
+    logger.info('Recibidas')
+    for item in act_list:
+        next_act_uri = item[0]
+        nombre = str(gresp.value(subject=next_act_uri, predicate=ECSDI.nombre))
+        fecha = str(gresp.value(subject=next_act_uri, predicate=ECSDI.fecha))
+        coordenadas = str(gresp.value(subject=next_act_uri, predicate=ECSDI.coordenadas))
+        result.append({'nombre': nombre, 'fecha': fecha, 'coordenadas': coordenadas})
+    result.sort(key=lambda x: x['fecha'])
+    return result
 
 
 def get_hotels(g, peticion_plan):
@@ -117,6 +131,7 @@ def get_hotels(g, peticion_plan):
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_hoteles.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_hoteles.address)
+    logger.info('Recibidos')
     return gresp
 
 
@@ -130,6 +145,7 @@ def get_flights(g, peticion_plan):
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_flights.uri,
                                        msgcnt=get_count(),
                                        content=peticion_plan), ag_flights.address)
+    logger.info('Recibidos')
     return gresp
 
 
@@ -184,6 +200,19 @@ def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, fligh
     return g
 
 
+@ttl_cache(maxsize=1000000, ttl=10 * 60)
+def create_result(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price, cultural, ludic,
+                  festivity, hotel_min_price, hotel_max_price):
+    n = get_count()
+    peticion_plan = ECSDI['peticion_de_plan' + str(n)]
+    g = create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
+                                      cultural, ludic, festivity, hotel_min_price, hotel_max_price, peticion_plan, n)
+    activities = get_activities(g, peticion_plan)
+    # hotels = get_hotels(g, peticion_plan)
+    # flights = get_flights(g, peticion_plan)
+    return {'activities': activities}
+
+
 @app.route("/iface", methods=['GET', 'POST'])
 def form():
     if request.method == 'GET':
@@ -201,17 +230,10 @@ def form():
         ludic = request.form['lact']
         festivity = request.form['fact']
 
-        n = get_count()
-        peticion_plan = ECSDI['peticion_de_plan' + str(n)]
-        g = create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
-                                          cultural, ludic, festivity, hotel_min_price, hotel_max_price, peticion_plan, n)
-        activities = get_activities(g, peticion_plan)
-        # hotels = get_hotels(g, peticion_plan)
-        # flights = get_flights(g, peticion_plan)
+        result = create_result(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
+                               cultural, ludic, festivity, hotel_min_price, hotel_max_price)
 
-        # result = activities + hotels + flights
-
-        return render_template('formulario.html')
+        return render_template('result.html', activities=result['activities'])
 
 
 @app.route("/Stop")
@@ -255,9 +277,10 @@ def read_agent(tipus, agente):
 def agentbehavior1(cola):
     pass
 
+
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
-    ab1 = Process(target=agentbehavior1, args=(cola1, ))
+    ab1 = Process(target=agentbehavior1, args=(cola1,))
     ab1.start()
 
     # Ponemos en marcha el servidor

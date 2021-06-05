@@ -13,7 +13,7 @@ Asume que el agente de registro esta en el puerto 9000
 
 @author: javier
 """
-from datetime import datetime
+from datetime import datetime, timedelta
 from functools import lru_cache
 from multiprocessing import Process, Queue
 import socket
@@ -21,7 +21,8 @@ import socket
 import argparse
 
 from apscheduler.schedulers.background import BackgroundScheduler
-from rdflib import Namespace, Graph
+from cachetools.func import ttl_cache
+from rdflib import Namespace, Graph, Literal
 from rdflib.namespace import RDF, FOAF
 
 from flask import Flask, request
@@ -158,9 +159,10 @@ def read_agent(tipus, agente):
 
 def reload_data():
     if agn_externo.address == '':
-        logger.info('Buscando Agente de Alojamientos...')
+        logger.info('Buscando Agente Externo de Actividades...')
         read_agent(agn.AgenteActividadesExternoAmadeus, agn_externo)
         logger.info('Encontrado')
+    logger.info("Pidiendo datos para el futuro")
     g = Graph()
     peticion_actividades = ECSDI['peticion_actividades' + str(get_count())]
     g.add((peticion_actividades, RDF.type, ECSDI.Peticion_Actividades))
@@ -170,9 +172,10 @@ def reload_data():
                                        content=peticion_actividades), agn_externo.address)
 
     gresp.serialize(destination='../datos/actividades.ttl', format='turtle')
+    logger.info("Datos guardados")
 
 
-@lru_cache(maxsize=None)
+@ttl_cache(maxsize=1000000, ttl=10 * 60)
 def get_n_actividades(n, city, type):
     gres = Graph()
     g = Graph()
@@ -184,9 +187,25 @@ def get_n_actividades(n, city, type):
             if str(g.value(subject=next_act_uri, predicate=ECSDI.ciudad)) == city:
                 n -= 1
                 name = g.value(subject=next_act_uri, predicate=ECSDI.nombre)
+                coordenadas = g.value(subject=next_act_uri, predicate=ECSDI.coordenadas)
                 gres.add((next_act_uri, RDF.type, ECSDI.Actividad))
                 gres.add((next_act_uri, ECSDI.nombre, name))
+                gres.add((next_act_uri, ECSDI.coordenadas, coordenadas))
     return gres
+
+ACT_PER_DAY = 3
+
+
+def add_dates(g, fecha):
+    act_list = g.triples((None, RDF.type, ECSDI.Actividad))
+    i = 1
+    for item in act_list:
+        next_act_uri = item[0]
+        if i <= 0:
+            i = ACT_PER_DAY
+            fecha += timedelta(days=1)
+        g.add((next_act_uri, ECSDI.fecha, Literal(fecha.strftime("%d-%m-%Y"))))
+        i -= 1
 
 
 def get_actividades(g, content):
@@ -212,13 +231,14 @@ def get_actividades(g, content):
     festiva_v = int(g.value(subject=festiva, predicate=ECSDI.tipo))
 
     days = (fecha_final_date - fecha_inicial_date).days
-    actividades_ludicas = int((days * 2) * (ludica_v / (ludica_v + cultural_v + festiva_v)))
-    actividades_culturales = int((days * 2) * (cultural_v / (ludica_v + cultural_v + festiva_v)))
-    actividades_festivas = int((days * 2) * (festiva_v / (ludica_v + cultural_v + festiva_v)))
+    actividades_ludicas = int((days * ACT_PER_DAY) * (ludica_v / (ludica_v + cultural_v + festiva_v)))
+    actividades_culturales = int((days * ACT_PER_DAY) * (cultural_v / (ludica_v + cultural_v + festiva_v)))
+    actividades_festivas = int((days * ACT_PER_DAY) * (festiva_v / (ludica_v + cultural_v + festiva_v)))
     g = Graph()
     g += get_n_actividades(actividades_ludicas, ciudad_dict[ciudad_destino_v.lower()], ECSDI.Ludica)
     g += get_n_actividades(actividades_culturales, ciudad_dict[ciudad_destino_v.lower()], ECSDI.Cultural)
     g += get_n_actividades(actividades_festivas, ciudad_dict[ciudad_destino_v.lower()], ECSDI.Festiva)
+    add_dates(g, fecha_inicial_date)
     return g
 
 
@@ -228,7 +248,6 @@ def comunicacion():
     Entrypoint de comunicacion
     """
     global dsgraph
-    print("PETICION DE ALOJAMIENTOS RECIBIDA")
 
     message = request.args['content']
 
@@ -241,6 +260,7 @@ def comunicacion():
     if msg is None:
         grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteActividades.uri,
                                    msgcnt=mss_cnt)
+        logger.info("PETICION DE ERRONEA RECIBIDA")
 
     else:
         # obtener performativa
@@ -252,15 +272,18 @@ def comunicacion():
 
                 accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
                 if accion == ECSDI.Peticion_Actividades:
+                    logger.info("PETICION DE ACTIVIDADES RECIBIDA")
                     grespuesta = get_actividades(grafo_mensaje_entrante, content)
                 else:
                     grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteActividades.uri,
                                                msgcnt=mss_cnt)
+                    logger.info("PETICION DE ERRONEA RECIBIDA")
 
         else:
             # Si no es un request, respondemos que no hemos entendido el mensaje
             grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteActividades.uri,
                                        msgcnt=mss_cnt)
+            logger.info("PETICION DE ERRONEA RECIBIDA")
 
     serialize = grespuesta.serialize(format='xml')
     return serialize

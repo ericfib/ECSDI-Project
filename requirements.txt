@@ -9,3 +9,4 @@ foursquare
 pif
 python-dotenv
 apscheduler
+cachetools

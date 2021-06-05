@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Plan your travel: Result</h1>
+    <h2>Activities</h2>
+    <ul>
+        {% for act in activities %}
+            <li><p>{{ act.fecha }}: <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ act.coordenadas|urlencode }}">{{ act.nombre }}</a></p></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

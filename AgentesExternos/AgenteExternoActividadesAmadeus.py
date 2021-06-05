@@ -124,7 +124,6 @@ def comunicacion():
     Entrypoint de comunicacion
     """
     global dsgraph
-    logger.info("PETICION DE ALOJAMIENTOS RECIBIDA")
 
     message = request.args['content']
 
@@ -137,6 +136,7 @@ def comunicacion():
     if msg is None:
         grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientosExternoAmadeus.uri,
                                    msgcnt=mss_cnt)
+        logger.info("PETICION DE ERRONEA RECIBIDA")
 
     else:
         # obtener performativa
@@ -146,6 +146,7 @@ def comunicacion():
             # Si no es un request, respondemos que no hemos entendido el mensaje
             grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientosExternoAmadeus.uri,
                                        msgcnt=mss_cnt)
+            logger.info("PETICION DE ERRONEA RECIBIDA")
 
         else:
             if 'content' in msg:
@@ -158,13 +159,16 @@ def comunicacion():
 
                     grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteAlojamientosExternoAmadeus.uri,
                                                msgcnt=mss_cnt, receiver=msg['sender'])
+                    logger.info("PETICION DE ACTIVIDADES RECIBIDA")
                 else:
                     grespuesta = build_message(Graph(), ACL['not-understood'],
                                                sender=AgenteAlojamientosExternoAmadeus.uri,
                                                msgcnt=mss_cnt)
+                    logger.info("PETICION DE ERRONEA RECIBIDA")
             else:
                 grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientosExternoAmadeus.uri,
                                            msgcnt=mss_cnt)
+                logger.info("PETICION DE ERRONEA RECIBIDA")
 
     serialize = grespuesta.serialize(format='xml')
     return serialize
@@ -238,6 +242,8 @@ def buscar_actividades_externos():
                 grafo_actividades.add((actividad, RDF.type, ECSDI_LIST[i]))
                 grafo_actividades.add((actividad, ECSDI.nombre, Literal(item["name"])))
                 grafo_actividades.add((actividad, ECSDI.ciudad, Literal(city['code'])))
+                grafo_actividades.add((actividad, ECSDI.coordenadas, Literal(str(item['geoCode']['latitude']) + ', ' +
+                                                                             str(item['geoCode']['longitude']))))
     return grafo_actividades
 
 
