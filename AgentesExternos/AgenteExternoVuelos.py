@@ -215,11 +215,11 @@ def buscar_vuelos_externos():
         Select ?vuelo ?fromall ?toall ?comp
         where {
             ?vuelo rdf:type tio:Flight .
+            ?vuelo tio:to <"""+bcn+"""> .
+            ?vuelo tio:from <"""+prs+"""> .
             ?vuelo tio:to ?toall .
             ?vuelo tio:from ?fromall .
             ?vuelo tio:operatedBy ?comp .
-            ?vuelo tio:to <"""+bcn+"""> .
-            ?vuelo tio:from <"""+prs+"""> .
             }
         """
 
@@ -236,7 +236,17 @@ def buscar_vuelos_externos():
     
 
     for row in qpb.result:
-        print(row)
+        comp = Literal(row[3]).split('/')
+        comp = comp[4].replace("_", " ")
+        print(comp)
+        orig = Literal(row[2]).split('/')
+        orig = orig[4].replace("_", " ")
+        orig = orig.replace("%E2%80%93", " ")
+        print(orig)
+        dest = Literal(row[1]).split('/')
+        dest = dest[4].replace("_", " ")
+        print(dest)
+
         fecha_salida=random_date(dat_origen,dat_destino)
         fecha_salida_origen = random_date(fecha_salida, fecha_salida+timedelta(hours=14))
         fecha_llegada_origen = random_date(fecha_salida_origen+timedelta(hours=3), fecha_salida_origen+timedelta(hours=5))
@@ -258,15 +268,15 @@ def buscar_vuelos_externos():
 
         # Compania
         grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
-        grafo_vuelos.add((compania, ECSDI.nombre, Literal(row[3])))
+        grafo_vuelos.add((compania, ECSDI.nombre, Literal(comp)))
 
         # Llega a
         grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
-        grafo_vuelos.add((destino, ECSDI.nombre, Literal(row[2])))
+        grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
 
         # Sale_de
         grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
-        grafo_vuelos.add((origen, ECSDI.nombre, Literal(row[1])))
+        grafo_vuelos.add((origen, ECSDI.nombre, Literal(orig)))
 
 
         # Vuelo origen
@@ -295,7 +305,16 @@ def buscar_vuelos_externos():
     qbp = g.query(origenquerybp, initNs=dict(tio=TIO))
 
     for row in qbp.result:
-        print(row)
+        comp = row[3].split('/')
+        comp = comp[4].replace("_", " ")
+
+        orig = row[2].split('/')
+        orig = orig[4].replace("_", " ")
+
+        dest = row[1].split('/')
+        dest = dest[4].replace("_", " ")
+        dest = dest.replace("%E2%80%93"," ")
+
         fecha_llegada=random_date(dat_origen,dat_destino)
         fecha_salida_destino = random_date(fecha_llegada, fecha_llegada+timedelta(hours=14))
         fecha_llegada_destino = random_date(fecha_salida_destino+timedelta(hours=3), fecha_salida_destino+timedelta(hours=5))
@@ -316,15 +335,15 @@ def buscar_vuelos_externos():
 
         # Compania
         grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
-        grafo_vuelos.add((compania, ECSDI.nombre, Literal(row[3])))
+        grafo_vuelos.add((compania, ECSDI.nombre, Literal(comp)))
 
         # Llega a
         grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
-        grafo_vuelos.add((destino, ECSDI.nombre, Literal(row[2])))
+        grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
 
         # Sale_de
         grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
-        grafo_vuelos.add((origen, ECSDI.nombre, Literal(row[1])))
+        grafo_vuelos.add((origen, ECSDI.nombre, Literal(orig)))
 
         # Vuelo destino
         grafo_vuelos.add((vuelo_destino, RDF.type, ECSDI.vuelo))

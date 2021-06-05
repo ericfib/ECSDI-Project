@@ -1,0 +1,186 @@
+@prefix ECSDI: <http://www.semanticweb.org/eric/ontologies/2021/4/ecsdiOntology#> .
+@prefix acl: <http://www.nuin.org/ontology/fipa/acl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ECSDI:aeropuerto11 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto16 a ECSDI:aeropuerto ;
+    ECSDI:nombre "London City Airport" .
+
+ECSDI:aeropuerto21 a ECSDI:aeropuerto ;
+    ECSDI:nombre "London City Airport" .
+
+ECSDI:aeropuerto26 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto31 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto36 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto40 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto45 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto50 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto55 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto6 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:vuelo12 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos14 ;
+    ECSDI:fecha_final "2021-12-01T16:35:41"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-12-01T12:59:07"^^xsd:dateTime ;
+    ECSDI:importe 61 ;
+    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto15 .
+
+ECSDI:vuelo17 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos19 ;
+    ECSDI:fecha_final "2021-03-31T10:00:42"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-03-31T05:36:11"^^xsd:dateTime ;
+    ECSDI:importe 174 ;
+    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto20 .
+
+ECSDI:vuelo2 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos4 ;
+    ECSDI:fecha_final "2021-04-21T12:24:36"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-04-21T07:51:50"^^xsd:dateTime ;
+    ECSDI:importe 242 ;
+    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto5 .
+
+ECSDI:vuelo22 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos24 ;
+    ECSDI:fecha_final "2021-09-20T16:47:00"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-09-20T12:53:49"^^xsd:dateTime ;
+    ECSDI:importe 141 ;
+    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto25 .
+
+ECSDI:vuelo27 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos29 ;
+    ECSDI:fecha_final "2021-11-05T02:20:16"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-11-04T21:51:36"^^xsd:dateTime ;
+    ECSDI:importe 165 ;
+    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto30 .
+
+ECSDI:vuelo32 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos34 ;
+    ECSDI:fecha_final "2021-07-01T21:46:11"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-07-01T16:57:53"^^xsd:dateTime ;
+    ECSDI:importe 227 ;
+    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto35 .
+
+ECSDI:vuelo38 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos39 ;
+    ECSDI:fecha_final "2021-01-16T17:43:13"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-01-16T14:08:52"^^xsd:dateTime ;
+    ECSDI:importe 232 ;
+    ECSDI:tiene_como_aeropuerto_destino ECSDI:aeropuerto41 .
+
+ECSDI:vuelo43 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos44 ;
+    ECSDI:fecha_final "2021-02-02T11:41:45"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-02-02T08:02:08"^^xsd:dateTime ;
+    ECSDI:importe 167 ;
+    ECSDI:tiene_como_aeropuerto_destino ECSDI:aeropuerto46 .
+
+ECSDI:vuelo48 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos49 ;
+    ECSDI:fecha_final "2021-09-07T18:48:36"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-09-07T13:55:07"^^xsd:dateTime ;
+    ECSDI:importe 71 ;
+    ECSDI:tiene_como_aeropuerto_destino ECSDI:aeropuerto51 .
+
+ECSDI:vuelo53 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos54 ;
+    ECSDI:fecha_final "2021-06-15T23:56:40"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-06-15T20:22:41"^^xsd:dateTime ;
+    ECSDI:importe 241 ;
+    ECSDI:tiene_como_aeropuerto_destino ECSDI:aeropuerto56 .
+
+ECSDI:vuelo7 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos9 ;
+    ECSDI:fecha_final "2021-10-14T14:47:06"^^xsd:dateTime ;
+    ECSDI:fecha_inicial "2021-10-14T10:11:46"^^xsd:dateTime ;
+    ECSDI:importe 234 ;
+    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto10 .
+
+<message-5291150547338520464-0056> a acl:FipaAclMessage,
+        <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+    acl:performative acl:inform- ;
+    acl:receiver <http://www.agentes.org#AgenteVuelos> ;
+    acl:sender <http://www.agentes.org#AgenteExternoVuelos> .
+
+ECSDI:aeropuerto10 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Amsterdam Airport Schiphol" .
+
+ECSDI:aeropuerto15 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto20 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Amsterdam Airport Schiphol" .
+
+ECSDI:aeropuerto25 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto30 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto35 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto41 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto46 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto5 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto51 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto56 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:proveedor_de_vuelos14 a ECSDI:compania ;
+    ECSDI:nombre "Air Freight NZ" .
+
+ECSDI:proveedor_de_vuelos19 a ECSDI:compania ;
+    ECSDI:nombre "Air Freight NZ" .
+
+ECSDI:proveedor_de_vuelos24 a ECSDI:compania ;
+    ECSDI:nombre "EasyJet" .
+
+ECSDI:proveedor_de_vuelos29 a ECSDI:compania ;
+    ECSDI:nombre "China Eastern Airlines" .
+
+ECSDI:proveedor_de_vuelos34 a ECSDI:compania ;
+    ECSDI:nombre "Air Europa" .
+
+ECSDI:proveedor_de_vuelos39 a ECSDI:compania ;
+    ECSDI:nombre "Air Freight NZ" .
+
+ECSDI:proveedor_de_vuelos4 a ECSDI:compania ;
+    ECSDI:nombre "Air Freight NZ" .
+
+ECSDI:proveedor_de_vuelos44 a ECSDI:compania ;
+    ECSDI:nombre "EasyJet" .
+
+ECSDI:proveedor_de_vuelos49 a ECSDI:compania ;
+    ECSDI:nombre "China Eastern Airlines" .
+
+ECSDI:proveedor_de_vuelos54 a ECSDI:compania ;
+    ECSDI:nombre "Air Europa" .
+
+ECSDI:proveedor_de_vuelos9 a ECSDI:compania ;
+    ECSDI:nombre "Air Freight NZ" .
+
