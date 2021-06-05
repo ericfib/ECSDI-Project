@@ -11,7 +11,7 @@ from rdflib import URIRef
 from rdflib.namespace import ClosedNamespace
 
 ACL =  ClosedNamespace(
-    uri=URIRef('http://www.nuin.org/ontology/fipa/acl'),
+    uri=URIRef('http://www.nuin.org/ontology/fipa/acl#'),
     terms=[
         # Classes
         'FipaAclMessage',

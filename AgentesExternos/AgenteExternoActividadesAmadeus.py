@@ -48,12 +48,13 @@ parser.add_argument('--dport', type=int, help="Puerto de comunicacion del agente
 
 # Logging
 logger = config_logger(level=1)
+file_str = '../Examples/data/%s/%s.json'
 
 # parsing de los parametros de la linea de comandos
 args = parser.parse_args()
 # Configuration stuff
 if args.port is None:
-    port = 9001
+    port = 9013
 else:
     port = args.port
 
@@ -94,8 +95,8 @@ def get_count():
 # Datos del Agente
 
 
-AgenteAlojamientosExternoAmadeus = Agent('AgenteAlojamientosExternoAmadeus',
-                                         agn.AgenteAlojamientosExternoAmadeus,
+AgenteAlojamientosExternoAmadeus = Agent('AgenteActividadesExternoAmadeus',
+                                         agn.ActividadesExternoAmadeus,
                                          'http://%s:%d/comm' % (hostname, port),
                                          'http://%s:%d/Stop' % (hostname, port))
 
@@ -153,7 +154,7 @@ def comunicacion():
 
                 # hacer lo que pide la accion
                 if accion == ECSDI.Peticion_Alojamientos:
-                    grespuesta = buscar_alojamientos_externos()
+                    grespuesta = buscar_actividades_externos()
 
                     grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteAlojamientosExternoAmadeus.uri,
                                                msgcnt=mss_cnt, receiver=msg['sender'])
@@ -195,6 +196,7 @@ def agentbehavior1():
 
     :return:
     """
+    buscar_actividades_externos()
     gr = register_message()
 
     pass
@@ -214,64 +216,29 @@ def register_message():
     return gr
 
 
-def buscar_alojamientos_externos():
-    # DATE HA DE SER STRING YYYY-MM-DD
-    # CALL
-    grafo_hoteles = Graph()
-    grafo_hoteles.bind('ECSDI', ECSDI)
-    array_city = ["BCN", "PAR"]
+def buscar_actividades_externos():
+    grafo_actividades = Graph()
+    grafo_actividades.bind('ECSDI', ECSDI)
+    array_city = [{'lat': '41.38879', 'long': '2.15899', 'code': 'BCN'}, {'lat': '48.85341', 'long': '2.3488',
+                                                                          'code': 'PAR'}]
+    types = {'cultural': 'SIGHTS', 'ludica': 'NIGHTLIFE',
+             'festiva': 'RESTAURANT, SHOPPING'}
+    content = ECSDI['Respuesta_Actividades' + str(get_count())]
+    for i, city in enumerate(array_city):
+        for key, t in types.items():
+            try:
+                activities = amadeus.reference_data.locations.points_of_interest.get(latitude=city['lat'],
+                                                                                     longitud=city['long'],
+                                                                                     radius=5, categories=t)
+            except ResponseError:
+                with open(file_str % (city['code'], key)) as file:
+                    activities = json.load(file)
+            for j, item in enumerate(activities.get('data')):
+                actividad = ECSDI[key + '-' + str(i * j)]
+                grafo_actividades.add((actividad, RDF.type, ECSDI.Actividad))
+                grafo_actividades.add((actividad, ECSDI.nombre, Literal(item["name"])))
+    return grafo_actividades
 
-    content = ECSDI['Respuesta_Alojamiento' + str(get_count())]
-
-    for city in array_city:
-        for i in range(1, 10):
-            j = 0
-            cityhotels = amadeus.shopping.hotel_offers.get(cityCode=city, page=i)
-            response = cityhotels.data
-
-            # TRATAMIENTO RESPUESTA
-            # grafo = Graph('dso', namespace)
-
-            code = cityhotels.status_code
-
-            if cityhotels.status_code != 200:
-                print('Error al buscar hoteles: ' + cityhotels.status_code)
-            else:
-                for hotel in response:
-                    if hotel["type"] == "hotel-offers":
-                        j += 1
-                        alojamiento = ECSDI['alojamiento' + city + str(i * j)]
-                        proveedor_alojamientos = ECSDI['proveedor_alojamientos' + city + str(i * j)]
-                        ciudad = ECSDI['ciudad']
-                        localizacion = ECSDI['localizacion' + city + str(i * j)]
-
-                        # localizacion
-                        grafo_hoteles.add((localizacion, RDF.type, ECSDI.Localizacion))
-
-                        # alojamiento
-                        centrico = hotel["hotel"]["hotelDistance"]["distance"] <= 1
-
-                        grafo_hoteles.add((alojamiento, RDF.type, ECSDI.Alojamiento))
-                        grafo_hoteles.add((alojamiento, ECSDI.fecha_inicial, Literal(hotel["hotel"]["startDate"])))
-                        grafo_hoteles.add((alojamiento, ECSDI.fecha_final, Literal(hotel["hotel"]["endDate"])))
-                        grafo_hoteles.add((alojamiento, ECSDI.id_alojamiento, Literal(hotel["hotel"]["hotelId"])))
-                        grafo_hoteles.add((alojamiento, ECSDI.nombre, Literal(hotel["hotel"]["name"])))
-                        grafo_hoteles.add((alojamiento, ECSDI.centrico, Literal(centrico)))
-                        grafo_hoteles.add((alojamiento, ECSDI.importe, Literal(hotel["offers"]["price"]["total"])))
-
-                        # proveedor_alojamientos
-                        grafo_hoteles.add((proveedor_alojamientos, RDF.type, ECSDI.Proveedor_alojamiento))
-                        grafo_hoteles.add((proveedor_alojamientos, ECSDI.nombre, Literal(hotel["hotel"]["chainCode"])))
-
-                        # ciudad NOT SURE DE SI FA FALTA
-                        grafo_hoteles.add((ciudad, RDF.type, ECSDI.Ciudad))
-                        grafo_hoteles.add((ciudad, ECSDI.nombre, Literal(city)))
-
-                        # relacions
-                        grafo_hoteles.add((alojamiento, ECSDI.tiene_ubicacion, URIRef(localizacion)))
-                        grafo_hoteles.add((alojamiento, ECSDI.es_ofrecido_por, URIRef(proveedor_alojamientos)))
-
-    return grafo_hoteles
 
 
 if __name__ == '__main__':

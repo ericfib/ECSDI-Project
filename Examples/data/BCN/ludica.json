@@ -1,0 +1,278 @@
+{
+  "data": [
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "FE0693CF7A",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/FE0693CF7A",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38504,
+        "longitude": 2.167985
+      },
+      "name": "Teresa Carles",
+      "category": "RESTAURANT",
+      "rank": 15,
+      "tags": [
+        "restaurant",
+        "vegetarian",
+        "market",
+        "bar",
+        "liquor",
+        "professionalservices",
+        "transport",
+        "health&medical",
+        "sightseeing",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "3EF139D861",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/3EF139D861",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38827,
+        "longitude": 2.161604
+      },
+      "name": "Brunch & Cake",
+      "category": "RESTAURANT",
+      "rank": 30,
+      "tags": [
+        "vegetarian",
+        "restaurant",
+        "breakfast",
+        "shopping",
+        "bakery",
+        "transport",
+        "patio",
+        "garden"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "AB3F122E3E",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/AB3F122E3E",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.392376,
+        "longitude": 2.160919
+      },
+      "name": "Cervecería Catalana",
+      "category": "RESTAURANT",
+      "rank": 30,
+      "tags": [
+        "restaurant",
+        "tapas",
+        "sightseeing",
+        "traditionalcuisine",
+        "bar",
+        "activities",
+        "commercialplace"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "2F46E7E9A3",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/2F46E7E9A3",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38874,
+        "longitude": 2.166787
+      },
+      "name": "Ciudad Condal",
+      "category": "RESTAURANT",
+      "rank": 50,
+      "tags": [
+        "restaurant",
+        "tapas",
+        "shopping",
+        "bar"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "9BCF9ABBC7",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/9BCF9ABBC7",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38509,
+        "longitude": 2.16559
+      },
+      "name": "Flax & Kale",
+      "category": "RESTAURANT",
+      "rank": 100,
+      "tags": [
+        "restaurant",
+        "breakfast",
+        "vegetarian",
+        "sightseeing",
+        "health&medical",
+        "bar",
+        "professionalservices",
+        "shopping",
+        "cheap"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "529ABDC02F",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/529ABDC02F",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38691,
+        "longitude": 2.16112
+      },
+      "name": "La Flauta",
+      "category": "RESTAURANT",
+      "rank": 100,
+      "tags": [
+        "restaurant",
+        "tapas",
+        "bar"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "30601A1A90",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/30601A1A90",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.390785,
+        "longitude": 2.167414
+      },
+      "name": "Tapas 24",
+      "category": "RESTAURANT",
+      "rank": 100,
+      "tags": [
+        "restaurant",
+        "tapas",
+        "traditionalcuisine",
+        "sightseeing",
+        "commercialplace",
+        "transport",
+        "patio",
+        "garden",
+        "activities",
+        "bar"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "06D674CE74",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/06D674CE74",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.3911,
+        "longitude": 2.15112
+      },
+      "name": "Maitea",
+      "category": "RESTAURANT",
+      "rank": 100,
+      "tags": [
+        "restaurant",
+        "tapas",
+        "bar",
+        "sightseeing",
+        "commercialplace",
+        "seafood"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "24DE6CE737",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/24DE6CE737",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.390198,
+        "longitude": 2.156974
+      },
+      "name": "Osmosis",
+      "category": "RESTAURANT",
+      "rank": 100,
+      "tags": [
+        "restaurant",
+        "shopping",
+        "transport",
+        "professionalservices"
+      ]
+    },
+    {
+      "type": "location",
+      "subType": "POINT_OF_INTEREST",
+      "id": "72311EFD1F",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/pois/72311EFD1F",
+        "methods": [
+          "GET"
+        ]
+      },
+      "geoCode": {
+        "latitude": 41.38848,
+        "longitude": 2.15937
+      },
+      "name": "Cinc Sentits",
+      "category": "RESTAURANT",
+      "rank": 200,
+      "tags": [
+        "restaurant",
+        "sightseeing",
+        "bar"
+      ]
+    }
+  ],
+  "meta": {
+    "count": 79,
+    "links": {
+      "self": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=RESTAURANT,SHOPPING",
+      "next": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=10&categories=RESTAURANT,SHOPPING",
+      "last": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=70&categories=RESTAURANT,SHOPPING",
+      "first": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=RESTAURANT,SHOPPING",
+      "up": "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.38879&longitude=2.15899&radius=1&page[limit]=10&page[offset]=0&categories=RESTAURANT,SHOPPING"
+    }
+  }
+}
