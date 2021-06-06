@@ -17,25 +17,65 @@ import json
 from multiprocessing import Process, Queue
 import socket
 import os
+
+import argparse
 from pprint import PrettyPrinter
 
-from rdflib import Namespace, Graph
-from flask import Flask
+from rdflib import Namespace, Graph, Literal, URIRef
+from rdflib.namespace import FOAF, RDF
+
+from flask import Flask, request
 from dotenv import load_dotenv
 from amadeus import Client, ResponseError
 
-from AgentUtil.ACLMessages import register_agent
 from AgentUtil.FlaskServer import shutdown_server
+from AgentUtil.ACLMessages import build_message, send_message, register_agent, get_message_properties, get_agent_info
 from AgentUtil.Agent import Agent
-from AgentUtil.OntoNamespaces import ECSDI, ACL
 from AgentUtil.Logging import config_logger
+from AgentUtil.OntoNamespaces import ECSDI, ACL
 
 __author__ = 'javier'
 
-# Configuration stuff
-hostname = socket.gethostname()
-port = 9011
+# Definimos los parametros de la linea de comandos
+from AgentUtil.Util import gethostname
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--open', help="Define si el servidor esta abierto al exterior o no", action='store_true',
+                    default=False)
+parser.add_argument('--verbose', help="Genera un log de la comunicacion del servidor web", action='store_true',
+                    default=False)
+parser.add_argument('--port', type=int, help="Puerto de comunicacion del agente")
+parser.add_argument('--dhost', help="Host del agente de directorio")
+parser.add_argument('--dport', type=int, help="Puerto de comunicacion del agente de directorio")
+
+# Logging
+logger = config_logger(level=1)
+
+# parsing de los parametros de la linea de comandos
+args = parser.parse_args()
+# Configuration stuff
+if args.port is None:
+    port = 9012
+else:
+    port = args.port
+
+if args.open:
+    hostname = '0.0.0.0'
+    hostaddr = gethostname()
+else:
+    hostaddr = hostname = socket.gethostname()
+
+print('DS Hostname =', hostaddr)
+
+if args.dport is None:
+    dport = 9013
+else:
+    dport = args.dport
+
+if args.dhost is None:
+    dhostname = socket.gethostname()
+else:
+    dhostname = args.dhost
 # Directory Service Graph
 dsgraph = Graph()
 dsgraph.bind('acl', ACL)
@@ -46,29 +86,26 @@ agn = Namespace("http://www.agentes.org#")
 # Contador de mensajes
 mss_cnt = 0
 
+
 def get_count():
     global mss_cnt
     mss_cnt += 1
     return mss_cnt
 
-# Logging
-logger = config_logger(level=1)
 
 # Datos del Agente
 
+
 AgenteExternoVuelosAmadeus = Agent('AgenteExternoVuelosAmadeus',
-                       agn.AgenteExternoVuelos,
-                       'http://%s:%d/comm' % (hostname, port),
-                       'http://%s:%d/Stop' % (hostname, port))
+                                         agn.AgenteExternoVuelosAmadeus,
+                                         'http://%s:%d/comm' % (hostname, port),
+                                         'http://%s:%d/Stop' % (hostname, port))
 
 # Directory agent address
 DirectoryAgent = Agent('DirectoryAgent',
                        agn.Directory,
                        'http://%s:9000/Register' % hostname,
                        'http://%s:9000/Stop' % hostname)
-
-# Global triplestore graph
-dsgraph = Graph()
 
 cola1 = Queue()
 
@@ -82,6 +119,60 @@ AMADEUS_SECRET = os.getenv("AMADEUS_API_SECRET")
 amadeus = Client(client_id=AMADEUS_KEY, client_secret=AMADEUS_SECRET)
 ppr = PrettyPrinter(indent=4)
 
+def buscar_vuelos_externos():
+    # DATE HA DE SER STRING YYYY-MM-DD
+    # CALL
+    grafo_vuelos = Graph()
+    grafo_vuelos.bind('ECSDI', ECSDI)
+
+    content = ECSDI['Respuesta_Vuelos' + str(get_count())]
+
+    flights = amadeus.shopping.flight_offers_search.get(
+        originLocationCode='BCN',
+        destinationLocationCode='PAR',
+        departureDate='2021-07-01',
+        adults=1)
+    response = flights.data
+
+    # TRATAMIENTO RESPUESTA
+    # grafo = Graph('dso', namespace)
+
+    if flights.status_code != 200:
+        logger.info('Error al buscar vuelos: ' + flights.status_code)
+    else:
+
+        for flight in response:
+            for f in flight["itineraries"]:
+                for x in f["segments"]:
+                    #print(x["departure"])
+                    vuelo_origen = ECSDI['vuelo' + str(get_count())]
+                    compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
+                    origen = ECSDI['aeropuerto' + str(get_count())]
+                    destino = ECSDI['aeropuerto' + str(get_count())]
+
+                    # Compania
+                    grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
+                    grafo_vuelos.add((compania, ECSDI.nombre, Literal("Ryanair")))
+
+                    # Llega a
+                    grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+                    grafo_vuelos.add((destino, ECSDI.nombre, Literal("Charles de Gaulle Airport")))
+
+
+                    # Sale_de
+                    grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
+                    grafo_vuelos.add((origen, ECSDI.nombre, Literal("Barcelona El Prat Airport")))
+
+                    # Vuelo origen
+                    grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.vuelo))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto, URIRef(origen)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.importe, Literal(100)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.es_ofrecido_por, URIRef(compania)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.fecha_inicial, Literal(x["departure"]["at"])))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.fecha_final, Literal(x["arrival"]["at"])))
+
+    return grafo_vuelos
+
 
 @app.route("/comm")
 def comunicacion():
@@ -89,8 +180,51 @@ def comunicacion():
     Entrypoint de comunicacion
     """
     global dsgraph
-    global mss_cnt
-    pass
+    print("PETICION DE VUELOS RECIBIDA")
+
+    message = request.args['content']
+
+    grafo_mensaje_entrante = Graph()
+    grespuesta = Graph()
+    grafo_mensaje_entrante.parse(data=message)
+
+    msg = get_message_properties(grafo_mensaje_entrante)
+
+    if msg is None:
+        print("baia")
+        grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteExternoVuelosAmadeus.uri,
+                                   msgcnt=mss_cnt)
+
+    else:
+        # obtener performativa
+        perf = msg['performative']
+
+        if perf != ACL.request:
+            # Si no es un request, respondemos que no hemos entendido el mensaje
+            grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteExternoVuelosAmadeus.uri,
+                                       msgcnt=mss_cnt)
+
+        else:
+            if 'content' in msg:
+                content = msg['content']
+                accion = grafo_mensaje_entrante.value(subject=content, predicate=RDF.type)
+
+                # hacer lo que pide la accion
+                if accion == ECSDI.Peticion_Vuelos:
+                    grespuesta = buscar_vuelos_externos()
+
+                    grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteExternoVuelosAmadeus.uri,
+                                               msgcnt=mss_cnt, receiver=msg['sender'])
+                else:
+                    grespuesta = build_message(Graph(), ACL['not-understood'],
+                                               sender=AgenteExternoVuelosAmadeus.uri,
+                                               msgcnt=mss_cnt)
+            else:
+                grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteExternoVuelosAmadeus.uri,
+                                           msgcnt=mss_cnt)
+
+    serialize = grespuesta.serialize(format='xml')
+    return serialize
 
 
 @app.route("/Stop")
@@ -104,20 +238,6 @@ def stop():
     shutdown_server()
     return "Parando Servidor"
 
-
-def vuelosAmadeus():
-    try:
-        response = amadeus.shopping.flight_offers_search.get(
-            originLocationCode='BCN',
-            destinationLocationCode='PAR',
-            departureDate='2021-06-01',
-            adults=1)
-        print("FLIGHTS")
-        print("-----------------------------------")
-        ppr.pprint(response.data)
-    except ResponseError as error:
-        print(error)
-    
 
 def tidyup():
     """
@@ -141,30 +261,20 @@ def register_message():
     return gr
 
 
-def agentbehavior1(cola):
+def agentbehavior1():
     """
     Un comportamiento del agente
     :return:
     """
     # Registramos el agente
     gr = register_message()
-
-    # Escuchando la cola hasta que llegue un 0
-    fin = False
-    while not fin:
-        while cola.empty():
-            pass
-        v = cola.get()
-        if v == 0:
-            fin = True
-        else:
-            print(v)
+    #buscar_vuelos_externos()
 
 
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
-    ab1 = Process(target=agentbehavior1, args=(cola1,))
+    ab1 = Process(target=agentbehavior1)
     ab1.start()
 
     # Ponemos en marcha el servidor

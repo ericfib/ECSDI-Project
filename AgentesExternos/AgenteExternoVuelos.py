@@ -261,7 +261,6 @@ def buscar_vuelos_externos():
 
         # COMPROBAR QUE TODO EXISTA Y SI NO, AÑADIRLO!
         vuelo_origen = ECSDI['vuelo' + str(get_count())]
-        vuelo_destino = ECSDI['vuelo' + str(get_count())]
         compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
         origen = ECSDI['aeropuerto'+str(get_count())]
         destino = ECSDI['aeropuerto'+str(get_count())]
@@ -281,7 +280,7 @@ def buscar_vuelos_externos():
 
         # Vuelo origen
         grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.vuelo))
-        grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
+        grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto, URIRef(origen)))
         grafo_vuelos.add((vuelo_origen, ECSDI.importe, Literal(precio_origen))) # comprobar que importe sea atributo de vuelo
         grafo_vuelos.add((vuelo_origen, ECSDI.es_ofrecido_por, URIRef(compania)))
         grafo_vuelos.add((vuelo_origen, ECSDI.fecha_inicial, Literal(fecha_salida_origen)))
@@ -327,7 +326,6 @@ def buscar_vuelos_externos():
         print(precio_destino)
 
         # COMPROBAR QUE TODO EXISTA Y SI NO, AÑADIRLO!
-        vuelo_origen = ECSDI['vuelo' + str(get_count())]
         vuelo_destino = ECSDI['vuelo' + str(get_count())]
         compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
         origen = ECSDI['aeropuerto'+str(get_count())]
@@ -347,7 +345,7 @@ def buscar_vuelos_externos():
 
         # Vuelo destino
         grafo_vuelos.add((vuelo_destino, RDF.type, ECSDI.vuelo))
-        grafo_vuelos.add((vuelo_destino, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
+        grafo_vuelos.add((vuelo_destino, ECSDI.tiene_como_aeropuerto, URIRef(destino)))
         grafo_vuelos.add((vuelo_destino, ECSDI.importe, Literal(precio_destino))) # comprobar que importe sea atributo de vuelo
         grafo_vuelos.add((vuelo_destino, ECSDI.es_ofrecido_por, URIRef(compania)))
         grafo_vuelos.add((vuelo_destino, ECSDI.fecha_inicial, Literal(fecha_salida_destino)))

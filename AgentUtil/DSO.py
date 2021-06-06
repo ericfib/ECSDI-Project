@@ -78,6 +78,7 @@ ONTOLOGY = ClosedNamespace(
         'tiene_como_origen',
         'contrata',
         'es_ofrecido_por',
+        'tiene_como_aeropuerto',
         'tiene_ubicacion',
         'tiene_como_vuelo_de_ida',
         'llega_a',

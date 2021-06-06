@@ -2,185 +2,4585 @@
 @prefix acl: <http://www.nuin.org/ontology/fipa/acl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ECSDI:aeropuerto11 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto1001 a ECSDI:aeropuerto ;
     ECSDI:nombre "Charles de Gaulle Airport" .
 
-ECSDI:aeropuerto16 a ECSDI:aeropuerto ;
-    ECSDI:nombre "London City Airport" .
+ECSDI:aeropuerto1005 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1009 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto101 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1013 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1017 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1021 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1025 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1029 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1033 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1037 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1041 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1045 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1049 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto105 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1053 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1057 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1061 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1065 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1069 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1073 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1077 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1081 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1085 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1089 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto109 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1093 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1097 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1101 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1105 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1109 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1113 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1117 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1121 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1125 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1129 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto113 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1133 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1137 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1141 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto1145 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto117 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto121 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto125 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto129 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto13 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto133 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto137 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto141 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto145 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto149 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto153 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto157 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto161 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto165 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto169 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto17 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto173 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto177 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto181 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto185 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto189 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto193 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto197 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto201 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto205 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto209 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
 
 ECSDI:aeropuerto21 a ECSDI:aeropuerto ;
-    ECSDI:nombre "London City Airport" .
-
-ECSDI:aeropuerto26 a ECSDI:aeropuerto ;
     ECSDI:nombre "Charles de Gaulle Airport" .
 
-ECSDI:aeropuerto31 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto213 a ECSDI:aeropuerto ;
     ECSDI:nombre "Charles de Gaulle Airport" .
 
-ECSDI:aeropuerto36 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto217 a ECSDI:aeropuerto ;
     ECSDI:nombre "Charles de Gaulle Airport" .
 
-ECSDI:aeropuerto40 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto221 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto225 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto229 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto233 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto237 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto241 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto245 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto249 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto25 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto253 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto257 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto261 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto265 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto269 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto273 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto277 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto281 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto285 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto289 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto29 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto293 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto297 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto301 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto305 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto309 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto313 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto317 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto321 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto325 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto329 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto33 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto333 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto337 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto341 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto345 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto349 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto353 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto357 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto361 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto365 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto369 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto37 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto373 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto377 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto381 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto385 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto389 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto393 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto397 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto401 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto405 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto409 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto41 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto413 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto417 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto421 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto425 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto429 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto433 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto437 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto441 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto445 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto449 a ECSDI:aeropuerto ;
     ECSDI:nombre "Charles de Gaulle Airport" .
 
 ECSDI:aeropuerto45 a ECSDI:aeropuerto ;
     ECSDI:nombre "Charles de Gaulle Airport" .
 
-ECSDI:aeropuerto50 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto453 a ECSDI:aeropuerto ;
     ECSDI:nombre "Charles de Gaulle Airport" .
 
-ECSDI:aeropuerto55 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto457 a ECSDI:aeropuerto ;
     ECSDI:nombre "Charles de Gaulle Airport" .
 
-ECSDI:aeropuerto6 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto461 a ECSDI:aeropuerto ;
     ECSDI:nombre "Charles de Gaulle Airport" .
 
-ECSDI:vuelo12 a ECSDI:vuelo ;
-    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos14 ;
-    ECSDI:fecha_final "2021-12-01T16:35:41"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-12-01T12:59:07"^^xsd:dateTime ;
-    ECSDI:importe 61 ;
-    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto15 .
+ECSDI:aeropuerto465 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
 
-ECSDI:vuelo17 a ECSDI:vuelo ;
+ECSDI:aeropuerto469 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto473 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto477 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto481 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto485 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto489 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto49 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto493 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto497 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto5 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto501 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto505 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto509 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto513 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto517 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto521 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto525 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto529 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto53 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto533 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto537 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto541 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto545 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto549 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto553 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto557 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto561 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto565 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto569 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto57 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto573 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto577 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto581 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto585 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto589 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto593 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto597 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto601 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto605 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto609 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto61 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto613 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto617 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto621 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto625 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto629 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto633 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto637 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto641 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto645 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto649 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto65 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto653 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto657 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto661 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto665 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto669 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto673 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto677 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto681 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto685 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto689 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto69 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto693 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto697 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto701 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto705 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto709 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto713 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto717 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto721 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto725 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto729 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto73 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto733 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto737 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto741 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto745 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto749 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto753 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto757 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto761 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto765 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto769 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto77 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto773 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto777 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto781 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto785 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto789 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto793 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto797 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto801 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto805 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto809 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto81 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto813 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto817 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto821 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto825 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto829 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto833 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto837 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto841 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto845 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto849 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto85 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto853 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto857 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto861 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto865 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto869 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto873 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto877 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto881 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto885 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto889 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto89 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto893 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto897 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto9 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto901 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto905 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto909 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto913 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto917 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto921 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto925 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto929 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto93 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto933 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto937 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto941 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto945 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto949 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto953 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto957 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto961 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto965 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto969 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto97 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto973 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto977 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto981 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto985 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto989 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto993 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:aeropuerto997 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Charles de Gaulle Airport" .
+
+ECSDI:vuelo10 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos11 ;
+    ECSDI:fecha_final "2021-07-01T08:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T07:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto12 .
+
+ECSDI:vuelo1002 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1003 ;
+    ECSDI:fecha_final "2021-07-01T17:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1004 .
+
+ECSDI:vuelo1006 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1007 ;
+    ECSDI:fecha_final "2021-07-01T13:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1008 .
+
+ECSDI:vuelo1010 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1011 ;
+    ECSDI:fecha_final "2021-07-01T18:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1012 .
+
+ECSDI:vuelo1014 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1015 ;
+    ECSDI:fecha_final "2021-07-01T15:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1016 .
+
+ECSDI:vuelo1018 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1019 ;
+    ECSDI:fecha_final "2021-07-01T20:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1020 .
+
+ECSDI:vuelo102 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos103 ;
+    ECSDI:fecha_final "2021-07-01T13:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto104 .
+
+ECSDI:vuelo1022 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1023 ;
+    ECSDI:fecha_final "2021-07-01T13:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1024 .
+
+ECSDI:vuelo1026 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1027 ;
+    ECSDI:fecha_final "2021-07-01T18:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1028 .
+
+ECSDI:vuelo1030 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1031 ;
+    ECSDI:fecha_final "2021-07-01T20:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1032 .
+
+ECSDI:vuelo1034 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1035 ;
+    ECSDI:fecha_final "2021-07-01T21:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1036 .
+
+ECSDI:vuelo1038 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1039 ;
+    ECSDI:fecha_final "2021-07-01T23:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T22:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1040 .
+
+ECSDI:vuelo1042 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1043 ;
+    ECSDI:fecha_final "2021-07-01T19:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1044 .
+
+ECSDI:vuelo1046 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1047 ;
+    ECSDI:fecha_final "2021-07-01T21:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1048 .
+
+ECSDI:vuelo1050 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1051 ;
+    ECSDI:fecha_final "2021-07-01T19:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1052 .
+
+ECSDI:vuelo1054 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1055 ;
+    ECSDI:fecha_final "2021-07-01T21:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1056 .
+
+ECSDI:vuelo1058 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1059 ;
+    ECSDI:fecha_final "2021-07-01T16:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1060 .
+
+ECSDI:vuelo106 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos107 ;
+    ECSDI:fecha_final "2021-07-01T21:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto108 .
+
+ECSDI:vuelo1062 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1063 ;
+    ECSDI:fecha_final "2021-07-01T18:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1064 .
+
+ECSDI:vuelo1066 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1067 ;
+    ECSDI:fecha_final "2021-07-01T14:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1068 .
+
+ECSDI:vuelo1070 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1071 ;
+    ECSDI:fecha_final "2021-07-01T17:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1072 .
+
+ECSDI:vuelo1074 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1075 ;
+    ECSDI:fecha_final "2021-07-01T18:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1076 .
+
+ECSDI:vuelo1078 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1079 ;
+    ECSDI:fecha_final "2021-07-01T21:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1080 .
+
+ECSDI:vuelo1082 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1083 ;
+    ECSDI:fecha_final "2021-07-01T18:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1084 .
+
+ECSDI:vuelo1086 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1087 ;
+    ECSDI:fecha_final "2021-07-01T21:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1088 .
+
+ECSDI:vuelo1090 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1091 ;
+    ECSDI:fecha_final "2021-07-01T18:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1092 .
+
+ECSDI:vuelo1094 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1095 ;
+    ECSDI:fecha_final "2021-07-01T21:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1096 .
+
+ECSDI:vuelo1098 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1099 ;
+    ECSDI:fecha_final "2021-07-01T10:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T08:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1100 .
+
+ECSDI:vuelo110 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos111 ;
+    ECSDI:fecha_final "2021-07-01T22:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T22:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto112 .
+
+ECSDI:vuelo1102 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1103 ;
+    ECSDI:fecha_final "2021-07-01T13:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1104 .
+
+ECSDI:vuelo1106 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1107 ;
+    ECSDI:fecha_final "2021-07-01T19:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1108 .
+
+ECSDI:vuelo1110 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1111 ;
+    ECSDI:fecha_final "2021-07-01T22:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T21:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1112 .
+
+ECSDI:vuelo1114 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1115 ;
+    ECSDI:fecha_final "2021-07-01T14:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1116 .
+
+ECSDI:vuelo1118 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1119 ;
+    ECSDI:fecha_final "2021-07-01T18:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1120 .
+
+ECSDI:vuelo1122 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1123 ;
+    ECSDI:fecha_final "2021-07-01T19:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1124 .
+
+ECSDI:vuelo1126 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1127 ;
+    ECSDI:fecha_final "2021-07-01T23:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T22:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1128 .
+
+ECSDI:vuelo1130 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1131 ;
+    ECSDI:fecha_final "2021-07-01T16:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1132 .
+
+ECSDI:vuelo1134 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1135 ;
+    ECSDI:fecha_final "2021-07-01T20:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1136 .
+
+ECSDI:vuelo1138 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1139 ;
+    ECSDI:fecha_final "2021-07-01T12:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1140 .
+
+ECSDI:vuelo114 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos115 ;
+    ECSDI:fecha_final "2021-07-02T16:40:00" ;
+    ECSDI:fecha_inicial "2021-07-02T14:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto116 .
+
+ECSDI:vuelo1142 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos1143 ;
+    ECSDI:fecha_final "2021-07-01T16:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1144 .
+
+ECSDI:vuelo118 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos119 ;
+    ECSDI:fecha_final "2021-07-01T21:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto120 .
+
+ECSDI:vuelo122 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos123 ;
+    ECSDI:fecha_final "2021-07-01T13:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto124 .
+
+ECSDI:vuelo126 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos127 ;
+    ECSDI:fecha_final "2021-07-01T16:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto128 .
+
+ECSDI:vuelo130 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos131 ;
+    ECSDI:fecha_final "2021-07-01T09:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T07:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto132 .
+
+ECSDI:vuelo134 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos135 ;
+    ECSDI:fecha_final "2021-07-01T18:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto136 .
+
+ECSDI:vuelo138 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos139 ;
+    ECSDI:fecha_final "2021-07-01T21:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto140 .
+
+ECSDI:vuelo14 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos15 ;
+    ECSDI:fecha_final "2021-07-01T10:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T08:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto16 .
+
+ECSDI:vuelo142 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos143 ;
+    ECSDI:fecha_final "2021-07-01T19:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto144 .
+
+ECSDI:vuelo146 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos147 ;
+    ECSDI:fecha_final "2021-07-02T16:40:00" ;
+    ECSDI:fecha_inicial "2021-07-02T14:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto148 .
+
+ECSDI:vuelo150 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos151 ;
+    ECSDI:fecha_final "2021-07-01T16:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto152 .
+
+ECSDI:vuelo154 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos155 ;
+    ECSDI:fecha_final "2021-07-01T21:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto156 .
+
+ECSDI:vuelo158 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos159 ;
+    ECSDI:fecha_final "2021-07-01T09:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T07:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto160 .
+
+ECSDI:vuelo162 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos163 ;
+    ECSDI:fecha_final "2021-07-01T14:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto164 .
+
+ECSDI:vuelo166 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos167 ;
+    ECSDI:fecha_final "2021-07-01T14:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto168 .
+
+ECSDI:vuelo170 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos171 ;
+    ECSDI:fecha_final "2021-07-01T15:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto172 .
+
+ECSDI:vuelo174 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos175 ;
+    ECSDI:fecha_final "2021-07-01T19:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto176 .
+
+ECSDI:vuelo178 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos179 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto180 .
+
+ECSDI:vuelo18 a ECSDI:vuelo ;
     ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos19 ;
-    ECSDI:fecha_final "2021-03-31T10:00:42"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-03-31T05:36:11"^^xsd:dateTime ;
-    ECSDI:importe 174 ;
-    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto20 .
+    ECSDI:fecha_final "2021-07-01T11:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto20 .
+
+ECSDI:vuelo182 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos183 ;
+    ECSDI:fecha_final "2021-07-02T09:05:00" ;
+    ECSDI:fecha_inicial "2021-07-02T07:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto184 .
+
+ECSDI:vuelo186 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos187 ;
+    ECSDI:fecha_final "2021-07-01T18:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto188 .
+
+ECSDI:vuelo190 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos191 ;
+    ECSDI:fecha_final "2021-07-01T22:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto192 .
+
+ECSDI:vuelo194 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos195 ;
+    ECSDI:fecha_final "2021-07-01T18:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto196 .
+
+ECSDI:vuelo198 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos199 ;
+    ECSDI:fecha_final "2021-07-01T23:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto200 .
 
 ECSDI:vuelo2 a ECSDI:vuelo ;
-    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos4 ;
-    ECSDI:fecha_final "2021-04-21T12:24:36"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-04-21T07:51:50"^^xsd:dateTime ;
-    ECSDI:importe 242 ;
-    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto5 .
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos3 ;
+    ECSDI:fecha_final "2021-07-01T22:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto4 .
+
+ECSDI:vuelo202 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos203 ;
+    ECSDI:fecha_final "2021-07-01T18:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto204 .
+
+ECSDI:vuelo206 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos207 ;
+    ECSDI:fecha_final "2021-07-02T11:10:00" ;
+    ECSDI:fecha_inicial "2021-07-02T07:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto208 .
+
+ECSDI:vuelo210 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos211 ;
+    ECSDI:fecha_final "2021-07-01T18:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto212 .
+
+ECSDI:vuelo214 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos215 ;
+    ECSDI:fecha_final "2021-07-02T13:50:00" ;
+    ECSDI:fecha_inicial "2021-07-02T10:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto216 .
+
+ECSDI:vuelo218 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos219 ;
+    ECSDI:fecha_final "2021-07-01T18:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto220 .
 
 ECSDI:vuelo22 a ECSDI:vuelo ;
-    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos24 ;
-    ECSDI:fecha_final "2021-09-20T16:47:00"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-09-20T12:53:49"^^xsd:dateTime ;
-    ECSDI:importe 141 ;
-    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto25 .
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos23 ;
+    ECSDI:fecha_final "2021-07-01T14:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto24 .
 
-ECSDI:vuelo27 a ECSDI:vuelo ;
-    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos29 ;
-    ECSDI:fecha_final "2021-11-05T02:20:16"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-11-04T21:51:36"^^xsd:dateTime ;
-    ECSDI:importe 165 ;
-    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto30 .
+ECSDI:vuelo222 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos223 ;
+    ECSDI:fecha_final "2021-07-01T21:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto224 .
 
-ECSDI:vuelo32 a ECSDI:vuelo ;
-    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos34 ;
-    ECSDI:fecha_final "2021-07-01T21:46:11"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-07-01T16:57:53"^^xsd:dateTime ;
-    ECSDI:importe 227 ;
-    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto35 .
+ECSDI:vuelo226 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos227 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto228 .
+
+ECSDI:vuelo230 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos231 ;
+    ECSDI:fecha_final "2021-07-02T16:10:00" ;
+    ECSDI:fecha_inicial "2021-07-02T14:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto232 .
+
+ECSDI:vuelo234 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos235 ;
+    ECSDI:fecha_final "2021-07-01T13:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto236 .
+
+ECSDI:vuelo238 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos239 ;
+    ECSDI:fecha_final "2021-07-02T09:05:00" ;
+    ECSDI:fecha_inicial "2021-07-02T07:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto240 .
+
+ECSDI:vuelo242 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos243 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto244 .
+
+ECSDI:vuelo246 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos247 ;
+    ECSDI:fecha_final "2021-07-02T19:15:00" ;
+    ECSDI:fecha_inicial "2021-07-02T17:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto248 .
+
+ECSDI:vuelo250 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos251 ;
+    ECSDI:fecha_final "2021-07-01T10:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto252 .
+
+ECSDI:vuelo254 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos255 ;
+    ECSDI:fecha_final "2021-07-01T13:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto256 .
+
+ECSDI:vuelo258 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos259 ;
+    ECSDI:fecha_final "2021-07-01T07:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto260 .
+
+ECSDI:vuelo26 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos27 ;
+    ECSDI:fecha_final "2021-07-01T15:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto28 .
+
+ECSDI:vuelo262 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos263 ;
+    ECSDI:fecha_final "2021-07-01T11:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T07:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto264 .
+
+ECSDI:vuelo266 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos267 ;
+    ECSDI:fecha_final "2021-07-01T07:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto268 .
+
+ECSDI:vuelo270 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos271 ;
+    ECSDI:fecha_final "2021-07-01T15:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto272 .
+
+ECSDI:vuelo274 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos275 ;
+    ECSDI:fecha_final "2021-07-01T07:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto276 .
+
+ECSDI:vuelo278 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos279 ;
+    ECSDI:fecha_final "2021-07-01T19:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto280 .
+
+ECSDI:vuelo282 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos283 ;
+    ECSDI:fecha_final "2021-07-01T21:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto284 .
+
+ECSDI:vuelo286 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos287 ;
+    ECSDI:fecha_final "2021-07-02T13:50:00" ;
+    ECSDI:fecha_inicial "2021-07-02T10:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto288 .
+
+ECSDI:vuelo290 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos291 ;
+    ECSDI:fecha_final "2021-07-01T21:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto292 .
+
+ECSDI:vuelo294 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos295 ;
+    ECSDI:fecha_final "2021-07-02T15:50:00" ;
+    ECSDI:fecha_inicial "2021-07-02T12:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto296 .
+
+ECSDI:vuelo298 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos299 ;
+    ECSDI:fecha_final "2021-07-01T15:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto300 .
+
+ECSDI:vuelo30 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos31 ;
+    ECSDI:fecha_final "2021-07-01T21:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto32 .
+
+ECSDI:vuelo302 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos303 ;
+    ECSDI:fecha_final "2021-07-01T20:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto304 .
+
+ECSDI:vuelo306 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos307 ;
+    ECSDI:fecha_final "2021-07-01T15:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto308 .
+
+ECSDI:vuelo310 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos311 ;
+    ECSDI:fecha_final "2021-07-01T21:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto312 .
+
+ECSDI:vuelo314 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos315 ;
+    ECSDI:fecha_final "2021-07-01T07:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto316 .
+
+ECSDI:vuelo318 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos319 ;
+    ECSDI:fecha_final "2021-07-01T13:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T10:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto320 .
+
+ECSDI:vuelo322 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos323 ;
+    ECSDI:fecha_final "2021-07-01T15:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto324 .
+
+ECSDI:vuelo326 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos327 ;
+    ECSDI:fecha_final "2021-07-01T23:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto328 .
+
+ECSDI:vuelo330 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos331 ;
+    ECSDI:fecha_final "2021-07-01T07:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto332 .
+
+ECSDI:vuelo334 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos335 ;
+    ECSDI:fecha_final "2021-07-01T17:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto336 .
+
+ECSDI:vuelo338 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos339 ;
+    ECSDI:fecha_final "2021-07-01T07:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto340 .
+
+ECSDI:vuelo34 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos35 ;
+    ECSDI:fecha_final "2021-07-01T22:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto36 .
+
+ECSDI:vuelo342 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos343 ;
+    ECSDI:fecha_final "2021-07-01T20:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto344 .
+
+ECSDI:vuelo346 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos347 ;
+    ECSDI:fecha_final "2021-07-01T21:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto348 .
+
+ECSDI:vuelo350 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos351 ;
+    ECSDI:fecha_final "2021-07-02T11:10:00" ;
+    ECSDI:fecha_inicial "2021-07-02T07:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto352 .
+
+ECSDI:vuelo354 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos355 ;
+    ECSDI:fecha_final "2021-07-01T07:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto356 .
+
+ECSDI:vuelo358 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos359 ;
+    ECSDI:fecha_final "2021-07-01T21:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto360 .
+
+ECSDI:vuelo362 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos363 ;
+    ECSDI:fecha_final "2021-07-01T07:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto364 .
+
+ECSDI:vuelo366 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos367 ;
+    ECSDI:fecha_final "2021-07-01T23:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto368 .
+
+ECSDI:vuelo370 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos371 ;
+    ECSDI:fecha_final "2021-07-01T15:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto372 .
+
+ECSDI:vuelo374 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos375 ;
+    ECSDI:fecha_final "2021-07-02T11:10:00" ;
+    ECSDI:fecha_inicial "2021-07-02T07:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto376 .
+
+ECSDI:vuelo378 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos379 ;
+    ECSDI:fecha_final "2021-07-01T17:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto380 .
 
 ECSDI:vuelo38 a ECSDI:vuelo ;
     ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos39 ;
-    ECSDI:fecha_final "2021-01-16T17:43:13"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-01-16T14:08:52"^^xsd:dateTime ;
-    ECSDI:importe 232 ;
-    ECSDI:tiene_como_aeropuerto_destino ECSDI:aeropuerto41 .
+    ECSDI:fecha_final "2021-07-01T07:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto40 .
 
-ECSDI:vuelo43 a ECSDI:vuelo ;
-    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos44 ;
-    ECSDI:fecha_final "2021-02-02T11:41:45"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-02-02T08:02:08"^^xsd:dateTime ;
-    ECSDI:importe 167 ;
-    ECSDI:tiene_como_aeropuerto_destino ECSDI:aeropuerto46 .
+ECSDI:vuelo382 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos383 ;
+    ECSDI:fecha_final "2021-07-01T19:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto384 .
 
-ECSDI:vuelo48 a ECSDI:vuelo ;
-    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos49 ;
-    ECSDI:fecha_final "2021-09-07T18:48:36"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-09-07T13:55:07"^^xsd:dateTime ;
-    ECSDI:importe 71 ;
-    ECSDI:tiene_como_aeropuerto_destino ECSDI:aeropuerto51 .
+ECSDI:vuelo386 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos387 ;
+    ECSDI:fecha_final "2021-07-01T17:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto388 .
 
-ECSDI:vuelo53 a ECSDI:vuelo ;
-    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos54 ;
-    ECSDI:fecha_final "2021-06-15T23:56:40"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-06-15T20:22:41"^^xsd:dateTime ;
-    ECSDI:importe 241 ;
-    ECSDI:tiene_como_aeropuerto_destino ECSDI:aeropuerto56 .
+ECSDI:vuelo390 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos391 ;
+    ECSDI:fecha_final "2021-07-02T09:00:00" ;
+    ECSDI:fecha_inicial "2021-07-02T06:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto392 .
 
-ECSDI:vuelo7 a ECSDI:vuelo ;
-    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos9 ;
-    ECSDI:fecha_final "2021-10-14T14:47:06"^^xsd:dateTime ;
-    ECSDI:fecha_inicial "2021-10-14T10:11:46"^^xsd:dateTime ;
-    ECSDI:importe 234 ;
-    ECSDI:tiene_como_aeropuerto_origen ECSDI:aeropuerto10 .
+ECSDI:vuelo394 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos395 ;
+    ECSDI:fecha_final "2021-07-01T17:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto396 .
 
-<message-5291150547338520464-0056> a acl:FipaAclMessage,
+ECSDI:vuelo398 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos399 ;
+    ECSDI:fecha_final "2021-07-02T14:15:00" ;
+    ECSDI:fecha_inicial "2021-07-02T12:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto400 .
+
+ECSDI:vuelo402 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos403 ;
+    ECSDI:fecha_final "2021-07-01T11:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto404 .
+
+ECSDI:vuelo406 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos407 ;
+    ECSDI:fecha_final "2021-07-01T16:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto408 .
+
+ECSDI:vuelo410 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos411 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto412 .
+
+ECSDI:vuelo414 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos415 ;
+    ECSDI:fecha_final "2021-07-01T17:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto416 .
+
+ECSDI:vuelo418 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos419 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto420 .
+
+ECSDI:vuelo42 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos43 ;
+    ECSDI:fecha_final "2021-07-01T08:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T07:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto44 .
+
+ECSDI:vuelo422 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos423 ;
+    ECSDI:fecha_final "2021-07-01T19:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto424 .
+
+ECSDI:vuelo426 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos427 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto428 .
+
+ECSDI:vuelo430 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos431 ;
+    ECSDI:fecha_final "2021-07-01T20:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto432 .
+
+ECSDI:vuelo434 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos435 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto436 .
+
+ECSDI:vuelo438 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos439 ;
+    ECSDI:fecha_final "2021-07-01T21:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto440 .
+
+ECSDI:vuelo442 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos443 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto444 .
+
+ECSDI:vuelo446 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos447 ;
+    ECSDI:fecha_final "2021-07-01T23:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto448 .
+
+ECSDI:vuelo450 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos451 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto452 .
+
+ECSDI:vuelo454 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos455 ;
+    ECSDI:fecha_final "2021-07-02T11:10:00" ;
+    ECSDI:fecha_inicial "2021-07-02T07:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto456 .
+
+ECSDI:vuelo458 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos459 ;
+    ECSDI:fecha_final "2021-07-01T13:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto460 .
+
+ECSDI:vuelo46 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos47 ;
+    ECSDI:fecha_final "2021-07-01T10:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T08:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto48 .
+
+ECSDI:vuelo462 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos463 ;
+    ECSDI:fecha_final "2021-07-01T17:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto464 .
+
+ECSDI:vuelo466 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos467 ;
+    ECSDI:fecha_final "2021-07-01T08:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto468 .
+
+ECSDI:vuelo470 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos471 ;
+    ECSDI:fecha_final "2021-07-01T12:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T10:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto472 .
+
+ECSDI:vuelo474 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos475 ;
+    ECSDI:fecha_final "2021-07-01T18:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto476 .
+
+ECSDI:vuelo478 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos479 ;
+    ECSDI:fecha_final "2021-07-01T23:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T21:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto480 .
+
+ECSDI:vuelo482 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos483 ;
+    ECSDI:fecha_final "2021-07-01T08:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto484 .
+
+ECSDI:vuelo486 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos487 ;
+    ECSDI:fecha_final "2021-07-01T17:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto488 .
+
+ECSDI:vuelo490 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos491 ;
+    ECSDI:fecha_final "2021-07-01T13:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto492 .
+
+ECSDI:vuelo494 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos495 ;
+    ECSDI:fecha_final "2021-07-01T23:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T21:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto496 .
+
+ECSDI:vuelo498 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos499 ;
+    ECSDI:fecha_final "2021-07-01T08:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto500 .
+
+ECSDI:vuelo50 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos51 ;
+    ECSDI:fecha_final "2021-07-01T11:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto52 .
+
+ECSDI:vuelo502 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos503 ;
+    ECSDI:fecha_final "2021-07-01T23:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T21:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto504 .
+
+ECSDI:vuelo506 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos507 ;
+    ECSDI:fecha_final "2021-07-01T18:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto508 .
+
+ECSDI:vuelo510 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos511 ;
+    ECSDI:fecha_final "2021-07-02T10:20:00" ;
+    ECSDI:fecha_inicial "2021-07-02T08:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto512 .
+
+ECSDI:vuelo514 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos515 ;
+    ECSDI:fecha_final "2021-07-01T18:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto516 .
+
+ECSDI:vuelo518 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos519 ;
+    ECSDI:fecha_final "2021-07-02T12:35:00" ;
+    ECSDI:fecha_inicial "2021-07-02T10:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto520 .
+
+ECSDI:vuelo522 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos523 ;
+    ECSDI:fecha_final "2021-07-01T13:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto524 .
+
+ECSDI:vuelo526 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos527 ;
+    ECSDI:fecha_final "2021-07-02T10:20:00" ;
+    ECSDI:fecha_inicial "2021-07-02T08:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto528 .
+
+ECSDI:vuelo530 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos531 ;
+    ECSDI:fecha_final "2021-07-01T10:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto532 .
+
+ECSDI:vuelo534 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos535 ;
+    ECSDI:fecha_final "2021-07-01T20:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto536 .
+
+ECSDI:vuelo538 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos539 ;
+    ECSDI:fecha_final "2021-07-01T17:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto540 .
+
+ECSDI:vuelo54 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos55 ;
+    ECSDI:fecha_final "2021-07-01T13:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto56 .
+
+ECSDI:vuelo542 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos543 ;
+    ECSDI:fecha_final "2021-07-01T19:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto544 .
+
+ECSDI:vuelo546 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos547 ;
+    ECSDI:fecha_final "2021-07-01T15:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto548 .
+
+ECSDI:vuelo550 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos551 ;
+    ECSDI:fecha_final "2021-07-02T10:55:00" ;
+    ECSDI:fecha_inicial "2021-07-02T08:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto552 .
+
+ECSDI:vuelo554 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos555 ;
+    ECSDI:fecha_final "2021-07-01T14:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto556 .
+
+ECSDI:vuelo558 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos559 ;
+    ECSDI:fecha_final "2021-07-01T08:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto560 .
+
+ECSDI:vuelo562 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos563 ;
+    ECSDI:fecha_final "2021-07-01T11:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto564 .
+
+ECSDI:vuelo566 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos567 ;
+    ECSDI:fecha_final "2021-07-01T16:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto568 .
+
+ECSDI:vuelo570 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos571 ;
+    ECSDI:fecha_final "2021-07-01T16:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto572 .
+
+ECSDI:vuelo574 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos575 ;
+    ECSDI:fecha_final "2021-07-01T19:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto576 .
+
+ECSDI:vuelo578 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos579 ;
+    ECSDI:fecha_final "2021-07-01T08:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto580 .
+
+ECSDI:vuelo58 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos59 ;
+    ECSDI:fecha_final "2021-07-01T16:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto60 .
+
+ECSDI:vuelo582 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos583 ;
+    ECSDI:fecha_final "2021-07-01T17:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto584 .
+
+ECSDI:vuelo586 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos587 ;
+    ECSDI:fecha_final "2021-07-01T19:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto588 .
+
+ECSDI:vuelo590 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos591 ;
+    ECSDI:fecha_final "2021-07-01T23:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T21:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto592 .
+
+ECSDI:vuelo594 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos595 ;
+    ECSDI:fecha_final "2021-07-02T07:45:00" ;
+    ECSDI:fecha_inicial "2021-07-02T06:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto596 .
+
+ECSDI:vuelo598 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos599 ;
+    ECSDI:fecha_final "2021-07-01T23:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T21:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto600 .
+
+ECSDI:vuelo6 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos7 ;
+    ECSDI:fecha_final "2021-07-01T07:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto8 .
+
+ECSDI:vuelo602 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos603 ;
+    ECSDI:fecha_final "2021-07-02T10:25:00" ;
+    ECSDI:fecha_inicial "2021-07-02T09:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto604 .
+
+ECSDI:vuelo606 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos607 ;
+    ECSDI:fecha_final "2021-07-01T17:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto608 .
+
+ECSDI:vuelo610 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos611 ;
+    ECSDI:fecha_final "2021-07-02T07:45:00" ;
+    ECSDI:fecha_inicial "2021-07-02T06:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto612 .
+
+ECSDI:vuelo614 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos615 ;
+    ECSDI:fecha_final "2021-07-01T17:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto616 .
+
+ECSDI:vuelo618 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos619 ;
+    ECSDI:fecha_final "2021-07-02T10:25:00" ;
+    ECSDI:fecha_inicial "2021-07-02T09:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto620 .
+
+ECSDI:vuelo62 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos63 ;
+    ECSDI:fecha_final "2021-07-01T19:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto64 .
+
+ECSDI:vuelo622 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos623 ;
+    ECSDI:fecha_final "2021-07-01T11:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto624 .
+
+ECSDI:vuelo626 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos627 ;
+    ECSDI:fecha_final "2021-07-02T07:45:00" ;
+    ECSDI:fecha_inicial "2021-07-02T06:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto628 .
+
+ECSDI:vuelo630 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos631 ;
+    ECSDI:fecha_final "2021-07-01T14:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto632 .
+
+ECSDI:vuelo634 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos635 ;
+    ECSDI:fecha_final "2021-07-01T17:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto636 .
+
+ECSDI:vuelo638 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos639 ;
+    ECSDI:fecha_final "2021-07-01T20:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto640 .
+
+ECSDI:vuelo642 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos643 ;
+    ECSDI:fecha_final "2021-07-01T22:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto644 .
+
+ECSDI:vuelo646 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos647 ;
+    ECSDI:fecha_final "2021-07-01T11:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto648 .
+
+ECSDI:vuelo650 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos651 ;
+    ECSDI:fecha_final "2021-07-01T14:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto652 .
+
+ECSDI:vuelo654 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos655 ;
+    ECSDI:fecha_final "2021-07-01T18:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto656 .
+
+ECSDI:vuelo658 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos659 ;
+    ECSDI:fecha_final "2021-07-01T16:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto660 .
+
+ECSDI:vuelo66 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos67 ;
+    ECSDI:fecha_final "2021-07-01T16:15:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto68 .
+
+ECSDI:vuelo662 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos663 ;
+    ECSDI:fecha_final "2021-07-01T18:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto664 .
+
+ECSDI:vuelo666 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos667 ;
+    ECSDI:fecha_final "2021-07-01T11:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto668 .
+
+ECSDI:vuelo670 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos671 ;
+    ECSDI:fecha_final "2021-07-01T13:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto672 .
+
+ECSDI:vuelo674 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos675 ;
+    ECSDI:fecha_final "2021-07-01T16:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto676 .
+
+ECSDI:vuelo678 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos679 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto680 .
+
+ECSDI:vuelo682 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos683 ;
+    ECSDI:fecha_final "2021-07-01T08:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto684 .
+
+ECSDI:vuelo686 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos687 ;
+    ECSDI:fecha_final "2021-07-01T13:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto688 .
+
+ECSDI:vuelo690 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos691 ;
+    ECSDI:fecha_final "2021-07-01T11:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto692 .
+
+ECSDI:vuelo694 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos695 ;
+    ECSDI:fecha_final "2021-07-01T18:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto696 .
+
+ECSDI:vuelo698 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos699 ;
+    ECSDI:fecha_final "2021-07-01T11:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto700 .
+
+ECSDI:vuelo70 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos71 ;
+    ECSDI:fecha_final "2021-07-02T10:20:00" ;
+    ECSDI:fecha_inicial "2021-07-02T08:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto72 .
+
+ECSDI:vuelo702 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos703 ;
+    ECSDI:fecha_final "2021-07-01T18:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto704 .
+
+ECSDI:vuelo706 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos707 ;
+    ECSDI:fecha_final "2021-07-01T08:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto708 .
+
+ECSDI:vuelo710 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos711 ;
+    ECSDI:fecha_final "2021-07-01T18:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto712 .
+
+ECSDI:vuelo714 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos715 ;
+    ECSDI:fecha_final "2021-07-01T08:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto716 .
+
+ECSDI:vuelo718 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos719 ;
+    ECSDI:fecha_final "2021-07-01T18:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto720 .
+
+ECSDI:vuelo722 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos723 ;
+    ECSDI:fecha_final "2021-07-01T11:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto724 .
+
+ECSDI:vuelo726 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos727 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto728 .
+
+ECSDI:vuelo730 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos731 ;
+    ECSDI:fecha_final "2021-07-01T08:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto732 .
+
+ECSDI:vuelo734 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos735 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto736 .
+
+ECSDI:vuelo738 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos739 ;
+    ECSDI:fecha_final "2021-07-01T19:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto740 .
+
+ECSDI:vuelo74 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos75 ;
+    ECSDI:fecha_final "2021-07-01T22:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto76 .
+
+ECSDI:vuelo742 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos743 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T10:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto744 .
+
+ECSDI:vuelo746 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos747 ;
+    ECSDI:fecha_final "2021-07-01T17:10:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto748 .
+
+ECSDI:vuelo750 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos751 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T10:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto752 .
+
+ECSDI:vuelo754 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos755 ;
+    ECSDI:fecha_final "2021-07-01T19:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto756 .
+
+ECSDI:vuelo758 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos759 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T10:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto760 .
+
+ECSDI:vuelo762 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos763 ;
+    ECSDI:fecha_final "2021-07-01T22:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto764 .
+
+ECSDI:vuelo766 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos767 ;
+    ECSDI:fecha_final "2021-07-01T14:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto768 .
+
+ECSDI:vuelo770 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos771 ;
+    ECSDI:fecha_final "2021-07-01T20:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto772 .
+
+ECSDI:vuelo774 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos775 ;
+    ECSDI:fecha_final "2021-07-01T13:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto776 .
+
+ECSDI:vuelo778 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos779 ;
+    ECSDI:fecha_final "2021-07-01T16:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto780 .
+
+ECSDI:vuelo78 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos79 ;
+    ECSDI:fecha_final "2021-07-01T12:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto80 .
+
+ECSDI:vuelo782 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos783 ;
+    ECSDI:fecha_final "2021-07-01T12:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto784 .
+
+ECSDI:vuelo786 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos787 ;
+    ECSDI:fecha_final "2021-07-01T16:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto788 .
+
+ECSDI:vuelo790 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos791 ;
+    ECSDI:fecha_final "2021-07-01T12:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T10:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto792 .
+
+ECSDI:vuelo794 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos795 ;
+    ECSDI:fecha_final "2021-07-01T15:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:05:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto796 .
+
+ECSDI:vuelo798 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos799 ;
+    ECSDI:fecha_final "2021-07-01T15:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto800 .
+
+ECSDI:vuelo802 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos803 ;
+    ECSDI:fecha_final "2021-07-01T17:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto804 .
+
+ECSDI:vuelo806 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos807 ;
+    ECSDI:fecha_final "2021-07-01T08:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto808 .
+
+ECSDI:vuelo810 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos811 ;
+    ECSDI:fecha_final "2021-07-01T10:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T09:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto812 .
+
+ECSDI:vuelo814 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos815 ;
+    ECSDI:fecha_final "2021-07-01T15:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto816 .
+
+ECSDI:vuelo818 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos819 ;
+    ECSDI:fecha_final "2021-07-01T17:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto820 .
+
+ECSDI:vuelo82 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos83 ;
+    ECSDI:fecha_final "2021-07-01T16:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto84 .
+
+ECSDI:vuelo822 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos823 ;
+    ECSDI:fecha_final "2021-07-01T13:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto824 .
+
+ECSDI:vuelo826 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos827 ;
+    ECSDI:fecha_final "2021-07-01T15:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto828 .
+
+ECSDI:vuelo830 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos831 ;
+    ECSDI:fecha_final "2021-07-01T19:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto832 .
+
+ECSDI:vuelo834 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos835 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto836 .
+
+ECSDI:vuelo838 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos839 ;
+    ECSDI:fecha_final "2021-07-01T08:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto840 .
+
+ECSDI:vuelo842 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos843 ;
+    ECSDI:fecha_final "2021-07-01T11:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T10:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto844 .
+
+ECSDI:vuelo846 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos847 ;
+    ECSDI:fecha_final "2021-07-01T15:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto848 .
+
+ECSDI:vuelo850 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos851 ;
+    ECSDI:fecha_final "2021-07-01T19:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto852 .
+
+ECSDI:vuelo854 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos855 ;
+    ECSDI:fecha_final "2021-07-01T13:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto856 .
+
+ECSDI:vuelo858 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos859 ;
+    ECSDI:fecha_final "2021-07-01T17:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto860 .
+
+ECSDI:vuelo86 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos87 ;
+    ECSDI:fecha_final "2021-07-01T09:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T08:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto88 .
+
+ECSDI:vuelo862 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos863 ;
+    ECSDI:fecha_final "2021-07-01T13:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto864 .
+
+ECSDI:vuelo866 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos867 ;
+    ECSDI:fecha_final "2021-07-01T17:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto868 .
+
+ECSDI:vuelo870 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos871 ;
+    ECSDI:fecha_final "2021-07-01T08:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto872 .
+
+ECSDI:vuelo874 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos875 ;
+    ECSDI:fecha_final "2021-07-01T13:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:25:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto876 .
+
+ECSDI:vuelo878 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos879 ;
+    ECSDI:fecha_final "2021-07-01T13:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto880 .
+
+ECSDI:vuelo882 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos883 ;
+    ECSDI:fecha_final "2021-07-01T19:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto884 .
+
+ECSDI:vuelo886 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos887 ;
+    ECSDI:fecha_final "2021-07-01T15:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto888 .
+
+ECSDI:vuelo890 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos891 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto892 .
+
+ECSDI:vuelo894 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos895 ;
+    ECSDI:fecha_final "2021-07-01T08:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto896 .
+
+ECSDI:vuelo898 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos899 ;
+    ECSDI:fecha_final "2021-07-01T15:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto900 .
+
+ECSDI:vuelo90 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos91 ;
+    ECSDI:fecha_final "2021-07-01T16:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto92 .
+
+ECSDI:vuelo902 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos903 ;
+    ECSDI:fecha_final "2021-07-01T08:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto904 .
+
+ECSDI:vuelo906 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos907 ;
+    ECSDI:fecha_final "2021-07-01T15:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T14:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto908 .
+
+ECSDI:vuelo910 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos911 ;
+    ECSDI:fecha_final "2021-07-01T13:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:10:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto912 .
+
+ECSDI:vuelo914 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos915 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto916 .
+
+ECSDI:vuelo918 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos919 ;
+    ECSDI:fecha_final "2021-07-01T08:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto920 .
+
+ECSDI:vuelo922 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos923 ;
+    ECSDI:fecha_final "2021-07-01T17:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:30:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto924 .
+
+ECSDI:vuelo926 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos927 ;
+    ECSDI:fecha_final "2021-07-01T08:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto928 .
+
+ECSDI:vuelo930 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos931 ;
+    ECSDI:fecha_final "2021-07-01T17:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto932 .
+
+ECSDI:vuelo934 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos935 ;
+    ECSDI:fecha_final "2021-07-01T08:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto936 .
+
+ECSDI:vuelo938 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos939 ;
+    ECSDI:fecha_final "2021-07-01T19:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T17:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto940 .
+
+ECSDI:vuelo94 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos95 ;
+    ECSDI:fecha_final "2021-07-01T13:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:50:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto96 .
+
+ECSDI:vuelo942 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos943 ;
+    ECSDI:fecha_final "2021-07-01T08:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T06:20:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto944 .
+
+ECSDI:vuelo946 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos947 ;
+    ECSDI:fecha_final "2021-07-01T22:05:00" ;
+    ECSDI:fecha_inicial "2021-07-01T20:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto948 .
+
+ECSDI:vuelo950 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos951 ;
+    ECSDI:fecha_final "2021-07-01T13:25:00" ;
+    ECSDI:fecha_inicial "2021-07-01T12:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto952 .
+
+ECSDI:vuelo954 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos955 ;
+    ECSDI:fecha_final "2021-07-01T18:00:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto956 .
+
+ECSDI:vuelo958 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos959 ;
+    ECSDI:fecha_final "2021-07-01T15:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto960 .
+
+ECSDI:vuelo962 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos963 ;
+    ECSDI:fecha_final "2021-07-01T17:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:15:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto964 .
+
+ECSDI:vuelo966 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos967 ;
+    ECSDI:fecha_final "2021-07-01T20:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T18:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto968 .
+
+ECSDI:vuelo970 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos971 ;
+    ECSDI:fecha_final "2021-07-01T23:20:00" ;
+    ECSDI:fecha_inicial "2021-07-01T21:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto972 .
+
+ECSDI:vuelo974 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos975 ;
+    ECSDI:fecha_final "2021-07-01T15:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T13:35:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto976 .
+
+ECSDI:vuelo978 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos979 ;
+    ECSDI:fecha_final "2021-07-01T18:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto980 .
+
+ECSDI:vuelo98 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos99 ;
+    ECSDI:fecha_final "2021-07-01T18:50:00" ;
+    ECSDI:fecha_inicial "2021-07-01T16:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto100 .
+
+ECSDI:vuelo982 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos983 ;
+    ECSDI:fecha_final "2021-07-01T17:40:00" ;
+    ECSDI:fecha_inicial "2021-07-01T15:40:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto984 .
+
+ECSDI:vuelo986 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos987 ;
+    ECSDI:fecha_final "2021-07-01T20:35:00" ;
+    ECSDI:fecha_inicial "2021-07-01T19:00:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto988 .
+
+ECSDI:vuelo990 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos991 ;
+    ECSDI:fecha_final "2021-07-01T09:55:00" ;
+    ECSDI:fecha_inicial "2021-07-01T07:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto992 .
+
+ECSDI:vuelo994 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos995 ;
+    ECSDI:fecha_final "2021-07-01T13:30:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:55:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto996 .
+
+ECSDI:vuelo998 a ECSDI:vuelo ;
+    ECSDI:es_ofrecido_por ECSDI:proveedor_de_vuelos999 ;
+    ECSDI:fecha_final "2021-07-01T13:45:00" ;
+    ECSDI:fecha_inicial "2021-07-01T11:45:00" ;
+    ECSDI:importe 100 ;
+    ECSDI:tiene_como_aeropuerto ECSDI:aeropuerto1000 .
+
+<message--3377998503102692852-1145> a acl:FipaAclMessage,
         <http://www.w3.org/2002/07/owl#NamedIndividual> ;
     acl:performative acl:inform- ;
     acl:receiver <http://www.agentes.org#AgenteVuelos> ;
-    acl:sender <http://www.agentes.org#AgenteExternoVuelos> .
+    acl:sender <http://www.agentes.org#AgenteExternoVuelosAmadeus> .
 
-ECSDI:aeropuerto10 a ECSDI:aeropuerto ;
-    ECSDI:nombre "Amsterdam Airport Schiphol" .
+ECSDI:aeropuerto100 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
 
-ECSDI:aeropuerto15 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto1000 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1004 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1008 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1012 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1016 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1020 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1024 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1028 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1032 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1036 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto104 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1040 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1044 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1048 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1052 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1056 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1060 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1064 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1068 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1072 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1076 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto108 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1080 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1084 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1088 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1092 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1096 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1100 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1104 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1108 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1112 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1116 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto112 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1120 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1124 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1128 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1132 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1136 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1140 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto1144 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto116 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto12 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto120 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto124 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto128 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto132 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto136 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto140 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto144 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto148 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto152 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto156 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto16 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto160 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto164 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto168 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto172 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto176 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto180 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto184 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto188 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto192 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto196 a ECSDI:aeropuerto ;
     ECSDI:nombre "Barcelona El Prat Airport" .
 
 ECSDI:aeropuerto20 a ECSDI:aeropuerto ;
-    ECSDI:nombre "Amsterdam Airport Schiphol" .
-
-ECSDI:aeropuerto25 a ECSDI:aeropuerto ;
     ECSDI:nombre "Barcelona El Prat Airport" .
 
-ECSDI:aeropuerto30 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto200 a ECSDI:aeropuerto ;
     ECSDI:nombre "Barcelona El Prat Airport" .
 
-ECSDI:aeropuerto35 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto204 a ECSDI:aeropuerto ;
     ECSDI:nombre "Barcelona El Prat Airport" .
 
-ECSDI:aeropuerto41 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto208 a ECSDI:aeropuerto ;
     ECSDI:nombre "Barcelona El Prat Airport" .
 
-ECSDI:aeropuerto46 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto212 a ECSDI:aeropuerto ;
     ECSDI:nombre "Barcelona El Prat Airport" .
 
-ECSDI:aeropuerto5 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto216 a ECSDI:aeropuerto ;
     ECSDI:nombre "Barcelona El Prat Airport" .
 
-ECSDI:aeropuerto51 a ECSDI:aeropuerto ;
+ECSDI:aeropuerto220 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto224 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto228 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto232 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto236 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto24 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto240 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto244 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto248 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto252 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto256 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto260 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto264 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto268 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto272 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto276 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto28 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto280 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto284 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto288 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto292 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto296 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto300 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto304 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto308 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto312 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto316 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto32 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto320 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto324 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto328 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto332 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto336 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto340 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto344 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto348 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto352 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto356 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto36 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto360 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto364 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto368 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto372 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto376 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto380 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto384 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto388 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto392 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto396 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto4 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto40 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto400 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto404 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto408 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto412 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto416 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto420 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto424 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto428 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto432 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto436 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto44 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto440 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto444 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto448 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto452 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto456 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto460 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto464 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto468 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto472 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto476 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto48 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto480 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto484 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto488 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto492 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto496 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto500 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto504 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto508 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto512 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto516 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto52 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto520 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto524 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto528 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto532 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto536 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto540 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto544 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto548 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto552 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto556 a ECSDI:aeropuerto ;
     ECSDI:nombre "Barcelona El Prat Airport" .
 
 ECSDI:aeropuerto56 a ECSDI:aeropuerto ;
     ECSDI:nombre "Barcelona El Prat Airport" .
 
-ECSDI:proveedor_de_vuelos14 a ECSDI:compania ;
-    ECSDI:nombre "Air Freight NZ" .
+ECSDI:aeropuerto560 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto564 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto568 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto572 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto576 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto580 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto584 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto588 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto592 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto596 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto60 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto600 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto604 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto608 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto612 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto616 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto620 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto624 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto628 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto632 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto636 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto64 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto640 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto644 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto648 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto652 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto656 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto660 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto664 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto668 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto672 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto676 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto68 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto680 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto684 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto688 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto692 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto696 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto700 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto704 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto708 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto712 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto716 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto72 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto720 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto724 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto728 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto732 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto736 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto740 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto744 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto748 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto752 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto756 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto76 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto760 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto764 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto768 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto772 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto776 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto780 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto784 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto788 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto792 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto796 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto8 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto80 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto800 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto804 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto808 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto812 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto816 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto820 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto824 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto828 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto832 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto836 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto84 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto840 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto844 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto848 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto852 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto856 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto860 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto864 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto868 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto872 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto876 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto88 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto880 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto884 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto888 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto892 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto896 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto900 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto904 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto908 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto912 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto916 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto92 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto920 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto924 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto928 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto932 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto936 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto940 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto944 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto948 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto952 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto956 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto96 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto960 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto964 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto968 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto972 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto976 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto980 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto984 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto988 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto992 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:aeropuerto996 a ECSDI:aeropuerto ;
+    ECSDI:nombre "Barcelona El Prat Airport" .
+
+ECSDI:proveedor_de_vuelos1003 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1007 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1011 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1015 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1019 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1023 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1027 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos103 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1031 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1035 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1039 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1043 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1047 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1051 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1055 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1059 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1063 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1067 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos107 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1071 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1075 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1079 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1083 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1087 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1091 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1095 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1099 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos11 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1103 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1107 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos111 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1111 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1115 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1119 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1123 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1127 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1131 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1135 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1139 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos1143 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos115 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos119 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos123 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos127 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos131 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos135 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos139 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos143 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos147 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos15 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos151 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos155 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos159 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos163 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos167 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos171 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos175 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos179 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos183 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos187 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
 
 ECSDI:proveedor_de_vuelos19 a ECSDI:compania ;
-    ECSDI:nombre "Air Freight NZ" .
+    ECSDI:nombre "Ryanair" .
 
-ECSDI:proveedor_de_vuelos24 a ECSDI:compania ;
-    ECSDI:nombre "EasyJet" .
+ECSDI:proveedor_de_vuelos191 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
 
-ECSDI:proveedor_de_vuelos29 a ECSDI:compania ;
-    ECSDI:nombre "China Eastern Airlines" .
+ECSDI:proveedor_de_vuelos195 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
 
-ECSDI:proveedor_de_vuelos34 a ECSDI:compania ;
-    ECSDI:nombre "Air Europa" .
+ECSDI:proveedor_de_vuelos199 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos203 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos207 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos211 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos215 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos219 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos223 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos227 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos23 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos231 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos235 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos239 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos243 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos247 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos251 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos255 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos259 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos263 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos267 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos27 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos271 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos275 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos279 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos283 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos287 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos291 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos295 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos299 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos3 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos303 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos307 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos31 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos311 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos315 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos319 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos323 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos327 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos331 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos335 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos339 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos343 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos347 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos35 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos351 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos355 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos359 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos363 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos367 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos371 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos375 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos379 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos383 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos387 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
 
 ECSDI:proveedor_de_vuelos39 a ECSDI:compania ;
-    ECSDI:nombre "Air Freight NZ" .
+    ECSDI:nombre "Ryanair" .
 
-ECSDI:proveedor_de_vuelos4 a ECSDI:compania ;
-    ECSDI:nombre "Air Freight NZ" .
+ECSDI:proveedor_de_vuelos391 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
 
-ECSDI:proveedor_de_vuelos44 a ECSDI:compania ;
-    ECSDI:nombre "EasyJet" .
+ECSDI:proveedor_de_vuelos395 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
 
-ECSDI:proveedor_de_vuelos49 a ECSDI:compania ;
-    ECSDI:nombre "China Eastern Airlines" .
+ECSDI:proveedor_de_vuelos399 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
 
-ECSDI:proveedor_de_vuelos54 a ECSDI:compania ;
-    ECSDI:nombre "Air Europa" .
+ECSDI:proveedor_de_vuelos403 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
 
-ECSDI:proveedor_de_vuelos9 a ECSDI:compania ;
-    ECSDI:nombre "Air Freight NZ" .
+ECSDI:proveedor_de_vuelos407 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos411 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos415 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos419 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos423 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos427 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos43 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos431 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos435 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos439 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos443 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos447 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos451 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos455 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos459 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos463 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos467 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos47 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos471 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos475 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos479 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos483 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos487 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos491 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos495 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos499 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos503 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos507 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos51 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos511 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos515 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos519 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos523 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos527 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos531 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos535 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos539 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos543 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos547 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos55 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos551 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos555 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos559 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos563 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos567 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos571 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos575 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos579 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos583 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos587 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos59 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos591 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos595 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos599 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos603 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos607 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos611 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos615 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos619 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos623 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos627 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos63 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos631 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos635 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos639 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos643 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos647 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos651 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos655 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos659 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos663 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos667 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos67 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos671 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos675 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos679 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos683 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos687 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos691 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos695 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos699 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos7 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos703 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos707 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos71 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos711 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos715 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos719 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos723 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos727 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos731 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos735 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos739 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos743 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos747 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos75 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos751 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos755 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos759 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos763 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos767 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos771 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos775 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos779 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos783 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos787 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos79 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos791 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos795 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos799 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos803 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos807 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos811 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos815 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos819 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos823 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos827 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos83 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos831 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos835 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos839 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos843 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos847 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos851 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos855 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos859 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos863 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos867 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos87 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos871 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos875 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos879 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos883 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos887 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos891 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos895 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos899 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos903 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos907 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos91 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos911 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos915 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos919 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos923 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos927 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos931 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos935 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos939 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos943 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos947 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos95 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos951 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos955 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos959 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos963 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos967 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos971 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos975 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos979 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos983 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos987 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos99 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos991 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos995 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
+
+ECSDI:proveedor_de_vuelos999 a ECSDI:compania ;
+    ECSDI:nombre "Ryanair" .
 
