@@ -247,20 +247,13 @@ def buscar_vuelos_externos():
         dest = dest[4].replace("_", " ")
         print(dest)
 
-        fecha_salida=random_date(dat_origen,dat_destino)
-        fecha_salida_origen = random_date(fecha_salida, fecha_salida+timedelta(hours=14))
-        fecha_llegada_origen = random_date(fecha_salida_origen+timedelta(hours=3), fecha_salida_origen+timedelta(hours=5))
+        fecha_salida=random_date(dat_origen, dat_destino)
+        fecha_salida = random_date(fecha_salida, fecha_salida+timedelta(hours=14))
+        fecha_llegada = random_date(fecha_salida+timedelta(hours=3), fecha_salida+timedelta(hours=5))
     
-        precio_origen = random.randint(min_price,max_price)
+        precio_destino = random.randint(min_price,max_price)
 
-        print(fecha_salida_origen)
-        print(fecha_llegada_origen)
-
-        print(precio_origen)
-
-
-        # COMPROBAR QUE TODO EXISTA Y SI NO, AÑADIRLO!
-        vuelo_origen = ECSDI['vuelo' + str(get_count())]
+        vuelo = ECSDI['vuelo' + str(get_count())]
         compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
         origen = ECSDI['aeropuerto'+str(get_count())]
         destino = ECSDI['aeropuerto'+str(get_count())]
@@ -269,22 +262,22 @@ def buscar_vuelos_externos():
         grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
         grafo_vuelos.add((compania, ECSDI.nombre, Literal(comp)))
 
-        # Llega a
-        grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
-        grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
-
         # Sale_de
         grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
         grafo_vuelos.add((origen, ECSDI.nombre, Literal(orig)))
 
+        # Llega a
+        grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
 
-        # Vuelo origen
-        grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.vuelo))
-        grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto, URIRef(origen)))
-        grafo_vuelos.add((vuelo_origen, ECSDI.importe, Literal(precio_origen))) # comprobar que importe sea atributo de vuelo
-        grafo_vuelos.add((vuelo_origen, ECSDI.es_ofrecido_por, URIRef(compania)))
-        grafo_vuelos.add((vuelo_origen, ECSDI.fecha_inicial, Literal(fecha_salida_origen)))
-        grafo_vuelos.add((vuelo_origen, ECSDI.fecha_final, Literal(fecha_llegada_origen)))
+        # Vuelo destino
+        grafo_vuelos.add((vuelo, RDF.type, ECSDI.vuelo))
+        grafo_vuelos.add((vuelo, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
+        grafo_vuelos.add((vuelo, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
+        grafo_vuelos.add((vuelo, ECSDI.importe, Literal(precio_destino)))
+        grafo_vuelos.add((vuelo, ECSDI.es_ofrecido_por, URIRef(compania)))
+        grafo_vuelos.add((vuelo, ECSDI.fecha_inicial, Literal(fecha_salida)))
+        grafo_vuelos.add((vuelo, ECSDI.fecha_final, Literal(fecha_llegada)))
 
 
     # Se buscan vuelos con el aeropuerto de origen y destino
@@ -314,19 +307,14 @@ def buscar_vuelos_externos():
         dest = dest[4].replace("_", " ")
         dest = dest.replace("%E2%80%93"," ")
 
-        fecha_llegada=random_date(dat_origen,dat_destino)
-        fecha_salida_destino = random_date(fecha_llegada, fecha_llegada+timedelta(hours=14))
-        fecha_llegada_destino = random_date(fecha_salida_destino+timedelta(hours=3), fecha_salida_destino+timedelta(hours=5))
+        fecha=random_date(dat_origen, dat_destino)
+        fecha_salida = random_date(fecha, fecha+timedelta(hours=14))
+        fecha_llegada= random_date(fecha_salida+timedelta(hours=3), fecha_salida+timedelta(hours=5))
 
-        precio_destino = random.randint(min_price,max_price)
+        precio_destino = random.randint(min_price, max_price)
 
-        print(fecha_salida_destino)
-        print(fecha_llegada_destino)
 
-        print(precio_destino)
-
-        # COMPROBAR QUE TODO EXISTA Y SI NO, AÑADIRLO!
-        vuelo_destino = ECSDI['vuelo' + str(get_count())]
+        vuelo = ECSDI['vuelo' + str(get_count())]
         compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
         origen = ECSDI['aeropuerto'+str(get_count())]
         destino = ECSDI['aeropuerto'+str(get_count())]
@@ -335,21 +323,22 @@ def buscar_vuelos_externos():
         grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
         grafo_vuelos.add((compania, ECSDI.nombre, Literal(comp)))
 
-        # Llega a
-        grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
-        grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
-
         # Sale_de
         grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
         grafo_vuelos.add((origen, ECSDI.nombre, Literal(orig)))
 
+        # Llega a
+        grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
+
         # Vuelo destino
-        grafo_vuelos.add((vuelo_destino, RDF.type, ECSDI.vuelo))
-        grafo_vuelos.add((vuelo_destino, ECSDI.tiene_como_aeropuerto, URIRef(destino)))
-        grafo_vuelos.add((vuelo_destino, ECSDI.importe, Literal(precio_destino))) # comprobar que importe sea atributo de vuelo
-        grafo_vuelos.add((vuelo_destino, ECSDI.es_ofrecido_por, URIRef(compania)))
-        grafo_vuelos.add((vuelo_destino, ECSDI.fecha_inicial, Literal(fecha_salida_destino)))
-        grafo_vuelos.add((vuelo_destino, ECSDI.fecha_final, Literal(fecha_llegada_destino)))
+        grafo_vuelos.add((vuelo, RDF.type, ECSDI.vuelo))
+        grafo_vuelos.add((vuelo, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
+        grafo_vuelos.add((vuelo, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
+        grafo_vuelos.add((vuelo, ECSDI.importe, Literal(precio_destino)))
+        grafo_vuelos.add((vuelo, ECSDI.es_ofrecido_por, URIRef(compania)))
+        grafo_vuelos.add((vuelo, ECSDI.fecha_inicial, Literal(fecha_salida)))
+        grafo_vuelos.add((vuelo, ECSDI.fecha_final, Literal(fecha_llegada)))
 
 
     # Devolvemos el grafo de vuelos

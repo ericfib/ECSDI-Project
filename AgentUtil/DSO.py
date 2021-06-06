@@ -52,7 +52,7 @@ ONTOLOGY = ClosedNamespace(
         'Usuario',
         'Agente',
         'Localizacion',
-        'Aeropuerto',
+        'Aeropuerto', #añadido
         'Respuesta_Vuelos',
         'Respuesta_Plan',
         'Proveedor_de_vuelos',
@@ -68,6 +68,8 @@ ONTOLOGY = ClosedNamespace(
         'esta_hecha_por',
         'tiene_como_alojamiento',
         'genera',
+        'ciudad_destino', #añadido
+        'ciudad_origen', #añadido
         'provoca',
         'tiene_actividades',
         'tiene_como_destino',
@@ -78,7 +80,8 @@ ONTOLOGY = ClosedNamespace(
         'tiene_como_origen',
         'contrata',
         'es_ofrecido_por',
-        'tiene_como_aeropuerto',
+        'tiene_como_aeropuerto_origen', #añadido
+        'tiene_como_aeropuerto_destino', #añadido
         'tiene_ubicacion',
         'tiene_como_vuelo_de_ida',
         'llega_a',

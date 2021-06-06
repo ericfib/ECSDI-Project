@@ -155,7 +155,7 @@ def read_agent(tipus, agente):
 
 def get_vuelos():
     global ag
-    if mss_cnt % 2 == 0:
+    if mss_cnt % 2 != 0:
         ag = ag_vuelos_ext[0]
         if ag.address == '':
             logger.info('Contactando Agente de alojamientos externo...')
@@ -243,44 +243,68 @@ def stop():
     shutdown_server()
     return "Parando Servidor"
 
-def get_vuelos_local(city, pricemax, pricemin, dateIni, dateFi):
-    global aeropuerto
-    gresp = Graph()
-    gresp.bind('ECSDI', ECSDI)
+def get_vuelos_local(ciudad_origen, ciudad_destino, pricemax, pricemin, dateIni, dateFi):
+    global aeropuerto_origen
+    global aeropuerto_destino
 
-    content = ECSDI['Respuesta_Vuelos' + str(get_count())]
+    if ciudad_origen == 'BCN':
+        aeropuerto_origen = "Barcelona El Prat Airport"
+        aeropuerto_destino = "Charles de Gaulle Airport"
 
+    else:
+        aeropuerto_origen = "Charles de Gaulle Airport"
+        aeropuerto_destino = "Barcelona El Prat Airport"
+    gres = Graph()
     g = Graph()
-    g.bind('ECSDI', ECSDI)
+    n = 2
     g.parse('../datos/vuelos.ttl', format='turtle')
+    act_list = g.triples((None, RDF.type, ECSDI.vuelo))
+    if act_list is not None:
+        while n > 0:
+            next_act_uri = next(act_list)[0]
+            if int(g.value(subject=next_act_uri, predicate=ECSDI.importe)) >= pricemin and int(g.value(subject=next_act_uri, predicate=ECSDI.importe)) <= pricemax:
+                importe = g.value(subject=next_act_uri, predicate=ECSDI.importe)
+                fecha_inicial = g.value(subject=next_act_uri, predicate=ECSDI.fecha_inicial)
+                fecha_final = g.value(subject=next_act_uri, predicate=ECSDI.fecha_final)
+                comp = g.value(subject=next_act_uri, predicate=ECSDI.es_ofrecido_por)
+                nombre_comp = g.value(subject=comp, predicate=ECSDI.nombre)
 
+                origen = g.value(subject=next_act_uri, predicate=ECSDI.tiene_como_aeropuerto_origen)
+                nombre_origen = g.value(subject=origen, predicate=ECSDI.nombre)
 
-    aeropuerto = "Barcelona El Prat Airport"
+                destino = g.value(subject=next_act_uri, predicate=ECSDI.tiene_como_aeropuerto_destino)
+                nombre_destino = g.value(subject=destino, predicate=ECSDI.nombre)
+                print(aeropuerto_origen)
+                # Primero hacemos el de ida y cambiamos los valores para buscar de vuelta
+                if str(nombre_origen) == str(aeropuerto_origen) and str(nombre_destino) == str(aeropuerto_destino):
+                    if aeropuerto_origen == "Barcelona El Prat Airport":
+                        aeropuerto_origen = "Charles de Gaulle Airport"
+                        aeropuerto_destino = "Barcelona El Prat Airport"
+                    else:
+                        aeropuerto_origen = "Barcelona El Prat Airport"
+                        aeropuerto_destino = "Charles de Gaulle Airport"
 
-    queryobj = """
-        prefix ecsdi:<http://www.semanticweb.org/eric/ontologies/2021/4/ecsdiOntology#>
-        Select ?vuelo
-        Where {
-            ?vuelo ecsdi:tiene_como_aeropuerto "%s" .     
-        }
-        LIMIT 1
-    """ % (aeropuerto)
+                    # Compania
+                    gres.add((comp, RDF.type, ECSDI.compania))
+                    gres.add((comp, ECSDI.nombre, nombre_comp))
 
-    qpb = g.query(queryobj, initNs=dict(ecsdi=ECSDI))
+                    # Llega a
+                    gres.add((destino, RDF.type, ECSDI.aeropuerto))
+                    gres.add((destino, ECSDI.nombre, nombre_destino))
 
-    vueloURI = qpb.result[0][0]
-    precioFinal = g.value(subject=vueloURI, predicate=ECSDI.importe)
-    proveedor = g.value(subject=vueloURI, predicate=ECSDI.es_ofrecido_por)
-    destinoFinal = g.value(subject=vueloURI, predicate=ECSDI.tiene_como_aeropuerto_destino)
+                    # Sale de
+                    gres.add((origen, RDF.type, ECSDI.aeropuerto))
+                    gres.add((origen, ECSDI.nombre, nombre_origen))
 
-    gresp.add((vueloURI, RDF.type, ECSDI.Vuelo))
-    gresp.add((vueloURI, ECSDI.tiene_como_aeropuerto_destino, destinoFinal))
-    gresp.add((vueloURI, ECSDI.importe, precioFinal))
-    gresp.add((vueloURI, ECSDI.es_ofrecido_por, proveedor))
-    gresp.add((vueloURI, ECSDI.fecha_inicial, dateIni))
-    gresp.add((vueloURI, ECSDI.fecha_final, dateFi))
-
-    return gresp
+                    gres.add((next_act_uri, RDF.type, ECSDI.Vuelo))
+                    gres.add((next_act_uri, ECSDI.tiene_como_aeropuerto_destino, destino))
+                    gres.add((next_act_uri, ECSDI.tiene_como_aeropuerto_origen, origen))
+                    gres.add((next_act_uri, ECSDI.importe, importe))
+                    gres.add((next_act_uri, ECSDI.es_ofrecido_por, comp))
+                    gres.add((next_act_uri, ECSDI.fecha_inicial, fecha_inicial))
+                    gres.add((next_act_uri, ECSDI.fecha_final, fecha_final))
+                    n -= 1
+    return gres
 
 @app.route("/comm")
 def comunicacion():
@@ -314,17 +338,18 @@ def comunicacion():
                 if accion == ECSDI.Peticion_Vuelos:
                     ciudad_dict = {'barcelona': 'BCN', 'paris': 'PAR'}
 
-                    precio_max_v = str(
+                    precio_max_v = int(
                         grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.rango_precio_vuelos_max))
-                    precio_min_v = str(
+                    precio_min_v = int(
                         grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.rango_precio_vuelos_min))
+                    ciudad_origen_v = str(
+                        grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.ciudad_origen))
                     ciudad_destino_v = str(
                         grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.ciudad_destino))
                     fecha_inicial_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_inicio)
                     fecha_final_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_final)
 
-                    grespuesta = get_vuelos_local(ciudad_dict[ciudad_destino_v.lower()], precio_max_v, precio_min_v,
-                                            fecha_inicial_v, fecha_final_v)
+                    grespuesta = get_vuelos_local(ciudad_dict[ciudad_origen_v.lower()], ciudad_dict[ciudad_destino_v.lower()], precio_max_v, precio_min_v, fecha_inicial_v, fecha_final_v)
 
                     grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteVuelos.uri,
                                                msgcnt=mss_cnt, receiver=msg['sender'])

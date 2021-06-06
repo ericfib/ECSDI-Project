@@ -20,6 +20,7 @@ import os
 
 import argparse
 from pprint import PrettyPrinter
+import random
 
 from rdflib import Namespace, Graph, Literal, URIRef
 from rdflib.namespace import FOAF, RDF
@@ -127,24 +128,20 @@ def buscar_vuelos_externos():
 
     content = ECSDI['Respuesta_Vuelos' + str(get_count())]
 
-    flights = amadeus.shopping.flight_offers_search.get(
+    flightsbcnprs = amadeus.shopping.flight_offers_search.get(
         originLocationCode='BCN',
         destinationLocationCode='PAR',
         departureDate='2021-07-01',
         adults=1)
-    response = flights.data
+    response = flightsbcnprs.data
 
-    # TRATAMIENTO RESPUESTA
-    # grafo = Graph('dso', namespace)
-
-    if flights.status_code != 200:
-        logger.info('Error al buscar vuelos: ' + flights.status_code)
+    if flightsbcnprs.status_code != 200:
+        logger.info('Error al buscar vuelos: ' + flightsbcnprs.status_code)
     else:
 
         for flight in response:
             for f in flight["itineraries"]:
                 for x in f["segments"]:
-                    #print(x["departure"])
                     vuelo_origen = ECSDI['vuelo' + str(get_count())]
                     compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
                     origen = ECSDI['aeropuerto' + str(get_count())]
@@ -163,10 +160,55 @@ def buscar_vuelos_externos():
                     grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
                     grafo_vuelos.add((origen, ECSDI.nombre, Literal("Barcelona El Prat Airport")))
 
+                    importe = random.randint(30, 350)
+
                     # Vuelo origen
                     grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.vuelo))
-                    grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto, URIRef(origen)))
-                    grafo_vuelos.add((vuelo_origen, ECSDI.importe, Literal(100)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.importe, Literal(importe)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.es_ofrecido_por, URIRef(compania)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.fecha_inicial, Literal(x["departure"]["at"])))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.fecha_final, Literal(x["arrival"]["at"])))
+
+    flightsprsbcn = amadeus.shopping.flight_offers_search.get(
+        originLocationCode='PAR',
+        destinationLocationCode='BCN',
+        departureDate='2021-07-01',
+        adults=1)
+    response = flightsprsbcn.data
+
+    if flightsprsbcn.status_code != 200:
+        logger.info('Error al buscar vuelos: ' + flightsprsbcn.status_code)
+    else:
+
+        for flight in response:
+            for f in flight["itineraries"]:
+                for x in f["segments"]:
+                    vuelo_origen = ECSDI['vuelo' + str(get_count())]
+                    compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
+                    origen = ECSDI['aeropuerto' + str(get_count())]
+                    destino = ECSDI['aeropuerto' + str(get_count())]
+
+                    # Compania
+                    grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
+                    grafo_vuelos.add((compania, ECSDI.nombre, Literal("Ryanair")))
+
+                    # Llega a
+                    grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+                    grafo_vuelos.add((destino, ECSDI.nombre, Literal("Barcelona El Prat Airport")))
+
+                    # Sale_de
+                    grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
+                    grafo_vuelos.add((origen, ECSDI.nombre, Literal("Charles de Gaulle Airport")))
+
+                    importe = random.randint(30, 350)
+
+                    # Vuelo origen
+                    grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.vuelo))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
+                    grafo_vuelos.add((vuelo_origen, ECSDI.importe, Literal(importe)))
                     grafo_vuelos.add((vuelo_origen, ECSDI.es_ofrecido_por, URIRef(compania)))
                     grafo_vuelos.add((vuelo_origen, ECSDI.fecha_inicial, Literal(x["departure"]["at"])))
                     grafo_vuelos.add((vuelo_origen, ECSDI.fecha_final, Literal(x["arrival"]["at"])))
