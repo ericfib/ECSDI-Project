@@ -197,8 +197,11 @@ def comunicacion():
                     ciudad_destino_v = str(grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.ciudad_destino))
                     fecha_inicial_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_inicio)
                     fecha_final_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_final)
+                    escentrico = bool(grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.centrico))
+
                     try:
-                        grespuesta = get_alojamientos(ciudad_dict[ciudad_destino_v.lower()], precio_max_v, precio_min_v , fecha_inicial_v, fecha_final_v)
+                        grespuesta = get_alojamientos(ciudad_dict[ciudad_destino_v.lower()], precio_max_v, precio_min_v,
+                                                      fecha_inicial_v, fecha_final_v, escentrico)
                         grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteAlojamientos.uri,
                                                    msgcnt=mss_cnt, receiver=msg['sender'])
                     except IndexError:
@@ -254,7 +257,7 @@ def fetch_alojamientos():
 
 
 @ttl_cache(maxsize=1000000, ttl=10 * 60)
-def get_alojamientos(city, pricemax, pricemin, dateIni, dateFi):
+def get_alojamientos(city, pricemax, pricemin, dateIni, dateFi, escentrico):
 
     gresp = Graph()
     gresp.bind('ECSDI', ECSDI)
@@ -271,10 +274,12 @@ def get_alojamientos(city, pricemax, pricemin, dateIni, dateFi):
         Where {
             ?Alojamiento ecsdi:ciudad "%s" .
             ?Alojamiento ecsdi:importe ?price
+            ?Alojamiento ecsdi:centrico ?centrico
+            FILTER(?centrico == %s)
             FILTER(?price <= %s && ?price >= %s)
         }
         LIMIT 1
-    """ % (city, pricemax, pricemin)
+    """ % (city, escentrico, pricemax, pricemin)
 
     qpb = g.query(queryobj, initNs=dict(ecsdi=ECSDI))
     alojamientoURI = qpb.result[0][0]
