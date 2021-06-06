@@ -10,7 +10,7 @@
 from rdflib import URIRef
 from rdflib.namespace import ClosedNamespace
 
-ONTOLOGY = ClosedNamespace(
+ECSDI = ClosedNamespace(
     uri=URIRef('http://www.semanticweb.org/eric/ontologies/2021/4/ecsdiOntology'),
     terms=[
         # Classes
