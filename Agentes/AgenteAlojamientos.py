@@ -273,13 +273,12 @@ def get_alojamientos(city, pricemax, pricemin, dateIni, dateFi, escentrico):
         Select ?Alojamiento 
         Where {
             ?Alojamiento ecsdi:ciudad "%s" .
-            ?Alojamiento ecsdi:importe ?price
-            ?Alojamiento ecsdi:centrico ?centrico
-            FILTER(?centrico == %s)
+            ?Alojamiento ecsdi:importe ?price .
             FILTER(?price <= %s && ?price >= %s)
+            ?Alojamiento ecsdi:centrico %s
         }
         LIMIT 1
-    """ % (city, escentrico, pricemax, pricemin)
+    """ % (city, pricemax, pricemin, str(escentrico).lower())
 
     qpb = g.query(queryobj, initNs=dict(ecsdi=ECSDI))
     alojamientoURI = qpb.result[0][0]

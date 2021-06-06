@@ -130,4 +130,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
+datos/actividades.ttl
+datos/vuelos.ttl
+datos/alojamientos.ttl
