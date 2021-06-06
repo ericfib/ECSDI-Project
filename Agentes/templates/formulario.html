@@ -5,57 +5,55 @@
     <title>Title</title>
 </head>
 <body>
-    <div style="margin-left: 50px">
-        <h1>Plan your travel</h1>
-        {% if error %}
-            <p>{{ error }}</p>
-        {% endif %}
-        <form method="post">
-            <label for="corigin">City Origin:</label><br>
-            <select name="corigin" id="corigin" style="width: 200px">
-                <option value="barcelona">Barcelona</option>
-                <option value="paris">Paris</option>
-            </select><br><br>
+    <h1 style="text-align: center">Plan your travel</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <form method="post" style="margin: auto; width: 200px;">
+        <label for="corigin">City Origin:</label><br>
+        <select name="corigin" id="corigin" style="width: 200px">
+            <option value="barcelona">Barcelona</option>
+            <option value="paris">Paris</option>
+        </select><br><br>
 
-            <label for="cdestination">City Destination:</label><br>
-            <select name="cdestination" id="cdestination" style="width: 200px">
-                <option value="barcelona">Barcelona</option>
-                <option value="paris">Paris</option>
-            </select><br><br>
+        <label for="cdestination">City Destination:</label><br>
+        <select name="cdestination" id="cdestination" style="width: 200px">
+            <option value="barcelona">Barcelona</option>
+            <option value="paris">Paris</option>
+        </select><br><br>
 
-            <label for="idate">Departure date:</label><br>
-            <input type="date" name="idate" id="idate" required style="width: 200px"><br><br>
+        <label for="idate">Departure date:</label><br>
+        <input type="date" name="idate" id="idate" required style="width: 200px"><br><br>
 
-            <label for="fdate">Return date:</label><br>
-            <input type="date" name="fdate" id="fdate" required style="width: 200px"><br><br>
+        <label for="fdate">Return date:</label><br>
+        <input type="date" name="fdate" id="fdate" required style="width: 200px"><br><br>
 
-            <label for="fmaxp">Max flight price:</label><br>
-            <input type="number" name="fmaxp" id="fmaxp" required style="width: 200px"><br><br>
+        <label for="fmaxp">Max flight price:</label><br>
+        <input type="number" name="fmaxp" id="fmaxp" required style="width: 200px"><br><br>
 
-            <label for="fminp">Min flight price:</label><br>
-            <input type="number" name="fminp" id="fminp" required style="width: 200px"><br><br>
+        <label for="fminp">Min flight price:</label><br>
+        <input type="number" name="fminp" id="fminp" required style="width: 200px"><br><br>
 
-            <label for="fmaxh">Max hotel price:</label><br>
-            <input type="number" name="fmaxh" id="fmaxh" required style="width: 200px"><br><br>
+        <label for="fmaxh">Max hotel price:</label><br>
+        <input type="number" name="fmaxh" id="fmaxh" required style="width: 200px"><br><br>
 
-            <label for="fminh">Min hotel price:</label><br>
-            <input type="number" name="fminh" id="fminh" required style="width: 200px"><br><br>
+        <label for="fminh">Min hotel price:</label><br>
+        <input type="number" name="fminh" id="fminh" required style="width: 200px"><br><br>
 
-            <label for="cact">Cultural activities (0-5):</label><br>
-            <input type="number" name="cact" id="cact" max="5" min="0" required style="width: 200px"><br><br>
+        <label for="cact">Cultural activities (0-5):</label><br>
+        <input type="number" name="cact" id="cact" max="5" min="0" required style="width: 200px"><br><br>
 
-            <label for="lact">Ludical activities (0-5):</label><br>
-            <input type="number" name="lact" id="lact" max="5" min="0" required style="width: 200px"><br><br>
+        <label for="lact">Ludical activities (0-5):</label><br>
+        <input type="number" name="lact" id="lact" max="5" min="0" required style="width: 200px"><br><br>
 
-            <label for="fact">Festivity activities (0-5):</label><br>
-            <input type="number" name="fact" id="fact" max="5" min="0" required style="width: 200px"><br><br>
+        <label for="fact">Festivity activities (0-5):</label><br>
+        <input type="number" name="fact" id="fact" max="5" min="0" required style="width: 200px"><br><br>
 
 
-            <input type="checkbox" name="centrico" value="true" id="centrico">
-            <label for="centrico">Alojamiento Centrico</label><br>
+        <input type="checkbox" name="centrico" value="true" id="centrico">
+        <label for="centrico">Alojamiento Centrico</label><br>
 
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>

@@ -15,14 +15,14 @@
         <li><p><strong>Precio total:</strong> {{ hotel.precioFinal }}€</p></li>
     </ul>
     <h2>Vuelos</h2>
-        <h3>Ida: De {{ vuelos.0.aeropuerto_destino }} a {{ vuelos.0.aeropuerto_origen }}</h3>
+        <h3>Ida: De {{ vuelos.0.aeropuerto_origen }} a {{ vuelos.0.aeropuerto_destino }}</h3>
         <ul>
             <li>Precio: {{ vuelos.0.importe }}€</li>
             <li>Compañia: {{ vuelos.0.compania }}</li>
             <li>Fecha de salida: {{ vuelos.0.fecha_inicial }}</li>
             <li>Fecha de llegada: {{ vuelos.0.fecha_final }}</li>
         </ul>
-        <h3>Vuelta: De {{ vuelos.1.aeropuerto_destino }} a {{ vuelos.1.aeropuerto_origen }}</h3>
+        <h3>Vuelta: De {{ vuelos.1.aeropuerto_origen }} a {{ vuelos.1.aeropuerto_destino }}</h3>
         <ul>
             <li>Precio: {{ vuelos.1.importe }}€</li>
             <li>Compañia: {{ vuelos.1.compania }}</li>
