@@ -167,7 +167,7 @@ def get_vuelos():
 
     g = Graph()
 
-    peticion_vuelos = ECSDI['peticion_vuelos' + str(get_count())]
+    peticion_vuelos = ECSDI['Peticion_vuelos' + str(get_count())]
     g.add((peticion_vuelos, RDF.type, ECSDI.Peticion_Vuelos))
 
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteVuelos.uri, receiver=ag.uri,
@@ -192,7 +192,7 @@ def fetch_alojamientos():
             read_agent(agn.AgenteExternoVuelosAmadeus, ag)
     g = Graph()
 
-    peticion_vuelos = ECSDI['peticion_vuelos' + str(get_count())]
+    peticion_vuelos = ECSDI['Peticion_vuelos' + str(get_count())]
     g.add((peticion_vuelos, RDF.type, ECSDI.Peticion_Vuelos))
 
     gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteVuelos.uri, receiver=ag.uri,
@@ -300,15 +300,15 @@ def get_vuelos_local(ciudad_origen, ciudad_destino, pricemax, pricemin, dateIni,
                     date_aux = dateFinal
 
                     # Compania
-                    gres.add((comp, RDF.type, ECSDI.compania))
+                    gres.add((comp, RDF.type, ECSDI.Compania))
                     gres.add((comp, ECSDI.nombre, nombre_comp))
 
                     # Llega a
-                    gres.add((destino, RDF.type, ECSDI.aeropuerto))
+                    gres.add((destino, RDF.type, ECSDI.Aeropuerto))
                     gres.add((destino, ECSDI.nombre, nombre_destino))
 
                     # Sale de
-                    gres.add((origen, RDF.type, ECSDI.aeropuerto))
+                    gres.add((origen, RDF.type, ECSDI.Aeropuerto))
                     gres.add((origen, ECSDI.nombre, nombre_origen))
 
                     gres.add((next_act_uri, RDF.type, ECSDI.Vuelo))

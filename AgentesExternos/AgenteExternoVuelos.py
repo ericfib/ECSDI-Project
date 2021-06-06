@@ -197,7 +197,7 @@ def buscar_vuelos_externos():
     grafo_vuelos = Graph()
     grafo_vuelos.bind('ECSDI', ECSDI)
 
-    content = ECSDI['Respuesta_Alojamiento' + str(get_count())]
+    content = ECSDI['Respuesta_Vuelos' + str(get_count())]
 
     # Carga el grafo RDF desde el fichero
     ontofile = gzip.open('../datos/FlightRoutes.ttl.gz')
@@ -253,21 +253,21 @@ def buscar_vuelos_externos():
     
         precio_destino = random.randint(min_price,max_price)
 
-        vuelo = ECSDI['vuelo' + str(get_count())]
-        compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
-        origen = ECSDI['aeropuerto'+str(get_count())]
-        destino = ECSDI['aeropuerto'+str(get_count())]
+        vuelo = ECSDI['Vuelo' + str(get_count())]
+        compania = ECSDI['Proveedor_de_vuelos' + str(get_count())]
+        origen = ECSDI['Aeropuerto'+str(get_count())]
+        destino = ECSDI['Aeropuerto'+str(get_count())]
 
         # Compania
-        grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
+        grafo_vuelos.add((compania, RDF.type, ECSDI.Compania))
         grafo_vuelos.add((compania, ECSDI.nombre, Literal(comp)))
 
         # Sale_de
-        grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((origen, RDF.type, ECSDI.Aeropuerto))
         grafo_vuelos.add((origen, ECSDI.nombre, Literal(orig)))
 
         # Llega a
-        grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((destino, RDF.type, ECSDI.Aeropuerto))
         grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
 
         # Vuelo destino
@@ -314,21 +314,21 @@ def buscar_vuelos_externos():
         precio_destino = random.randint(min_price, max_price)
 
 
-        vuelo = ECSDI['vuelo' + str(get_count())]
-        compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
-        origen = ECSDI['aeropuerto'+str(get_count())]
-        destino = ECSDI['aeropuerto'+str(get_count())]
+        vuelo = ECSDI['Vuelo' + str(get_count())]
+        compania = ECSDI['Proveedor_de_vuelos' + str(get_count())]
+        origen = ECSDI['Aeropuerto'+str(get_count())]
+        destino = ECSDI['Aeropuerto'+str(get_count())]
 
         # Compania
-        grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
+        grafo_vuelos.add((compania, RDF.type, ECSDI.Compania))
         grafo_vuelos.add((compania, ECSDI.nombre, Literal(comp)))
 
         # Sale_de
-        grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((origen, RDF.type, ECSDI.Aeropuerto))
         grafo_vuelos.add((origen, ECSDI.nombre, Literal(orig)))
 
         # Llega a
-        grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+        grafo_vuelos.add((destino, RDF.type, ECSDI.Aeropuerto))
         grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
 
         # Vuelo destino

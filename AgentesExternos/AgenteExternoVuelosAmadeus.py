@@ -142,22 +142,22 @@ def buscar_vuelos_externos():
         for flight in response:
             for f in flight["itineraries"]:
                 for x in f["segments"]:
-                    vuelo_origen = ECSDI['vuelo' + str(get_count())]
-                    compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
-                    origen = ECSDI['aeropuerto' + str(get_count())]
-                    destino = ECSDI['aeropuerto' + str(get_count())]
+                    vuelo_origen = ECSDI['Vuelo' + str(get_count())]
+                    compania = ECSDI['Proveedor_de_vuelos' + str(get_count())]
+                    origen = ECSDI['Aeropuerto' + str(get_count())]
+                    destino = ECSDI['Aeropuerto' + str(get_count())]
 
                     # Compania
-                    grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
+                    grafo_vuelos.add((compania, RDF.type, ECSDI.Compania))
                     grafo_vuelos.add((compania, ECSDI.nombre, Literal("Ryanair")))
 
                     # Llega a
-                    grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+                    grafo_vuelos.add((destino, RDF.type, ECSDI.Aeropuerto))
                     grafo_vuelos.add((destino, ECSDI.nombre, Literal("Charles de Gaulle Airport")))
 
 
                     # Sale_de
-                    grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
+                    grafo_vuelos.add((origen, RDF.type, ECSDI.Aeropuerto))
                     grafo_vuelos.add((origen, ECSDI.nombre, Literal("Barcelona El Prat Airport")))
 
                     importe = random.randint(30, 350)
@@ -185,21 +185,21 @@ def buscar_vuelos_externos():
         for flight in response:
             for f in flight["itineraries"]:
                 for x in f["segments"]:
-                    vuelo_origen = ECSDI['vuelo' + str(get_count())]
-                    compania = ECSDI['proveedor_de_vuelos' + str(get_count())]
-                    origen = ECSDI['aeropuerto' + str(get_count())]
-                    destino = ECSDI['aeropuerto' + str(get_count())]
+                    vuelo_origen = ECSDI['Vuelo' + str(get_count())]
+                    compania = ECSDI['Proveedor_de_vuelos' + str(get_count())]
+                    origen = ECSDI['Aeropuerto' + str(get_count())]
+                    destino = ECSDI['Aeropuerto' + str(get_count())]
 
                     # Compania
-                    grafo_vuelos.add((compania, RDF.type, ECSDI.compania))
+                    grafo_vuelos.add((compania, RDF.type, ECSDI.Compania))
                     grafo_vuelos.add((compania, ECSDI.nombre, Literal("Ryanair")))
 
                     # Llega a
-                    grafo_vuelos.add((destino, RDF.type, ECSDI.aeropuerto))
+                    grafo_vuelos.add((destino, RDF.type, ECSDI.Aeropuerto))
                     grafo_vuelos.add((destino, ECSDI.nombre, Literal("Barcelona El Prat Airport")))
 
                     # Sale_de
-                    grafo_vuelos.add((origen, RDF.type, ECSDI.aeropuerto))
+                    grafo_vuelos.add((origen, RDF.type, ECSDI.Aeropuerto))
                     grafo_vuelos.add((origen, ECSDI.nombre, Literal("Charles de Gaulle Airport")))
 
                     importe = random.randint(30, 350)
