@@ -163,7 +163,7 @@ def buscar_vuelos_externos():
                     importe = random.randint(30, 350)
 
                     # Vuelo origen
-                    grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.vuelo))
+                    grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.Vuelo))
                     grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
                     grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
                     grafo_vuelos.add((vuelo_origen, ECSDI.importe, Literal(importe)))
@@ -205,7 +205,7 @@ def buscar_vuelos_externos():
                     importe = random.randint(30, 350)
 
                     # Vuelo origen
-                    grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.vuelo))
+                    grafo_vuelos.add((vuelo_origen, RDF.type, ECSDI.Vuelo))
                     grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
                     grafo_vuelos.add((vuelo_origen, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
                     grafo_vuelos.add((vuelo_origen, ECSDI.importe, Literal(importe)))

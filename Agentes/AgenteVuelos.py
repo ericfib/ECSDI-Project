@@ -261,7 +261,7 @@ def get_vuelos_local(ciudad_origen, ciudad_destino, pricemax, pricemin, dateIni,
     g = Graph()
     n = 2
     g.parse('../datos/vuelos.ttl', format='turtle')
-    act_list = g.triples((None, RDF.type, ECSDI.vuelo))
+    act_list = g.triples((None, RDF.type, ECSDI.Vuelo))
     dateInicial = datetime.strptime(dateIni, '%Y-%m-%d').date()
     dateFinal = datetime.strptime(dateFi, '%Y-%m-%d').date()
     date_aux = dateInicial

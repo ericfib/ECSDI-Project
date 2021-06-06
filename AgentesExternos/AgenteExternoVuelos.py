@@ -271,7 +271,7 @@ def buscar_vuelos_externos():
         grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
 
         # Vuelo destino
-        grafo_vuelos.add((vuelo, RDF.type, ECSDI.vuelo))
+        grafo_vuelos.add((vuelo, RDF.type, ECSDI.Vuelo))
         grafo_vuelos.add((vuelo, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
         grafo_vuelos.add((vuelo, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
         grafo_vuelos.add((vuelo, ECSDI.importe, Literal(precio_destino)))
@@ -332,7 +332,7 @@ def buscar_vuelos_externos():
         grafo_vuelos.add((destino, ECSDI.nombre, Literal(dest)))
 
         # Vuelo destino
-        grafo_vuelos.add((vuelo, RDF.type, ECSDI.vuelo))
+        grafo_vuelos.add((vuelo, RDF.type, ECSDI.Vuelo))
         grafo_vuelos.add((vuelo, ECSDI.tiene_como_aeropuerto_origen, URIRef(origen)))
         grafo_vuelos.add((vuelo, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
         grafo_vuelos.add((vuelo, ECSDI.importe, Literal(precio_destino)))
