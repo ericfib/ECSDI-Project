@@ -212,17 +212,17 @@ def get_actividades(g, content):
     ciudad_dict = {'barcelona': 'BCN', 'paris': 'PAR'}
     ciudad_destino_v = str(g.value(subject=content, predicate=ECSDI.ciudad_destino))
 
-    fecha_inicial_v = g.value(subject=content, predicate=ECSDI.fecha_inicio)
+    fecha_inicial_v = g.value(subject=content, predicate=ECSDI.fecha_inicial)
     fecha_inicial_date = datetime.strptime(fecha_inicial_v, '%Y-%m-%d')
 
     fecha_final_v = g.value(subject=content, predicate=ECSDI.fecha_final)
     fecha_final_date = datetime.strptime(fecha_final_v, '%Y-%m-%d')
 
-    ludica_v = int(g.value(subject=content, predicate=ECSDI.ludica))
+    ludica_v = int(g.value(subject=content, predicate=ECSDI.porcentaje_actividad_ludica))
 
-    cultural_v = int(g.value(subject=content, predicate=ECSDI.cultural))
+    cultural_v = int(g.value(subject=content, predicate=ECSDI.porcentaje_actividad_cultural))
 
-    festiva_v = int(g.value(subject=content, predicate=ECSDI.festiva))
+    festiva_v = int(g.value(subject=content, predicate=ECSDI.porcentaje_actividad_festiva))
 
     days = (fecha_final_date - fecha_inicial_date).days
     actividades_ludicas = int((days * ACT_PER_DAY) * (ludica_v / (ludica_v + cultural_v + festiva_v)))

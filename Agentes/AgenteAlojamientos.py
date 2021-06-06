@@ -195,7 +195,7 @@ def comunicacion():
                     precio_max_v = str(grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.rango_precio_alojamiento_max))
                     precio_min_v = str(grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.rango_precio_alojamiento_min))
                     ciudad_destino_v = str(grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.ciudad_destino))
-                    fecha_inicial_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_inicio)
+                    fecha_inicial_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_inicial)
                     fecha_final_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_final)
                     try:
                         grespuesta = get_alojamientos(ciudad_dict[ciudad_destino_v.lower()], precio_max_v, precio_min_v , fecha_inicial_v, fecha_final_v)

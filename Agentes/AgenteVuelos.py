@@ -362,7 +362,7 @@ def comunicacion():
                         grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.ciudad_origen))
                     ciudad_destino_v = str(
                         grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.ciudad_destino))
-                    fecha_inicial_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_inicio)
+                    fecha_inicial_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_inicial)
                     fecha_final_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_final)
 
                     grespuesta = get_vuelos_local(ciudad_dict[ciudad_origen_v.lower()], ciudad_dict[ciudad_destino_v.lower()], precio_max_v, precio_min_v, fecha_inicial_v, fecha_final_v)

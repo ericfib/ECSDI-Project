@@ -225,15 +225,15 @@ def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, fligh
 
     g.add((peticion_plan, ECSDI.ciudad_destino, Literal(destination)))
 
-    g.add((peticion_plan, ECSDI.fecha_inicio, Literal(dep_date)))
+    g.add((peticion_plan, ECSDI.fecha_inicial, Literal(dep_date)))
 
     g.add((peticion_plan, ECSDI.fecha_final, Literal(ret_date)))
 
-    g.add((peticion_plan, ECSDI.ludica, Literal(ludic)))
+    g.add((peticion_plan, ECSDI.porcentaje_actividad_ludica, Literal(ludic)))
 
-    g.add((peticion_plan, ECSDI.cultural, Literal(cultural)))
+    g.add((peticion_plan, ECSDI.porcentaje_actividad_cultural, Literal(cultural)))
 
-    g.add((peticion_plan, ECSDI.festiva, Literal(festivity)))
+    g.add((peticion_plan, ECSDI.porcentaje_actividad_festiva, Literal(festivity)))
 
     g.add((peticion_plan, ECSDI.rango_precio_alojamiento_max, Literal(aloj_max_price)))
 
@@ -243,7 +243,7 @@ def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, fligh
 
     g.add((peticion_plan, ECSDI.rango_precio_vuelos_min, Literal(flight_min_price)))
 
-    g.add((peticion_plan, ECSDI.alojamiento_centrico, Literal(centrico)))
+    g.add((peticion_plan, ECSDI.centrico, Literal(centrico)))
 
     return g
 
