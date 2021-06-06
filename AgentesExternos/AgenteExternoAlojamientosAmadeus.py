@@ -253,7 +253,7 @@ def buscar_alojamientos_externos():
                         grafo_hoteles.add((alojamiento, ECSDI.id_alojamiento, Literal(hotel["hotel"]["hotelId"])))
                         grafo_hoteles.add((alojamiento, ECSDI.nombre, Literal(hotel["hotel"]["name"])))
                         grafo_hoteles.add((alojamiento, ECSDI.centrico, Literal(centrico)))
-                        grafo_hoteles.add((alojamiento, ECSDI.importe, Literal(hotel["offers"][0]["price"]["total"])))
+                        grafo_hoteles.add((alojamiento, ECSDI.importe, Literal(int(float(hotel["offers"][0]["price"]["total"])))))
                         grafo_hoteles.add((alojamiento, ECSDI.coordenadas, Literal(str(hotel["hotel"]["latitude"]) + ', ' +
                                                                              str(hotel["hotel"]["longitude"]))))
                         grafo_hoteles.add((alojamiento, ECSDI.ciudad, Literal(city)))

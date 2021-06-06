@@ -69,7 +69,7 @@ else:
 print('DS Hostname =', hostaddr)
 
 if args.dport is None:
-    dport = 9000
+    dport = 9012
 else:
     dport = args.dport
 
@@ -276,8 +276,8 @@ def buscar_vuelos_externos():
         grafo_vuelos.add((vuelo, ECSDI.tiene_como_aeropuerto_destino, URIRef(destino)))
         grafo_vuelos.add((vuelo, ECSDI.importe, Literal(precio_destino)))
         grafo_vuelos.add((vuelo, ECSDI.es_ofrecido_por, URIRef(compania)))
-        grafo_vuelos.add((vuelo, ECSDI.fecha_inicial, Literal(fecha_salida)))
-        grafo_vuelos.add((vuelo, ECSDI.fecha_final, Literal(fecha_llegada)))
+        grafo_vuelos.add((vuelo, ECSDI.fecha_inicial, Literal(fecha_salida.strftime('%Y-%m-%dT%H:%M:%S'))))
+        grafo_vuelos.add((vuelo, ECSDI.fecha_final, Literal(fecha_llegada.strftime('%Y-%m-%dT%H:%M:%S'))))
 
 
     # Se buscan vuelos con el aeropuerto de origen y destino

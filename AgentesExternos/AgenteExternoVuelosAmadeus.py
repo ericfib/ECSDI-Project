@@ -56,7 +56,7 @@ logger = config_logger(level=1)
 args = parser.parse_args()
 # Configuration stuff
 if args.port is None:
-    port = 9012
+    port = 9022
 else:
     port = args.port
 

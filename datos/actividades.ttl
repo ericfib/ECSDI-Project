@@ -276,7 +276,7 @@ ECSDI:ludica-49 a ECSDI:Ludica ;
     ECSDI:coordenadas "48.857986, 2.357996" ;
     ECSDI:nombre "Le Colimaçon" .
 
-<message--3185792789961981380-0056> a acl:FipaAclMessage,
+<message-4215965832929806638-0056> a acl:FipaAclMessage,
         <http://www.w3.org/2002/07/owl#NamedIndividual> ;
     acl:performative acl:inform- ;
     acl:receiver <http://www.agentes.org#AgenteActividades> ;

@@ -55,6 +55,9 @@ ag_hoteles = Agent('', '', '', None)
 ag_flights = Agent('', '', '', None)
 ag_activity = Agent('', '', '', None)
 
+class ErrorUser(Exception):
+    pass
+
 
 def directory_search_message(type):
     """
@@ -127,12 +130,22 @@ def get_hotels(g, peticion_plan):
         read_agent(agn.AgenteAlojamientos, ag_hoteles)
         logger.info('Encontrado')
     logger.info('Pidiendo alojamientos al agente de Alojamientos')
+    info = 10
     g.add((peticion_plan, RDF.type, ECSDI.Peticion_Alojamientos))
-    gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_hoteles.uri,
-                                       msgcnt=get_count(),
-                                       content=peticion_plan), ag_hoteles.address)
-    uri_list = gresp.triples((None, RDF.type, ECSDI.Alojamiento))
-    uri = next(uri_list)[0]
+    gresp = Graph()
+    uri = None
+    while info > 0:
+        gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_hoteles.uri,
+                                           msgcnt=get_count(),
+                                           content=peticion_plan), ag_hoteles.address)
+        uri_list = gresp.triples((None, RDF.type, ECSDI.Alojamiento))
+        try:
+            uri = next(uri_list)[0]
+            info = 0
+        except StopIteration:
+            info -= 1
+    if info == 0 and uri is None:
+        raise ErrorUser()
     nombre = str(gresp.value(subject=uri, predicate=ECSDI.nombre))
     importe = str(gresp.value(subject=uri, predicate=ECSDI.importe))
     coordenadas = str(gresp.value(subject=uri, predicate=ECSDI.coordenadas))
@@ -156,12 +169,52 @@ def get_flights(g, peticion_plan):
         read_agent(agn.AgenteVuelos, ag_flights)
         logger.info('Encontrado')
     logger.info('Pidiendo vuelos al agente de Vuelos')
+    info = 10
     g.add((peticion_plan, RDF.type, ECSDI.Peticion_Vuelos))
-    gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_flights.uri,
-                                       msgcnt=get_count(),
-                                       content=peticion_plan), ag_flights.address)
-    logger.info('Recibidos')
-    return gresp
+    result = None
+    while info > 0:
+        gresp = send_message(build_message(g, perf=ACL.request, sender=AgenteViaje.uri, receiver=ag_flights.uri,
+                                           msgcnt=get_count(),
+                                           content=peticion_plan), ag_flights.address)
+        logger.info('Recibidos')
+        vue_list = gresp.triples((None, RDF.type, ECSDI.Vuelo))
+        try:
+            vue = next(vue_list)[0]
+            des = gresp.value(subject=vue, predicate=ECSDI.tiene_como_aeropuerto_destino)
+            aeropuerto_destino = str(gresp.value(subject=des, predicate=ECSDI.nombre))
+            ori = gresp.value(subject=vue, predicate=ECSDI.tiene_como_aeropuerto_origen)
+            aeropuerto_origen = str(gresp.value(subject=ori, predicate=ECSDI.nombre))
+            importe = float(gresp.value(subject=vue, predicate=ECSDI.importe))
+            comp = gresp.value(subject=vue, predicate=ECSDI.es_ofrecido_por)
+            compania = str(gresp.value(subject=comp, predicate=ECSDI.nombre))
+            fecha_inicial = gresp.value(subject=vue, predicate=ECSDI.fecha_inicial)
+            fecha_final = gresp.value(subject=vue, predicate=ECSDI.fecha_final)
+            vuelo1 = {
+                'aeropuerto_destino': aeropuerto_destino, 'aeropuerto_origen': aeropuerto_origen, 'importe': importe,
+                'compania': compania, 'fecha_inicial': fecha_inicial, 'fecha_final': fecha_final
+            }
+            vue = next(vue_list)[0]
+            des = gresp.value(subject=vue, predicate=ECSDI.tiene_como_aeropuerto_destino)
+            aeropuerto_destino = str(gresp.value(subject=des, predicate=ECSDI.nombre))
+            ori = gresp.value(subject=vue, predicate=ECSDI.tiene_como_aeropuerto_origen)
+            aeropuerto_origen = str(gresp.value(subject=ori, predicate=ECSDI.nombre))
+            importe = float(gresp.value(subject=vue, predicate=ECSDI.importe))
+            comp = gresp.value(subject=vue, predicate=ECSDI.es_ofrecido_por)
+            compania = str(gresp.value(subject=comp, predicate=ECSDI.nombre))
+            fecha_inicial = gresp.value(subject=vue, predicate=ECSDI.fecha_inicial)
+            fecha_final = gresp.value(subject=vue, predicate=ECSDI.fecha_final)
+            vuelo2 = {
+                'aeropuerto_destino': aeropuerto_destino, 'aeropuerto_origen': aeropuerto_origen, 'importe': importe,
+                'compania': compania, 'fecha_inicial': fecha_inicial, 'fecha_final': fecha_final
+            }
+            result = [vuelo1, vuelo2]
+            info = 0
+        except StopIteration:
+            info -= 1
+    if result is None:
+        raise ErrorUser
+    result.sort(key=lambda x: x['fecha_inicial'])
+    return result
 
 
 def create_peticion_de_plan_graph(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
@@ -205,14 +258,14 @@ def create_result(origin, destination, dep_date, ret_date, flight_min_price, fli
                                       peticion_plan, n)
     activities = get_activities(g, peticion_plan)
     hotel = get_hotels(g, peticion_plan)
-    # flights = get_flights(g, peticion_plan)
-    return {'activities': activities, 'hotel': hotel}
+    flights = get_flights(g, peticion_plan)
+    return {'activities': activities, 'hotel': hotel, 'vuelos': flights}
 
 
 @app.route("/iface", methods=['GET', 'POST'])
 def form():
     if request.method == 'GET':
-        return render_template('formulario.html')
+        return render_template('formulario.html', error='')
     else:
         origin = request.form['corigin']
         destination = request.form['cdestination']
@@ -228,11 +281,14 @@ def form():
         centrico = request.form.get('centrico', False)
         if centrico:
             centrico = True
+        try:
+            result = create_result(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
+                                   cultural, ludic, festivity, hotel_min_price, hotel_max_price, centrico)
+        except ErrorUser:
+            return render_template('formulario.html', error='Try another settings')
 
-        result = create_result(origin, destination, dep_date, ret_date, flight_min_price, flight_max_price,
-                               cultural, ludic, festivity, hotel_min_price, hotel_max_price, centrico)
-
-        return render_template('result.html', activities=result['activities'], hotel=result['hotel'])
+        return render_template('result.html', activities=result['activities'], hotel=result['hotel'],
+                               vuelos=result['vuelos'])
 
 
 @app.route("/Stop")

@@ -310,6 +310,7 @@ def agentbehavior1():
     :return:
     """
     gr = register_message()
+    reload_data()
 
 
 def register_message():
@@ -327,10 +328,9 @@ def register_message():
     return gr
 
 
-sched.add_job(reload_data, 'cron', day='*', hour='12')
-
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
+    sched.add_job(reload_data, 'cron', day='*', hour='12')
     sched.start()
     ab1 = Process(target=agentbehavior1)
     ab1.start()

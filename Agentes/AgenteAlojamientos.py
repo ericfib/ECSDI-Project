@@ -13,10 +13,8 @@ Asume que el agente de registro esta en el puerto 9000
 
 @author: javier
 """
-import gzip
 import socket
 from multiprocessing import Process, Queue
-from functools import lru_cache
 
 
 import argparse
@@ -92,7 +90,6 @@ sched = BackgroundScheduler()
 ag_alojamientos_ext = Agent('', '', '', None)
 
 
-
 def get_count():
     global mss_cnt
     mss_cnt += 1
@@ -117,6 +114,7 @@ cola1 = Queue()
 
 # Flask stuff
 app = Flask(__name__)
+
 
 def directory_search_message(type):
     """
@@ -199,11 +197,13 @@ def comunicacion():
                     ciudad_destino_v = str(grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.ciudad_destino))
                     fecha_inicial_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_inicio)
                     fecha_final_v = grafo_mensaje_entrante.value(subject=content, predicate=ECSDI.fecha_final)
-
-                    grespuesta = get_alojamientos(ciudad_dict[ciudad_destino_v.lower()], precio_max_v, precio_min_v , fecha_inicial_v, fecha_final_v)
-
-                    grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteAlojamientos.uri,
-                                               msgcnt=mss_cnt, receiver=msg['sender'])
+                    try:
+                        grespuesta = get_alojamientos(ciudad_dict[ciudad_destino_v.lower()], precio_max_v, precio_min_v , fecha_inicial_v, fecha_final_v)
+                        grespuesta = build_message(grespuesta, ACL['inform-'], sender=AgenteAlojamientos.uri,
+                                                   msgcnt=mss_cnt, receiver=msg['sender'])
+                    except IndexError:
+                        grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientos.uri,
+                                                   msgcnt=mss_cnt)
                     pass
                 else:
                     grespuesta = build_message(Graph(), ACL['not-understood'], sender=AgenteAlojamientos.uri,
@@ -236,16 +236,6 @@ def tidyup():
 
     """
     pass
-
-
-def agentbehavior1():
-    """
-    Un comportamiento del agente
-
-    :return:
-    """
-    gr = register_message()
-    #reload_data()
 
 def fetch_alojamientos():
     if ag_alojamientos_ext.address == '':
@@ -281,18 +271,16 @@ def get_alojamientos(city, pricemax, pricemin, dateIni, dateFi):
         Where {
             ?Alojamiento ecsdi:ciudad "%s" .
             ?Alojamiento ecsdi:importe ?price
-            FILTER(?price <= "%s" && ?price >= "%s")
+            FILTER(?price <= %s && ?price >= %s)
         }
         LIMIT 1
-    """ %(city, pricemax, pricemin)
+    """ % (city, pricemax, pricemin)
 
     qpb = g.query(queryobj, initNs=dict(ecsdi=ECSDI))
-
     alojamientoURI = qpb.result[0][0]
     precioFinal = g.value(subject=alojamientoURI, predicate=ECSDI.importe)
     nombreFinal = g.value(subject=alojamientoURI, predicate=ECSDI.nombre)
     coordenadasFinal = g.value(subject=alojamientoURI, predicate=ECSDI.coordenadas)
-
 
     gresp.add((alojamientoURI, RDF.type, ECSDI.Alojamiento))
     gresp.add((alojamientoURI, ECSDI.importe, precioFinal))
@@ -324,12 +312,21 @@ def register_message():
     return gr
 
 
-sched.add_job(reload_data, 'cron', day='*', hour='12')
+def agentbehavior1():
+    """
+    Un comportamiento del agente
+
+    :return:
+    """
+    gr = register_message()
+    reload_data()
+
 
 if __name__ == '__main__':
     # Ponemos en marcha los behaviors
     ab1 = Process(target=agentbehavior1)
     ab1.start()
+    sched.add_job(reload_data, 'cron', day='*', hour='12')
     sched.start()
 
     # Ponemos en marcha el servidor

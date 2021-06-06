@@ -7,7 +7,7 @@ ECSDI:alojamiento10 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39306, 2.1615" ;
     ECSDI:id_alojamiento "HLBCN116" ;
-    ECSDI:importe "136.21" ;
+    ECSDI:importe 136 ;
     ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" .
 
 ECSDI:alojamiento11 a ECSDI:Alojamiento ;
@@ -15,7 +15,7 @@ ECSDI:alojamiento11 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.38548, 2.1718" ;
     ECSDI:id_alojamiento "HSBCNAGY" ;
-    ECSDI:importe "109.00" ;
+    ECSDI:importe 95 ;
     ECSDI:nombre "Cataluña" .
 
 ECSDI:alojamiento12 a ECSDI:Alojamiento ;
@@ -23,7 +23,7 @@ ECSDI:alojamiento12 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39094, 2.17068" ;
     ECSDI:id_alojamiento "HSBCNAKP" ;
-    ECSDI:importe "920.00" ;
+    ECSDI:importe 920 ;
     ECSDI:nombre "Acta Atrium Palace" .
 
 ECSDI:alojamiento13 a ECSDI:Alojamiento ;
@@ -31,7 +31,7 @@ ECSDI:alojamiento13 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39306, 2.1615" ;
     ECSDI:id_alojamiento "HLBCN116" ;
-    ECSDI:importe "136.21" ;
+    ECSDI:importe 136 ;
     ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" .
 
 ECSDI:alojamiento14 a ECSDI:Alojamiento ;
@@ -39,7 +39,7 @@ ECSDI:alojamiento14 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.38548, 2.1718" ;
     ECSDI:id_alojamiento "HSBCNAGY" ;
-    ECSDI:importe "109.00" ;
+    ECSDI:importe 95 ;
     ECSDI:nombre "Cataluña" .
 
 ECSDI:alojamiento15 a ECSDI:Alojamiento ;
@@ -47,7 +47,7 @@ ECSDI:alojamiento15 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39094, 2.17068" ;
     ECSDI:id_alojamiento "HSBCNAKP" ;
-    ECSDI:importe "920.00" ;
+    ECSDI:importe 920 ;
     ECSDI:nombre "Acta Atrium Palace" .
 
 ECSDI:alojamiento16 a ECSDI:Alojamiento ;
@@ -55,7 +55,7 @@ ECSDI:alojamiento16 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39306, 2.1615" ;
     ECSDI:id_alojamiento "HLBCN116" ;
-    ECSDI:importe "136.21" ;
+    ECSDI:importe 136 ;
     ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" .
 
 ECSDI:alojamiento17 a ECSDI:Alojamiento ;
@@ -63,7 +63,7 @@ ECSDI:alojamiento17 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.38548, 2.1718" ;
     ECSDI:id_alojamiento "HSBCNAGY" ;
-    ECSDI:importe "109.00" ;
+    ECSDI:importe 95 ;
     ECSDI:nombre "Cataluña" .
 
 ECSDI:alojamiento18 a ECSDI:Alojamiento ;
@@ -71,7 +71,7 @@ ECSDI:alojamiento18 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39094, 2.17068" ;
     ECSDI:id_alojamiento "HSBCNAKP" ;
-    ECSDI:importe "920.00" ;
+    ECSDI:importe 920 ;
     ECSDI:nombre "Acta Atrium Palace" .
 
 ECSDI:alojamiento19 a ECSDI:Alojamiento ;
@@ -79,7 +79,7 @@ ECSDI:alojamiento19 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39306, 2.1615" ;
     ECSDI:id_alojamiento "HLBCN116" ;
-    ECSDI:importe "136.21" ;
+    ECSDI:importe 136 ;
     ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" .
 
 ECSDI:alojamiento2 a ECSDI:Alojamiento ;
@@ -87,7 +87,7 @@ ECSDI:alojamiento2 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.38548, 2.1718" ;
     ECSDI:id_alojamiento "HSBCNAGY" ;
-    ECSDI:importe "109.00" ;
+    ECSDI:importe 95 ;
     ECSDI:nombre "Cataluña" .
 
 ECSDI:alojamiento20 a ECSDI:Alojamiento ;
@@ -95,7 +95,7 @@ ECSDI:alojamiento20 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.38548, 2.1718" ;
     ECSDI:id_alojamiento "HSBCNAGY" ;
-    ECSDI:importe "109.00" ;
+    ECSDI:importe 95 ;
     ECSDI:nombre "Cataluña" .
 
 ECSDI:alojamiento21 a ECSDI:Alojamiento ;
@@ -103,7 +103,7 @@ ECSDI:alojamiento21 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39094, 2.17068" ;
     ECSDI:id_alojamiento "HSBCNAKP" ;
-    ECSDI:importe "920.00" ;
+    ECSDI:importe 920 ;
     ECSDI:nombre "Acta Atrium Palace" .
 
 ECSDI:alojamiento22 a ECSDI:Alojamiento ;
@@ -111,7 +111,7 @@ ECSDI:alojamiento22 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39306, 2.1615" ;
     ECSDI:id_alojamiento "HLBCN116" ;
-    ECSDI:importe "136.21" ;
+    ECSDI:importe 136 ;
     ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" .
 
 ECSDI:alojamiento23 a ECSDI:Alojamiento ;
@@ -119,7 +119,7 @@ ECSDI:alojamiento23 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.38548, 2.1718" ;
     ECSDI:id_alojamiento "HSBCNAGY" ;
-    ECSDI:importe "109.00" ;
+    ECSDI:importe 95 ;
     ECSDI:nombre "Cataluña" .
 
 ECSDI:alojamiento24 a ECSDI:Alojamiento ;
@@ -127,7 +127,7 @@ ECSDI:alojamiento24 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39094, 2.17068" ;
     ECSDI:id_alojamiento "HSBCNAKP" ;
-    ECSDI:importe "920.00" ;
+    ECSDI:importe 920 ;
     ECSDI:nombre "Acta Atrium Palace" .
 
 ECSDI:alojamiento25 a ECSDI:Alojamiento ;
@@ -135,7 +135,7 @@ ECSDI:alojamiento25 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39306, 2.1615" ;
     ECSDI:id_alojamiento "HLBCN116" ;
-    ECSDI:importe "136.21" ;
+    ECSDI:importe 136 ;
     ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" .
 
 ECSDI:alojamiento26 a ECSDI:Alojamiento ;
@@ -143,7 +143,7 @@ ECSDI:alojamiento26 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.38548, 2.1718" ;
     ECSDI:id_alojamiento "HSBCNAGY" ;
-    ECSDI:importe "109.00" ;
+    ECSDI:importe 95 ;
     ECSDI:nombre "Cataluña" .
 
 ECSDI:alojamiento27 a ECSDI:Alojamiento ;
@@ -151,7 +151,7 @@ ECSDI:alojamiento27 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39094, 2.17068" ;
     ECSDI:id_alojamiento "HSBCNAKP" ;
-    ECSDI:importe "920.00" ;
+    ECSDI:importe 920 ;
     ECSDI:nombre "Acta Atrium Palace" .
 
 ECSDI:alojamiento28 a ECSDI:Alojamiento ;
@@ -159,7 +159,7 @@ ECSDI:alojamiento28 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39306, 2.1615" ;
     ECSDI:id_alojamiento "HLBCN116" ;
-    ECSDI:importe "136.21" ;
+    ECSDI:importe 136 ;
     ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" .
 
 ECSDI:alojamiento29 a ECSDI:Alojamiento ;
@@ -167,7 +167,7 @@ ECSDI:alojamiento29 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85254, 2.34198" ;
     ECSDI:id_alojamiento "HIPARC12" ;
-    ECSDI:importe "361.88" ;
+    ECSDI:importe 331 ;
     ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" .
 
 ECSDI:alojamiento3 a ECSDI:Alojamiento ;
@@ -175,7 +175,7 @@ ECSDI:alojamiento3 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39094, 2.17068" ;
     ECSDI:id_alojamiento "HSBCNAKP" ;
-    ECSDI:importe "920.00" ;
+    ECSDI:importe 920 ;
     ECSDI:nombre "Acta Atrium Palace" .
 
 ECSDI:alojamiento30 a ECSDI:Alojamiento ;
@@ -183,7 +183,7 @@ ECSDI:alojamiento30 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85801, 2.34661" ;
     ECSDI:id_alojamiento "XKPAR321" ;
-    ECSDI:importe "108.00" ;
+    ECSDI:importe 108 ;
     ECSDI:nombre "The Demo Hotel" .
 
 ECSDI:alojamiento31 a ECSDI:Alojamiento ;
@@ -191,7 +191,7 @@ ECSDI:alojamiento31 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.84917, 2.34301" ;
     ECSDI:id_alojamiento "RTPARSOR" ;
-    ECSDI:importe "164.50" ;
+    ECSDI:importe 164 ;
     ECSDI:nombre "Hotel de Test" .
 
 ECSDI:alojamiento32 a ECSDI:Alojamiento ;
@@ -199,7 +199,7 @@ ECSDI:alojamiento32 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86053, 2.34653" ;
     ECSDI:id_alojamiento "RTPARNOV" ;
-    ECSDI:importe "212.00" ;
+    ECSDI:importe 212 ;
     ECSDI:nombre "Novotel Paris les Halles" .
 
 ECSDI:alojamiento33 a ECSDI:Alojamiento ;
@@ -207,7 +207,7 @@ ECSDI:alojamiento33 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86195, 2.33592" ;
     ECSDI:id_alojamiento "BRPARVDB" ;
-    ECSDI:importe "342.75" ;
+    ECSDI:importe 342 ;
     ECSDI:nombre "Renaissance Paris Vendome Hotel" .
 
 ECSDI:alojamiento34 a ECSDI:Alojamiento ;
@@ -215,7 +215,7 @@ ECSDI:alojamiento34 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85254, 2.34198" ;
     ECSDI:id_alojamiento "HIPARC12" ;
-    ECSDI:importe "361.88" ;
+    ECSDI:importe 331 ;
     ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" .
 
 ECSDI:alojamiento35 a ECSDI:Alojamiento ;
@@ -223,7 +223,7 @@ ECSDI:alojamiento35 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85801, 2.34661" ;
     ECSDI:id_alojamiento "XKPAR321" ;
-    ECSDI:importe "108.00" ;
+    ECSDI:importe 108 ;
     ECSDI:nombre "The Demo Hotel" .
 
 ECSDI:alojamiento36 a ECSDI:Alojamiento ;
@@ -231,7 +231,7 @@ ECSDI:alojamiento36 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.84917, 2.34301" ;
     ECSDI:id_alojamiento "RTPARSOR" ;
-    ECSDI:importe "164.50" ;
+    ECSDI:importe 164 ;
     ECSDI:nombre "Hotel de Test" .
 
 ECSDI:alojamiento37 a ECSDI:Alojamiento ;
@@ -239,7 +239,7 @@ ECSDI:alojamiento37 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86053, 2.34653" ;
     ECSDI:id_alojamiento "RTPARNOV" ;
-    ECSDI:importe "212.00" ;
+    ECSDI:importe 212 ;
     ECSDI:nombre "Novotel Paris les Halles" .
 
 ECSDI:alojamiento38 a ECSDI:Alojamiento ;
@@ -247,7 +247,7 @@ ECSDI:alojamiento38 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86195, 2.33592" ;
     ECSDI:id_alojamiento "BRPARVDB" ;
-    ECSDI:importe "342.75" ;
+    ECSDI:importe 342 ;
     ECSDI:nombre "Renaissance Paris Vendome Hotel" .
 
 ECSDI:alojamiento39 a ECSDI:Alojamiento ;
@@ -255,7 +255,7 @@ ECSDI:alojamiento39 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85254, 2.34198" ;
     ECSDI:id_alojamiento "HIPARC12" ;
-    ECSDI:importe "361.88" ;
+    ECSDI:importe 331 ;
     ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" .
 
 ECSDI:alojamiento4 a ECSDI:Alojamiento ;
@@ -263,7 +263,7 @@ ECSDI:alojamiento4 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39306, 2.1615" ;
     ECSDI:id_alojamiento "HLBCN116" ;
-    ECSDI:importe "136.21" ;
+    ECSDI:importe 136 ;
     ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" .
 
 ECSDI:alojamiento40 a ECSDI:Alojamiento ;
@@ -271,7 +271,7 @@ ECSDI:alojamiento40 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85801, 2.34661" ;
     ECSDI:id_alojamiento "XKPAR321" ;
-    ECSDI:importe "108.00" ;
+    ECSDI:importe 108 ;
     ECSDI:nombre "The Demo Hotel" .
 
 ECSDI:alojamiento41 a ECSDI:Alojamiento ;
@@ -279,7 +279,7 @@ ECSDI:alojamiento41 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.84917, 2.34301" ;
     ECSDI:id_alojamiento "RTPARSOR" ;
-    ECSDI:importe "164.50" ;
+    ECSDI:importe 164 ;
     ECSDI:nombre "Hotel de Test" .
 
 ECSDI:alojamiento42 a ECSDI:Alojamiento ;
@@ -287,7 +287,7 @@ ECSDI:alojamiento42 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86053, 2.34653" ;
     ECSDI:id_alojamiento "RTPARNOV" ;
-    ECSDI:importe "212.00" ;
+    ECSDI:importe 212 ;
     ECSDI:nombre "Novotel Paris les Halles" .
 
 ECSDI:alojamiento43 a ECSDI:Alojamiento ;
@@ -295,7 +295,7 @@ ECSDI:alojamiento43 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86195, 2.33592" ;
     ECSDI:id_alojamiento "BRPARVDB" ;
-    ECSDI:importe "342.75" ;
+    ECSDI:importe 342 ;
     ECSDI:nombre "Renaissance Paris Vendome Hotel" .
 
 ECSDI:alojamiento44 a ECSDI:Alojamiento ;
@@ -303,7 +303,7 @@ ECSDI:alojamiento44 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85254, 2.34198" ;
     ECSDI:id_alojamiento "HIPARC12" ;
-    ECSDI:importe "361.88" ;
+    ECSDI:importe 331 ;
     ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" .
 
 ECSDI:alojamiento45 a ECSDI:Alojamiento ;
@@ -311,7 +311,7 @@ ECSDI:alojamiento45 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85801, 2.34661" ;
     ECSDI:id_alojamiento "XKPAR321" ;
-    ECSDI:importe "108.00" ;
+    ECSDI:importe 108 ;
     ECSDI:nombre "The Demo Hotel" .
 
 ECSDI:alojamiento46 a ECSDI:Alojamiento ;
@@ -319,7 +319,7 @@ ECSDI:alojamiento46 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.84917, 2.34301" ;
     ECSDI:id_alojamiento "RTPARSOR" ;
-    ECSDI:importe "164.50" ;
+    ECSDI:importe 164 ;
     ECSDI:nombre "Hotel de Test" .
 
 ECSDI:alojamiento47 a ECSDI:Alojamiento ;
@@ -327,7 +327,7 @@ ECSDI:alojamiento47 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86053, 2.34653" ;
     ECSDI:id_alojamiento "RTPARNOV" ;
-    ECSDI:importe "212.00" ;
+    ECSDI:importe 212 ;
     ECSDI:nombre "Novotel Paris les Halles" .
 
 ECSDI:alojamiento48 a ECSDI:Alojamiento ;
@@ -335,7 +335,7 @@ ECSDI:alojamiento48 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86195, 2.33592" ;
     ECSDI:id_alojamiento "BRPARVDB" ;
-    ECSDI:importe "342.75" ;
+    ECSDI:importe 342 ;
     ECSDI:nombre "Renaissance Paris Vendome Hotel" .
 
 ECSDI:alojamiento49 a ECSDI:Alojamiento ;
@@ -343,7 +343,7 @@ ECSDI:alojamiento49 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85254, 2.34198" ;
     ECSDI:id_alojamiento "HIPARC12" ;
-    ECSDI:importe "361.88" ;
+    ECSDI:importe 331 ;
     ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" .
 
 ECSDI:alojamiento5 a ECSDI:Alojamiento ;
@@ -351,7 +351,7 @@ ECSDI:alojamiento5 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.38548, 2.1718" ;
     ECSDI:id_alojamiento "HSBCNAGY" ;
-    ECSDI:importe "109.00" ;
+    ECSDI:importe 95 ;
     ECSDI:nombre "Cataluña" .
 
 ECSDI:alojamiento50 a ECSDI:Alojamiento ;
@@ -359,7 +359,7 @@ ECSDI:alojamiento50 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85801, 2.34661" ;
     ECSDI:id_alojamiento "XKPAR321" ;
-    ECSDI:importe "108.00" ;
+    ECSDI:importe 108 ;
     ECSDI:nombre "The Demo Hotel" .
 
 ECSDI:alojamiento51 a ECSDI:Alojamiento ;
@@ -367,7 +367,7 @@ ECSDI:alojamiento51 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.84917, 2.34301" ;
     ECSDI:id_alojamiento "RTPARSOR" ;
-    ECSDI:importe "164.50" ;
+    ECSDI:importe 164 ;
     ECSDI:nombre "Hotel de Test" .
 
 ECSDI:alojamiento52 a ECSDI:Alojamiento ;
@@ -375,7 +375,7 @@ ECSDI:alojamiento52 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86053, 2.34653" ;
     ECSDI:id_alojamiento "RTPARNOV" ;
-    ECSDI:importe "212.00" ;
+    ECSDI:importe 212 ;
     ECSDI:nombre "Novotel Paris les Halles" .
 
 ECSDI:alojamiento53 a ECSDI:Alojamiento ;
@@ -383,7 +383,7 @@ ECSDI:alojamiento53 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86195, 2.33592" ;
     ECSDI:id_alojamiento "BRPARVDB" ;
-    ECSDI:importe "342.75" ;
+    ECSDI:importe 342 ;
     ECSDI:nombre "Renaissance Paris Vendome Hotel" .
 
 ECSDI:alojamiento54 a ECSDI:Alojamiento ;
@@ -391,7 +391,7 @@ ECSDI:alojamiento54 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85254, 2.34198" ;
     ECSDI:id_alojamiento "HIPARC12" ;
-    ECSDI:importe "361.88" ;
+    ECSDI:importe 331 ;
     ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" .
 
 ECSDI:alojamiento55 a ECSDI:Alojamiento ;
@@ -399,7 +399,7 @@ ECSDI:alojamiento55 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85801, 2.34661" ;
     ECSDI:id_alojamiento "XKPAR321" ;
-    ECSDI:importe "108.00" ;
+    ECSDI:importe 108 ;
     ECSDI:nombre "The Demo Hotel" .
 
 ECSDI:alojamiento56 a ECSDI:Alojamiento ;
@@ -407,7 +407,7 @@ ECSDI:alojamiento56 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.84917, 2.34301" ;
     ECSDI:id_alojamiento "RTPARSOR" ;
-    ECSDI:importe "164.50" ;
+    ECSDI:importe 164 ;
     ECSDI:nombre "Hotel de Test" .
 
 ECSDI:alojamiento57 a ECSDI:Alojamiento ;
@@ -415,7 +415,7 @@ ECSDI:alojamiento57 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86053, 2.34653" ;
     ECSDI:id_alojamiento "RTPARNOV" ;
-    ECSDI:importe "212.00" ;
+    ECSDI:importe 212 ;
     ECSDI:nombre "Novotel Paris les Halles" .
 
 ECSDI:alojamiento58 a ECSDI:Alojamiento ;
@@ -423,7 +423,7 @@ ECSDI:alojamiento58 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86195, 2.33592" ;
     ECSDI:id_alojamiento "BRPARVDB" ;
-    ECSDI:importe "342.75" ;
+    ECSDI:importe 342 ;
     ECSDI:nombre "Renaissance Paris Vendome Hotel" .
 
 ECSDI:alojamiento59 a ECSDI:Alojamiento ;
@@ -431,7 +431,7 @@ ECSDI:alojamiento59 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85254, 2.34198" ;
     ECSDI:id_alojamiento "HIPARC12" ;
-    ECSDI:importe "361.88" ;
+    ECSDI:importe 331 ;
     ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" .
 
 ECSDI:alojamiento6 a ECSDI:Alojamiento ;
@@ -439,7 +439,7 @@ ECSDI:alojamiento6 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39094, 2.17068" ;
     ECSDI:id_alojamiento "HSBCNAKP" ;
-    ECSDI:importe "920.00" ;
+    ECSDI:importe 920 ;
     ECSDI:nombre "Acta Atrium Palace" .
 
 ECSDI:alojamiento60 a ECSDI:Alojamiento ;
@@ -447,7 +447,7 @@ ECSDI:alojamiento60 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85801, 2.34661" ;
     ECSDI:id_alojamiento "XKPAR321" ;
-    ECSDI:importe "108.00" ;
+    ECSDI:importe 108 ;
     ECSDI:nombre "The Demo Hotel" .
 
 ECSDI:alojamiento61 a ECSDI:Alojamiento ;
@@ -455,7 +455,7 @@ ECSDI:alojamiento61 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.84917, 2.34301" ;
     ECSDI:id_alojamiento "RTPARSOR" ;
-    ECSDI:importe "164.50" ;
+    ECSDI:importe 164 ;
     ECSDI:nombre "Hotel de Test" .
 
 ECSDI:alojamiento62 a ECSDI:Alojamiento ;
@@ -463,7 +463,7 @@ ECSDI:alojamiento62 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86053, 2.34653" ;
     ECSDI:id_alojamiento "RTPARNOV" ;
-    ECSDI:importe "212.00" ;
+    ECSDI:importe 212 ;
     ECSDI:nombre "Novotel Paris les Halles" .
 
 ECSDI:alojamiento63 a ECSDI:Alojamiento ;
@@ -471,7 +471,7 @@ ECSDI:alojamiento63 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86195, 2.33592" ;
     ECSDI:id_alojamiento "BRPARVDB" ;
-    ECSDI:importe "342.75" ;
+    ECSDI:importe 342 ;
     ECSDI:nombre "Renaissance Paris Vendome Hotel" .
 
 ECSDI:alojamiento64 a ECSDI:Alojamiento ;
@@ -479,7 +479,7 @@ ECSDI:alojamiento64 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85254, 2.34198" ;
     ECSDI:id_alojamiento "HIPARC12" ;
-    ECSDI:importe "361.88" ;
+    ECSDI:importe 331 ;
     ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" .
 
 ECSDI:alojamiento65 a ECSDI:Alojamiento ;
@@ -487,7 +487,7 @@ ECSDI:alojamiento65 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85801, 2.34661" ;
     ECSDI:id_alojamiento "XKPAR321" ;
-    ECSDI:importe "108.00" ;
+    ECSDI:importe 108 ;
     ECSDI:nombre "The Demo Hotel" .
 
 ECSDI:alojamiento66 a ECSDI:Alojamiento ;
@@ -495,7 +495,7 @@ ECSDI:alojamiento66 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.84917, 2.34301" ;
     ECSDI:id_alojamiento "RTPARSOR" ;
-    ECSDI:importe "164.50" ;
+    ECSDI:importe 164 ;
     ECSDI:nombre "Hotel de Test" .
 
 ECSDI:alojamiento67 a ECSDI:Alojamiento ;
@@ -503,7 +503,7 @@ ECSDI:alojamiento67 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86053, 2.34653" ;
     ECSDI:id_alojamiento "RTPARNOV" ;
-    ECSDI:importe "212.00" ;
+    ECSDI:importe 212 ;
     ECSDI:nombre "Novotel Paris les Halles" .
 
 ECSDI:alojamiento68 a ECSDI:Alojamiento ;
@@ -511,7 +511,7 @@ ECSDI:alojamiento68 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86195, 2.33592" ;
     ECSDI:id_alojamiento "BRPARVDB" ;
-    ECSDI:importe "342.75" ;
+    ECSDI:importe 342 ;
     ECSDI:nombre "Renaissance Paris Vendome Hotel" .
 
 ECSDI:alojamiento69 a ECSDI:Alojamiento ;
@@ -519,7 +519,7 @@ ECSDI:alojamiento69 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85254, 2.34198" ;
     ECSDI:id_alojamiento "HIPARC12" ;
-    ECSDI:importe "361.88" ;
+    ECSDI:importe 331 ;
     ECSDI:nombre "HOLIDAY INN PARIS-NOTRE DAME123" .
 
 ECSDI:alojamiento7 a ECSDI:Alojamiento ;
@@ -527,7 +527,7 @@ ECSDI:alojamiento7 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39306, 2.1615" ;
     ECSDI:id_alojamiento "HLBCN116" ;
-    ECSDI:importe "136.21" ;
+    ECSDI:importe 136 ;
     ECSDI:nombre "ALEXANDRA BARCELONA A DT BY HILTON" .
 
 ECSDI:alojamiento70 a ECSDI:Alojamiento ;
@@ -535,7 +535,7 @@ ECSDI:alojamiento70 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.85801, 2.34661" ;
     ECSDI:id_alojamiento "XKPAR321" ;
-    ECSDI:importe "108.00" ;
+    ECSDI:importe 108 ;
     ECSDI:nombre "The Demo Hotel" .
 
 ECSDI:alojamiento71 a ECSDI:Alojamiento ;
@@ -543,7 +543,7 @@ ECSDI:alojamiento71 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.84917, 2.34301" ;
     ECSDI:id_alojamiento "RTPARSOR" ;
-    ECSDI:importe "164.50" ;
+    ECSDI:importe 164 ;
     ECSDI:nombre "Hotel de Test" .
 
 ECSDI:alojamiento72 a ECSDI:Alojamiento ;
@@ -551,7 +551,7 @@ ECSDI:alojamiento72 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86053, 2.34653" ;
     ECSDI:id_alojamiento "RTPARNOV" ;
-    ECSDI:importe "212.00" ;
+    ECSDI:importe 212 ;
     ECSDI:nombre "Novotel Paris les Halles" .
 
 ECSDI:alojamiento73 a ECSDI:Alojamiento ;
@@ -559,7 +559,7 @@ ECSDI:alojamiento73 a ECSDI:Alojamiento ;
     ECSDI:ciudad "PAR" ;
     ECSDI:coordenadas "48.86195, 2.33592" ;
     ECSDI:id_alojamiento "BRPARVDB" ;
-    ECSDI:importe "342.75" ;
+    ECSDI:importe 342 ;
     ECSDI:nombre "Renaissance Paris Vendome Hotel" .
 
 ECSDI:alojamiento8 a ECSDI:Alojamiento ;
@@ -567,7 +567,7 @@ ECSDI:alojamiento8 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.38548, 2.1718" ;
     ECSDI:id_alojamiento "HSBCNAGY" ;
-    ECSDI:importe "109.00" ;
+    ECSDI:importe 95 ;
     ECSDI:nombre "Cataluña" .
 
 ECSDI:alojamiento9 a ECSDI:Alojamiento ;
@@ -575,7 +575,7 @@ ECSDI:alojamiento9 a ECSDI:Alojamiento ;
     ECSDI:ciudad "BCN" ;
     ECSDI:coordenadas "41.39094, 2.17068" ;
     ECSDI:id_alojamiento "HSBCNAKP" ;
-    ECSDI:importe "920.00" ;
+    ECSDI:importe 920 ;
     ECSDI:nombre "Acta Atrium Palace" .
 
 ECSDI:coordenadas10 a ECSDI:Localizacion .
@@ -722,7 +722,7 @@ ECSDI:coordenadas8 a ECSDI:Localizacion .
 
 ECSDI:coordenadas9 a ECSDI:Localizacion .
 
-<message-4078123561846083886-0073> a acl:FipaAclMessage,
+<message--4615835995702175735-0073> a acl:FipaAclMessage,
         <http://www.w3.org/2002/07/owl#NamedIndividual> ;
     acl:performative acl:inform- ;
     acl:receiver <http://www.agentes.org#AgenteAlojamientos> ;

@@ -6,8 +6,7 @@ Agente que se registra como agente de hoteles y espera peticiones
 @author: javier
 """
 
-from datetime import datetime
-from functools import lru_cache
+from datetime import datetime, timedelta
 from multiprocessing import Process, Queue
 import socket
 
@@ -15,7 +14,7 @@ import argparse
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from cachetools.func import ttl_cache
-from rdflib import Namespace, Graph
+from rdflib import Namespace, Graph, Literal
 from rdflib.namespace import RDF, FOAF
 
 from flask import Flask, request
@@ -47,7 +46,7 @@ logger = config_logger(level=1)
 args = parser.parse_args()
 # Configuration stuff
 if args.port is None:
-    port = 9001
+    port = 9002
 else:
     port = args.port
 
@@ -178,6 +177,7 @@ def get_vuelos():
     logger.info('Todo ha ido bien')
     gresp.serialize(destination='../datos/vuelos.ttl', format='turtle')
 
+
 def fetch_alojamientos():
     global ag
     if mss_cnt % 2 == 0:
@@ -200,6 +200,7 @@ def fetch_alojamientos():
                                        content=peticion_vuelos), ag.address)
 
     gresp.serialize(destination='../datos/vuelos.ttl', format='turtle')
+
 
 def reload_data():
     logger.info('Refrescando datos... haha')
@@ -243,6 +244,8 @@ def stop():
     shutdown_server()
     return "Parando Servidor"
 
+
+@ttl_cache(maxsize=1000000, ttl=10 * 60)
 def get_vuelos_local(ciudad_origen, ciudad_destino, pricemax, pricemin, dateIni, dateFi):
     global aeropuerto_origen
     global aeropuerto_destino
@@ -259,6 +262,9 @@ def get_vuelos_local(ciudad_origen, ciudad_destino, pricemax, pricemin, dateIni,
     n = 2
     g.parse('../datos/vuelos.ttl', format='turtle')
     act_list = g.triples((None, RDF.type, ECSDI.vuelo))
+    dateInicial = datetime.strptime(dateIni, '%Y-%m-%d').date()
+    dateFinal = datetime.strptime(dateFi, '%Y-%m-%d').date()
+    date_aux = dateInicial
     if act_list is not None:
         while n > 0:
             next_act_uri = next(act_list)[0]
@@ -274,15 +280,24 @@ def get_vuelos_local(ciudad_origen, ciudad_destino, pricemax, pricemin, dateIni,
 
                 destino = g.value(subject=next_act_uri, predicate=ECSDI.tiene_como_aeropuerto_destino)
                 nombre_destino = g.value(subject=destino, predicate=ECSDI.nombre)
-                print(aeropuerto_origen)
+
                 # Primero hacemos el de ida y cambiamos los valores para buscar de vuelta
                 if str(nombre_origen) == str(aeropuerto_origen) and str(nombre_destino) == str(aeropuerto_destino):
+                    f_i = datetime.strptime(fecha_inicial, '%Y-%m-%dT%H:%M:%S')
+                    f_f = datetime.strptime(fecha_final, '%Y-%m-%dT%H:%M:%S')
+                    tiempo_inicial = f_i.time()
+                    fecha_inicial = datetime.combine(date_aux, tiempo_inicial).strftime('%d-%m-%Y %H:%M:%S')
+                    tiempo_final = f_f.time()
+                    if f_i.day != f_f.day:
+                        dateInicial += timedelta(days=1)
+                    fecha_final = datetime.combine(date_aux, tiempo_final).strftime('%d-%m-%Y %H:%M:%S')
                     if aeropuerto_origen == "Barcelona El Prat Airport":
                         aeropuerto_origen = "Charles de Gaulle Airport"
                         aeropuerto_destino = "Barcelona El Prat Airport"
                     else:
                         aeropuerto_origen = "Barcelona El Prat Airport"
                         aeropuerto_destino = "Charles de Gaulle Airport"
+                    date_aux = dateFinal
 
                     # Compania
                     gres.add((comp, RDF.type, ECSDI.compania))
@@ -301,10 +316,11 @@ def get_vuelos_local(ciudad_origen, ciudad_destino, pricemax, pricemin, dateIni,
                     gres.add((next_act_uri, ECSDI.tiene_como_aeropuerto_origen, origen))
                     gres.add((next_act_uri, ECSDI.importe, importe))
                     gres.add((next_act_uri, ECSDI.es_ofrecido_por, comp))
-                    gres.add((next_act_uri, ECSDI.fecha_inicial, fecha_inicial))
-                    gres.add((next_act_uri, ECSDI.fecha_final, fecha_final))
+                    gres.add((next_act_uri, ECSDI.fecha_inicial, Literal(fecha_inicial)))
+                    gres.add((next_act_uri, ECSDI.fecha_final, Literal(fecha_final)))
                     n -= 1
     return gres
+
 
 @app.route("/comm")
 def comunicacion():
@@ -387,6 +403,7 @@ if __name__ == '__main__':
     # Ponemos en marcha los behaviors
     ab1 = Process(target=agentbehavior1)
     ab1.start()
+    sched.add_job(reload_data, 'cron', day='*', hour='12')
     sched.start()
     # Ponemos en marcha el servidor
     app.run(host=hostname, port=port)
