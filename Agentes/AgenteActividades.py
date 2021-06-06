@@ -30,7 +30,7 @@ from AgentUtil.FlaskServer import shutdown_server
 from AgentUtil.ACLMessages import build_message, register_agent, get_message_properties, send_message
 from AgentUtil.Agent import Agent
 from AgentUtil.Logging import config_logger
-from AgentUtil.OntoNamespaces import ACL, ECSDI, DSO
+from AgentUtil.OntoNamespaces import ECSDI, ACL, DSO
 
 __author__ = 'arnau'
 
@@ -204,7 +204,14 @@ def add_dates(g, fecha):
         if i <= 0:
             i = ACT_PER_DAY
             fecha += timedelta(days=1)
-        g.add((next_act_uri, ECSDI.fecha, Literal(fecha.strftime("%d-%m-%Y"))))
+        date = fecha.date()
+        if i == 1:
+            fecha = datetime.combine(date, datetime.strptime('21:00', '%H:%M').time())
+        elif i == 2:
+            fecha = datetime.combine(date, datetime.strptime('12:00', '%H:%M').time())
+        else:
+            fecha = datetime.combine(date, datetime.strptime('09:00', '%H:%M').time())
+        g.add((next_act_uri, ECSDI.fecha, Literal(fecha.strftime("%d-%m-%Y %H:%M"))))
         i -= 1
 
 
@@ -225,9 +232,9 @@ def get_actividades(g, content):
     festiva_v = int(g.value(subject=content, predicate=ECSDI.porcentaje_actividad_festiva))
 
     days = (fecha_final_date - fecha_inicial_date).days
-    actividades_ludicas = int((days * ACT_PER_DAY) * (ludica_v / (ludica_v + cultural_v + festiva_v)))
-    actividades_culturales = int((days * ACT_PER_DAY) * (cultural_v / (ludica_v + cultural_v + festiva_v)))
-    actividades_festivas = int((days * ACT_PER_DAY) * (festiva_v / (ludica_v + cultural_v + festiva_v)))
+    actividades_ludicas = int(((days * ACT_PER_DAY) - 1) * (ludica_v / (ludica_v + cultural_v + festiva_v)))
+    actividades_culturales = int(((days * ACT_PER_DAY) - 1) * (cultural_v / (ludica_v + cultural_v + festiva_v)))
+    actividades_festivas = int(((days * ACT_PER_DAY) - 1) * (festiva_v / (ludica_v + cultural_v + festiva_v)))
     g = Graph()
     g += get_n_actividades(actividades_ludicas, ciudad_dict[ciudad_destino_v.lower()], ECSDI.Ludica)
     g += get_n_actividades(actividades_culturales, ciudad_dict[ciudad_destino_v.lower()], ECSDI.Cultural)

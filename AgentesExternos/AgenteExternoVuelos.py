@@ -33,7 +33,7 @@ from AgentUtil.FlaskServer import shutdown_server
 from AgentUtil.ACLMessages import build_message, send_message, register_agent, get_message_properties, get_agent_info
 from AgentUtil.Agent import Agent
 from AgentUtil.Logging import config_logger
-from AgentUtil.OntoNamespaces import ECSDI,ACL,TIO
+from AgentUtil.OntoNamespaces import ECSDI, ACL, TIO
 
 __author__ = 'javier'
 
